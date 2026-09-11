@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet"/>
+    <style>
+        @layer base {
+            html, body { margin: 0; padding: 0; }
+            body { overscroll-behavior: none; }
+            main>:first-child { margin-top: 0 !important; }
+            main>:last-child { margin-bottom: 0 !important; }
+        }
+        ::-webkit-scrollbar { display: none; }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface": "#fbf9f5",
+                        "on-surface": "#1b1c1a",
+                        "primary": "#9f3c16",
+                        "primary-container": "#bf542c",
+                        "on-primary": "#ffffff",
+                        "on-primary-container": "#fffbff",
+                        "secondary": "#74584e",
+                        "on-secondary": "#ffffff",
+                        "secondary-container": "#fed8ca",
+                        "on-secondary-container": "#795c52",
+                        "tertiary": "#8b4c00",
+                        "surface-container": "#efeeea",
+                        "surface-container-low": "#f5f3ef",
+                        "surface-container-high": "#eae8e4",
+                        "surface-container-highest": "#e4e2de",
+                        "surface-container-lowest": "#ffffff",
+                        "outline-variant": "#dec0b7"
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-surface font-['Plus_Jakarta_Sans'] text-on-surface antialiased">
+    <!-- Header / Navbar -->
+    <header class="fixed top-0 w-full z-50 shadow-[0_4px_20px_rgba(44,24,16,0.06)]">
+        <div class="bg-secondary text-on-secondary px-6 py-2 text-center text-xs">
+            <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
+                <div class="flex items-center gap-2">
+                    <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                    <span>ABIERTO HOY: 07:30 - 22:30 · Café de especialidad y cocina a las brasas</span>
+                </div>
+                <div class="flex items-center gap-4">
+                    <a class="flex items-center gap-1 hover:text-orange-200 transition-colors" href="tel:+50223456789">
+                        <span class="material-symbols-outlined text-[14px]">call</span>
+                        <span>+502 2345-6789</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="h-20 bg-surface/95 backdrop-blur-xl border-b border-outline-variant/30 px-6">
+            <div class="max-w-7xl mx-auto h-full flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <span class="font-['Playfair_Display'] text-xl font-bold tracking-tight text-primary">Aroma & Brasa</span>
+                </div>
+                <nav class="hidden xl:flex items-center gap-2">
+                    <a class="px-3 py-1.5 bg-primary-container text-on-primary-container font-semibold rounded-full text-sm" href="#">Inicio</a>
+                    <a class="px-3 py-1.5 text-stone-700 hover:text-stone-900 transition-colors text-sm" href="#">Menú Digital</a>
+                    <a class="px-3 py-1.5 text-stone-700 hover:text-stone-900 transition-colors text-sm" href="#">Galería & Ambiente</a>
+                    <a class="px-3 py-1.5 text-stone-700 hover:text-stone-900 transition-colors text-sm" href="#">Reservar Mesa</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="w-full pt-[112px]">
+        <!-- Hero Section -->
+        <section class="relative w-full bg-surface-container-lowest py-16 lg:py-24 px-6">
+            <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <div class="lg:col-span-7 flex flex-col items-start gap-4">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-high text-xs font-bold text-primary">
+                        <span class="w-2 h-2 rounded-full bg-primary animate-ping"></span>
+                        Abierto Ahora · Almuerzo & Cena
+                    </div>
+                    <h1 class="font-['Playfair_Display'] text-4xl lg:text-6xl font-bold tracking-tight leading-tight">
+                        El Arte del <span class="italic text-primary font-normal">Fuego Lento</span> y el Café de Finca.
+                    </h1>
+                    <p class="text-stone-700 text-base lg:text-lg max-w-xl">
+                        Sabores rústicos elevados a la alta cocina, panes de masa madre recién salidos del horno de barro y microlotes de café de altura.
+                    </p>
+                    <div class="flex flex-wrap gap-4 pt-2">
+                        <a href="#" class="px-6 py-3.5 rounded-full bg-primary text-on-primary font-bold shadow-md hover:bg-primary-container transition-all">
+                            Reservar una Mesa
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
