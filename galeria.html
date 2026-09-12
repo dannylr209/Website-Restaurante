@@ -1,69 +1,295 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
-    <link rel="preconnect" href="https://fonts.googleapis.com"/>
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet"/>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-[#fbf9f5] font-['Plus_Jakarta_Sans'] text-[#1b1c1a] antialiased">
-    <main class="w-full pt-28 min-h-screen">
-        <section class="max-w-7xl mx-auto px-6 py-12 text-center">
-            <h1 class="font-['Playfair_Display'] text-4xl lg:text-5xl font-bold tracking-tight mb-4">
-                Galería de Sabores, Texturas y Momentos
-            </h1>
-            <p class="text-stone-600 max-w-2xl mx-auto mb-8">
-                Un recorrido visual por nuestra cocina abierta, la terraza con jardín botánico y la barra de café de especialidad.
-            </p>
-            <!-- Filtros interactivos -->
-            <div class="flex flex-wrap items-center justify-center gap-2 p-1.5 rounded-full bg-stone-100 max-w-fit mx-auto shadow-sm" id="gallery-filters">
-                <button class="filter-btn px-5 py-2.5 rounded-full font-semibold transition-all bg-[#1b1c1a] text-white text-sm" data-filter="all">Todo el ambiente</button>
-                <button class="filter-btn px-5 py-2.5 rounded-full font-semibold transition-all text-stone-600 hover:text-black text-sm" data-filter="brasa">La Brasa & Horno</button>
-                <button class="filter-btn px-5 py-2.5 rounded-full font-semibold transition-all text-stone-600 hover:text-black text-sm" data-filter="cafe">Café & Repostería</button>
-            </div>
-        </section>
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"on-error-container":"#93000a","inverse-on-surface":"#f2f0ed","inverse-primary":"#ffb59c","surface":"#fbf9f5","on-tertiary-fixed-variant":"#6d3a00","on-surface":"#1b1c1a","on-secondary-container":"#795c52","surface-container-highest":"#e4e2de","on-tertiary":"#ffffff","primary-fixed-dim":"#ffb59c","secondary-container":"#fed8ca","surface-container-lowest":"#ffffff","on-secondary-fixed-variant":"#5a4137","tertiary":"#8b4c00","on-error":"#ffffff","secondary":"#74584e","surface-container-low":"#f5f3ef","on-background":"#1b1c1a","on-primary-container":"#fffbff","on-surface-variant":"#57423b","surface-tint":"#a23e18","surface-variant":"#e4e2de","surface-bright":"#fbf9f5","on-secondary-fixed":"#2a170f","tertiary-fixed-dim":"#ffb77a","on-tertiary-fixed":"#2e1500","tertiary-container":"#af6102","surface-container-high":"#eae8e4","outline-variant":"#dec0b7","secondary-fixed-dim":"#e3bfb2","primary":"#9f3c16","primary-fixed":"#ffdbcf","background":"#fbf9f5","inverse-surface":"#30312e","primary-container":"#bf542c","on-primary-fixed":"#390c00","error-container":"#ffdad6","on-tertiary-container":"#fffbff","secondary-fixed":"#ffdbce","surface-dim":"#dbdad6","outline":"#8a726a","tertiary-fixed":"#ffdcc2","on-secondary":"#ffffff","on-primary":"#ffffff","on-primary-fixed-variant":"#822801","error":"#ba1a1a","surface-container":"#efeeea"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-md":"1rem","gutter":"1.5rem","space-sm":"0.5rem","space-xl":"2.5rem","margin":"2rem","margin-sm":"1rem","gutter-sm":"1rem","space-xs":"0.25rem","space-lg":"1.5rem"},"fontFamily":{"display-lg-mobile":["Playfair Display"],"headline-lg-mobile":["Playfair Display"],"title-md":["Plus Jakarta Sans"],"body-md":["Plus Jakarta Sans"],"headline-md":["Playfair Display"],"label-md":["Plus Jakarta Sans"],"label-lg":["Plus Jakarta Sans"],"headline-sm":["Playfair Display"],"body-lg":["Plus Jakarta Sans"],"label-sm":["Plus Jakarta Sans"],"display-lg":["Playfair Display"],"headline-lg":["Playfair Display"]},"fontSize":{"display-lg-mobile":["36px",{"lineHeight":"44px","letterSpacing":"-0.01em","fontWeight":"700"}],"headline-lg-mobile":["26px",{"lineHeight":"34px","letterSpacing":"0em","fontWeight":"600"}],"title-md":["18px",{"lineHeight":"26px","fontWeight":"600"}],"body-md":["14px",{"lineHeight":"22px","fontWeight":"400"}],"headline-md":["24px",{"lineHeight":"32px","fontWeight":"600"}],"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.04em","fontWeight":"600"}],"label-lg":["14px",{"lineHeight":"20px","letterSpacing":"0.01em","fontWeight":"600"}],"headline-sm":["20px",{"lineHeight":"28px","fontWeight":"500"}],"body-lg":["16px",{"lineHeight":"26px","fontWeight":"400"}],"label-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.06em","fontWeight":"500"}],"display-lg":["48px",{"lineHeight":"56px","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-lg":["32px",{"lineHeight":"40px","letterSpacing":"-0.01em","fontWeight":"600"}]}}}}</script></head><body class="bg-background font-body-md text-body-md text-on-surface antialiased"><header class="fixed top-0 w-full z-50 shadow-[0_4px_20px_rgba(44,24,16,0.06)]"><div class="bg-secondary text-on-secondary px-gutter py-space-xs text-center"><div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-space-sm font-label-md text-label-md"><div class="flex items-center gap-space-xs"><span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span><span class="">ABIERTO HOY: 07:30 - 22:30 · Café de especialidad y cocina a las brasas</span></div><div class="flex items-center gap-space-md"><a class="inline-flex items-center gap-space-xs text-on-secondary hover:text-primary-fixed transition-colors" href="tel:+50223456789"><span class="material-symbols-outlined text-[14px]">call</span><span class="">+502 2345-6789</span></a><span class="opacity-40">|</span><a class="underline underline-offset-4 decoration-primary-fixed hover:text-primary-fixed transition-colors font-label-sm text-label-sm tracking-wider uppercase" data-path="reservar-mesa" href="reservas.html">Reserva Directa</a></div></div></div><div class="h-20 bg-surface/95 backdrop-blur-xl border-b border-outline-variant/30 px-gutter"><div class="max-w-7xl mx-auto h-full flex items-center justify-between gap-space-md"><a href="index.html" class="flex items-center gap-space-sm flex-shrink-0"><img alt="Logo Aroma &amp; Brasa" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1X8KXlZ-JRjuxmFoRJnpUxOmDToI5rZ92T9jvU4YOhrNcdzR_NRWqmi7WPvPoWUT6qmnEGAI4CbkZVP8wjjyE1rBxhUorNoQOPXcKfquQZobWYHM6HBRcoFi0uvZrAHVSlq81cCaWL2-EfaIqGc33aoFWOhyI8YsWQ_owGtNMkj3fOa9GgFrfDfWgNFBWCHYi5RfpIavPzqMzRWyogHF_NFumKjUr5GXdkfur9Y5afn38Gx6p0SH6nyNBLB"><div class="flex flex-col"><span class="font-headline-sm text-headline-sm font-bold tracking-tight text-primary leading-tight">Aroma &amp; Brasa</span><span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">Bistro &amp; Café</span></div></a><nav class="hidden xl:flex items-center gap-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded-full"><a class="px-3 py-1.5 rounded-full text-on-surface-variant hover:text-on-surface transition-colors font-label-md text-label-md" data-path="inicio" href="index.html">Inicio</a><a class="px-3 py-1.5 rounded-full text-on-surface-variant hover:text-on-surface transition-colors font-label-md text-label-md" data-path="menu-digital" href="menu.html">Menú Digital</a><a class="px-3 py-1.5 rounded-full text-on-surface-variant hover:text-on-surface transition-colors font-label-md text-label-md" data-path="galeria-y-ambiente" href="galeria.html">Galería &amp; Ambiente</a><a class="px-3 py-1.5 rounded-full text-on-surface-variant hover:text-on-surface transition-colors font-label-md text-label-md" data-path="reservar-mesa" href="reservas.html">Reservar Mesa</a><a class="px-3 py-1.5 rounded-full text-on-surface-variant hover:text-on-surface transition-colors font-label-md text-label-md" data-path="ubicacion-y-horarios" href="#">Ubicación &amp; Horarios</a><a class="px-3 py-1.5 rounded-full text-on-surface-variant hover:text-on-surface transition-colors font-label-md text-label-md" data-path="opiniones" href="#">Opiniones</a><a class="px-3 py-1.5 rounded-full text-on-surface-variant hover:text-on-surface transition-colors font-label-md text-label-md" data-path="blog-y-recetas" href="#">Blog &amp; Recetas</a></nav><div class="flex items-center gap-space-sm"><a class="hidden md:inline-flex items-center gap-space-xs px-3 py-2 rounded-full border border-outline-variant/60 text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all font-label-md text-label-md" href="tel:+50223456789"><span class="material-symbols-outlined text-[16px]">phone_in_talk</span><span class="">Llamar: +502 2345-6789</span></a><a class="inline-flex items-center gap-space-xs px-4 py-2 rounded-full bg-primary text-on-primary hover:bg-primary-container hover:text-on-primary-container shadow-sm transition-all font-label-lg text-label-lg" data-path="reservar-mesa" href="reservas.html"><span class="material-symbols-outlined text-[18px]">calendar_today</span><span class="">Reservar Mesa</span></a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center flex-shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></div></header><main class="w-full pt-[112px] bg-surface min-h-screen"><div class="flex flex-col w-full">
+<section class="relative w-full px-gutter py-space-xl overflow-hidden">
+<div class="max-w-7xl mx-auto flex flex-col items-center text-center relative z-10">
+<div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-surface-container-high text-primary font-label-md text-label-md uppercase tracking-wider mb-6 shadow-sm">
+<span class="material-symbols-outlined text-[16px]">photo_camera</span>
+<span class="">Archivo Visual · Temporada 2025</span>
+</div>
+<h1 class="font-display-lg text-display-lg text-on-surface max-w-4xl tracking-tight mb-4">
+        Galería de Sabores, Texturas y Momentos
+      </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl leading-relaxed mb-10">
+        Un recorrido visual por nuestra cocina abierta, la terraza con jardín botánico, la barra de café de especialidad y la pasión por el fuego.
+      </p>
+<div class="flex flex-wrap items-center justify-center gap-2 p-1.5 rounded-full bg-surface-container-low shadow-sm" id="gallery-filters">
+<button class="filter-btn active px-5 py-2.5 rounded-full font-label-md text-label-md transition-all bg-on-surface text-surface shadow-sm" data-filter="all">
+          Todo el ambiente
+        </button>
+<button class="filter-btn px-5 py-2.5 rounded-full font-label-md text-label-md transition-all text-on-surface-variant hover:text-on-surface" data-filter="platos">
+          Nuestros Platos
+        </button>
+<button class="filter-btn px-5 py-2.5 rounded-full font-label-md text-label-md transition-all text-on-surface-variant hover:text-on-surface" data-filter="brasa">
+          La Brasa &amp; Horno
+        </button>
+<button class="filter-btn px-5 py-2.5 rounded-full font-label-md text-label-md transition-all text-on-surface-variant hover:text-on-surface" data-filter="cafe">
+          Café &amp; Repostería
+        </button>
+<button class="filter-btn px-5 py-2.5 rounded-full font-label-md text-label-md transition-all text-on-surface-variant hover:text-on-surface" data-filter="terraza">
+          La Terraza &amp; Espacios
+        </button>
+</div>
+</div>
+</section>
+<section class="max-w-7xl mx-auto px-gutter pb-space-xl w-full">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6 auto-rows-[280px]" id="gallery-grid">
+<div class="gallery-item group relative lg:col-span-8 lg:row-span-2 rounded-xl overflow-hidden bg-surface-container cursor-pointer shadow-sm transition-all duration-500 hover:shadow-xl" data-category="brasa" data-date="Corte Prime Tomahawk · Madera de Encino" data-desc="Nuestra parrilla abierta utiliza carbón de encino y maderos aromáticos seleccionados para impartir un sellado caramelizado profundo en cortes madurados durante 45 días." data-img-prompt="Dramatic close-up of prime tomahawk steak sizzling over open glowing charcoal embers in an artisanal kitchen grill. Embers flying gently, rich dark caramelization, rosemary branch smoking on the grates. Atmospheric warm moody lighting with terracotta and espresso tones, 35mm gourmet photography style." data-subtitle="La Brasa &amp; Horno" data-title="El Fuego de la Parcela">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 ease-out group-hover:scale-105" data-alt="Dramatic close-up of prime tomahawk steak sizzling over open glowing charcoal embers in an artisanal kitchen grill. Embers flying gently, rich dark caramelization, rosemary branch smoking on the grates. Atmospheric warm moody lighting with terracotta and espresso tones, 35mm gourmet photography style." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBFUTMzqmIcZHj-eDXpmpVEOnzGuEbk5RYP1OwG0Oz2vxhgrqBNSD9oUk8fbUiwAp44Vu1M3XWT5xFhB3eFaGc-bVQt_LCibDpLgWe8_iuzD1cR6uqCE2cS86B0Dk0DQcyi22JNlehEuGFNfFh5O_118PNZrEGYUHOK6OPRPoN9HX42AQ5jMMDDguYqkGZDKAWKlb2VIgoUYpjNQsrws4jNjZTmJvMYu6iCnWYi_ZS-5fdMFuqB7ramkg')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80 group-hover:opacity-95 transition-opacity duration-300 flex flex-col justify-end p-8 text-on-primary">
+<div class="flex items-center gap-2 mb-2">
+<span class="px-2.5 py-0.5 rounded-full bg-primary text-on-primary font-label-sm text-label-sm uppercase tracking-wider">La Brasa Viva</span>
+<span class="text-white/80 font-label-sm text-label-sm">· Fuego Central</span>
+</div>
+<h3 class="font-headline-md text-headline-md font-bold mb-1">El Fuego de la Parcela</h3>
+<p class="font-body-md text-body-md text-white/90 line-clamp-2 max-w-xl">Cortes madurados con madera de encino guatemalteco, sellados a 500 grados frente a la vista del comensal.</p>
+<div class="mt-4 flex items-center gap-2 text-primary-fixed font-label-md text-label-md opacity-0 group-hover:opacity-100 transition-opacity transform translate-y-2 group-hover:translate-y-0">
+<span class="">Explorar detalle fotográfico</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</div>
+</div>
+</div>
+<div class="gallery-item group relative lg:col-span-4 lg:row-span-2 rounded-xl overflow-hidden bg-surface-container cursor-pointer shadow-sm transition-all duration-500 hover:shadow-xl" data-category="cafe" data-date="Varietal Geisha de Huehuetenango · Altura 1,900m" data-desc="Extracción lenta a 92 grados centígrados para resaltar delicadas notas florales a jazmín, miel silvestre y bergamota en nuestra barra de roble macizo." data-img-prompt="Artisan barista masterfully pouring hot water from a bronze gooseneck kettle into a glass V60 dripper. Solid dark oak coffee bar counter, ceramic handcrafted cups, diffused morning daylight through tall bistro windows. Earthy warm palette of cocoa, parchment, and soft brass, high-end editorial culinary photography." data-subtitle="Café de Especialidad" data-title="Extracción V60 Artesanal">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 ease-out group-hover:scale-105" data-alt="Artisan barista masterfully pouring hot water from a bronze gooseneck kettle into a glass V60 dripper. Solid dark oak coffee bar counter, ceramic handcrafted cups, diffused morning daylight through tall bistro windows. Earthy warm palette of cocoa, parchment, and soft brass, high-end editorial culinary photography." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC7U9Cw428vWwsDeLHpwM6h6GPoVqwLmKRXJEtPMJm-NYlbivD-rcGF7M0f65JUY5P4QU7UnY6dKAoHK3dahCSXI1Off_2vh8bWfUzlWzT_UAXXlSsNFtI5mucenAkv8wTnOAXbYVj-c07FOjFugOWCZy8lcI9VeOT1t5A86u7F1NXkrnc-nNCMRCdJ7dnj-DCXe3_eZxk7nkQ6FAJtwYQDBCh0QRgSyK1PUCQneYCIuZDAYVrKqCED6g')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-80 group-hover:opacity-95 transition-opacity duration-300 flex flex-col justify-end p-6 text-on-primary">
+<span class="px-2.5 py-0.5 rounded-full bg-tertiary-container text-on-tertiary-container font-label-sm text-label-sm uppercase tracking-wider self-start mb-2">Barra de Especialidad</span>
+<h3 class="font-headline-sm text-headline-sm font-bold mb-1">Extracción V60 Artesanal</h3>
+<p class="font-body-md text-body-md text-white/90 line-clamp-2">Granos de altura cosechados en pendientes volcánicas con tostado propio semanal.</p>
+</div>
+</div>
+<div class="gallery-item group relative lg:col-span-6 lg:row-span-1 rounded-xl overflow-hidden bg-surface-container cursor-pointer shadow-sm transition-all duration-500 hover:shadow-xl" data-category="terraza" data-date="Zona Jardín · Iluminación Cálida" data-desc="Rodeada de helechos arbóreos, orquídeas y monsteras locales, la terraza ofrece un refugio acústico bajo la caricia de bombillos de filamento cálido." data-img-prompt="Elegant outdoor bistro terrace dining table set with artisanal ceramic plates, sparkling wine glasses, and linen napkins. Lush hanging botanical garden foliage surrounding the pergola with glowing golden fairy lights during blue hour twilight. Warm ambiance, terracotta tones, natural wood textures." data-subtitle="La Terraza &amp; Espacios" data-title="Crepúsculo en la Terraza Botánica">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 ease-out group-hover:scale-105" data-alt="Elegant outdoor bistro terrace dining table set with artisanal ceramic plates, sparkling wine glasses, and linen napkins. Lush hanging botanical garden foliage surrounding the pergola with glowing golden fairy lights during blue hour twilight. Warm ambiance, terracotta tones, natural wood textures." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB1bsFVVW41cjq15SHyUh6X_P1zRfYMjL-OnlHEotGrdKptepoCcpGGGXeDmcsZbTWJnA7DRu5czsNysQ4IwiQ9NzGsCvCs1apBJN7AEMYbnkyZ5g97AXJXYx7gNvUdZPdaB5fG4BoGLXB_4GAR8eSv5Tqe8UpZB_tW_CSjri1Ab-gBOQGrayc_kpU5HXBtSBuj6x_lmPNrMLNWhIDQ12kkemEceMUgfKRV0eXjtUIQJq2p7uZvbuOf3g')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80 group-hover:opacity-95 transition-opacity duration-300 flex flex-col justify-end p-6 text-on-primary">
+<span class="px-2.5 py-0.5 rounded-full bg-secondary text-on-secondary font-label-sm text-label-sm uppercase tracking-wider self-start mb-2">Ambiente Exterior</span>
+<h3 class="font-headline-sm text-headline-sm font-bold">Crepúsculo en la Terraza Botánica</h3>
+<p class="font-body-md text-body-md text-white/90 line-clamp-1">El respiro natural preferido para aperitivos al caer la tarde.</p>
+</div>
+</div>
+<div class="gallery-item group relative lg:col-span-6 lg:row-span-1 rounded-xl overflow-hidden bg-surface-container cursor-pointer shadow-sm transition-all duration-500 hover:shadow-xl" data-category="platos" data-date="Cacao 72% de Alta Verapaz · Helado de Cardamomo" data-desc="Postre insignia horneado al momento. Corazón fundente con aroma a especias locales y azúcar hilada tostada en vivo frente al comensal." data-img-prompt="Close-up macro shot of decadent molten chocolate lava cake flowing with rich dark chocolate fudge. Garnished with delicate spun sugar smoke and edible gold leaf on a dark textured earthenware plate. Dusting of cocoa powder, warm moody rim lighting, artisanal bistro presentation." data-subtitle="Nuestros Platos" data-title="Volcán de Chocolate de Origen">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 ease-out group-hover:scale-105" data-alt="Close-up macro shot of decadent molten chocolate lava cake flowing with rich dark chocolate fudge. Garnished with delicate spun sugar smoke and edible gold leaf on a dark textured earthenware plate. Dusting of cocoa powder, warm moody rim lighting, artisanal bistro presentation." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB1H9f-6OcLREjMEOpZVaVfdlhDz3HR4zTrIhYneZQue0a5zQWf6jwTnPpYGeUe_7W1lT57IvMRAtqUqiT3P6x45JPi-NdQr3l45kSOmrU8dNvreqM9rncLV-hSiKRAR2nWwVsX1rynblJ8VwCmDHZGazS2WSqcNlc5iBYh1jjVas-N_aY0Jn0-2FRJ_iqOLHs6Zl_d18Oa-kywKPDUkQAQvdX-h3kbi3rDBS1vgDOcqNZfYXFP-BkdVw')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80 group-hover:opacity-95 transition-opacity duration-300 flex flex-col justify-end p-6 text-on-primary">
+<span class="px-2.5 py-0.5 rounded-full bg-primary-container text-on-primary-container font-label-sm text-label-sm uppercase tracking-wider self-start mb-2">Repostería de Fuego</span>
+<h3 class="font-headline-sm text-headline-sm font-bold">Volcán de Cacao 72%</h3>
+<p class="font-body-md text-body-md text-white/90 line-clamp-1">Sensación térmica entre lava oscura y helado artesanal de cardamomo.</p>
+</div>
+</div>
+<div class="gallery-item group relative lg:col-span-4 lg:row-span-2 rounded-xl overflow-hidden bg-surface-container cursor-pointer shadow-sm transition-all duration-500 hover:shadow-xl" data-category="terraza" data-date="Salón Central · Ladrillo Expuesto" data-desc="El rincón más sosegado del restaurante, decorado con maderas de demolición centenarias, libreros culinarios y butacas tapizadas en piel envejecida." data-img-prompt="Cozy intimate bistro dining room interior featuring an exposed red brick fireplace with gentle flames. Reclaimed rustic timber communal tables, leather upholstered armchairs, warm tungsten pendant lamps casting soft glows on dark wooden floorboards, inviting hearth atmosphere." data-subtitle="La Terraza &amp; Espacios" data-title="La Cava &amp; Chimenea Interior">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 ease-out group-hover:scale-105" data-alt="Cozy intimate bistro dining room interior featuring an exposed red brick fireplace with gentle flames. Reclaimed rustic timber communal tables, leather upholstered armchairs, warm tungsten pendant lamps casting soft glows on dark wooden floorboards, inviting hearth atmosphere." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBT2vVXLliluHZnX72PZBB8JmW9Lq0s9L9PTSGELgXwWR42gErA56SVmhYtCnpMAeFRGda4jGtu0GvDMQAt285RjjuPReLxVvvnRAStmttRZ1Q2Mo-BjCDtuzIULqwmVqlOPkGRRlA2-FrZpfIDqgwmlxxPD_ZLGLxsSSOo35TlJ6jC8gPYrxBcE4jIFpOP0mfkDbeCbNCXzbezvARLmT7y6I7sZYNuakm4sr_0Ogs1FkIHVoNDjwlZ8w')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-80 group-hover:opacity-95 transition-opacity duration-300 flex flex-col justify-end p-6 text-on-primary">
+<span class="px-2.5 py-0.5 rounded-full bg-secondary text-on-secondary font-label-sm text-label-sm uppercase tracking-wider self-start mb-2">Salón Íntimo</span>
+<h3 class="font-headline-sm text-headline-sm font-bold mb-1">Rincón de la Chimenea</h3>
+<p class="font-body-md text-body-md text-white/90 line-clamp-2">Espacio diseñado para veladas pausadas y catas guiadas de vinos naturales.</p>
+</div>
+</div>
+<div class="gallery-item group relative lg:col-span-4 lg:row-span-1 rounded-xl overflow-hidden bg-surface-container cursor-pointer shadow-sm transition-all duration-500 hover:shadow-xl" data-category="platos" data-date="Coctelería de Autor · Ahumado en Campana" data-desc="Bourbon envejecido, reducción de higos al horno y vermut rojo aromatizado con humo directo de romero silvestre atrapado en campana de cristal." data-img-prompt="Smoked artisanal cocktail in an ornate vintage cut-crystal tumbler. Delicate wisps of aromatic white smoke curling around a charred rosemary sprig garnish and artisanal ice cube. Dark moody bar table backdrop with warm copper cocktail shakers, fine luxury bar vibe." data-subtitle="Nuestros Platos" data-title="Neblina de Romero &amp; Bourbon">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 ease-out group-hover:scale-105" data-alt="Smoked artisanal cocktail in an ornate vintage cut-crystal tumbler. Delicate wisps of aromatic white smoke curling around a charred rosemary sprig garnish and artisanal ice cube. Dark moody bar table backdrop with warm copper cocktail shakers, fine luxury bar vibe." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDTWO7yyIqz-EdWCMvslBQYvZ4CgqkRv7FOyrr4JfPIYxgnPTpptP2Zvp09BWVGpHk9c0xYRlsHN2Gk1bfPJuspMwY8Fj76UxLfM-gSmG7V1kR6qECGjhb8hVltQ_cge-fhV4WC1bnZ0vYLj4xADHW3EijSFBzzydbIcHR24-rFHVhFDmkQ8leKkJF04gXmKXxme0OWek0blSbD1LpFU8AQYgLGX6832XGUApNVMHA2l-KNKDgjPXUwTA')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80 group-hover:opacity-95 transition-opacity duration-300 flex flex-col justify-end p-6 text-on-primary">
+<span class="px-2.5 py-0.5 rounded-full bg-primary-container text-on-primary-container font-label-sm text-label-sm uppercase tracking-wider self-start mb-2">Mixología</span>
+<h3 class="font-headline-sm text-headline-sm font-bold">Ahumado de la Casa</h3>
+<p class="font-body-md text-body-md text-white/90 line-clamp-1">Esencia botánica sellada con humo de leña.</p>
+</div>
+</div>
+<div class="gallery-item group relative lg:col-span-4 lg:row-span-1 rounded-xl overflow-hidden bg-surface-container cursor-pointer shadow-sm transition-all duration-500 hover:shadow-xl" data-category="cafe" data-date="Fermentación de 36 Horas · Harinas Molidas en Piedra" data-desc="Crujiente corteza dorada con greñado artístico, miga alveolar húmeda y acidez balanceada, horneadas diariamente antes del alba." data-img-prompt="Artisan woven basket brimming with freshly baked sourdough country loaves and rustic baguettes with flour dusted blistering golden-brown crusts. Soft morning steam rising gently from a sliced warm loaf. Rustic bakery kitchen counter setting with ear of wheat accents." data-subtitle="Café &amp; Repostería" data-title="Hogazas de Masa Madre">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 ease-out group-hover:scale-105" data-alt="Artisan woven basket brimming with freshly baked sourdough country loaves and rustic baguettes with flour dusted blistering golden-brown crusts. Soft morning steam rising gently from a sliced warm loaf. Rustic bakery kitchen counter setting with ear of wheat accents." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCJVyg0hlduobXC3Ymhc4Vj41zEIjb64iQ_D9rvoZ7PljWXgapvtIC5AnFcTPGWEthYpoPXphEYnAEvFuRTqeh1ZK-bBlx7k4LWMVo2tVE-L2uXlSgJVOZsDBAvYepJaW3RfyTo6wgZgtC05AJg0pb0GqWqNWgMR8Zb8EzGxXtpanZdvanHRfJJPzihlpswGFXyJf7HRr79utiizRui2RjXk_HJxIsLcrwk-TvvSPHXlnIhUztyGMqVHA')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80 group-hover:opacity-95 transition-opacity duration-300 flex flex-col justify-end p-6 text-on-primary">
+<span class="px-2.5 py-0.5 rounded-full bg-tertiary-container text-on-tertiary-container font-label-sm text-label-sm uppercase tracking-wider self-start mb-2">Obrador Matutino</span>
+<h3 class="font-headline-sm text-headline-sm font-bold">Masa Madre &amp; Horno</h3>
+<p class="font-body-md text-body-md text-white/90 line-clamp-1">El alma de nuestros desayunos y acompañamientos.</p>
+</div>
+</div>
+<div class="gallery-item group relative lg:col-span-8 lg:row-span-1 rounded-xl overflow-hidden bg-surface-container cursor-pointer shadow-sm transition-all duration-500 hover:shadow-xl" data-category="terraza" data-date="Mesa Comunal · Sobremesa Prolongada" data-desc="Momentos que cobran vida alrededor del fuego: risas compartidas, copas alzadas y bandejas de cortes pasando de mano en mano entre amigos." data-img-prompt="A joyous long wooden communal table in a stylish restaurant filled with happy people toasting with red wine glasses and sharing platters of grilled meats and roasted vegetables. Genuine laughter, ambient candlelight, warm bokeh background, elegant lively bistro atmosphere." data-subtitle="La Terraza &amp; Espacios" data-title="El Banquete Compartido">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 ease-out group-hover:scale-105" data-alt="A joyous long wooden communal table in a stylish restaurant filled with happy people toasting with red wine glasses and sharing platters of grilled meats and roasted vegetables. Genuine laughter, ambient candlelight, warm bokeh background, elegant lively bistro atmosphere." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAHsbWOl8ktO-tZL4pVlHQQHK8CqO1jvdxoMr4a5xcvcXlIPtmi7emL3kJ5d72hVFS-_nolbxkX3Sk7IdzDvK8tYI2KlIzItvx-z5DmAZ7HCh1IWZ_tZv4HM1fz7_iiJC2P8KX8WBlNDCd81664-ZnOOufKE3XAmifQ8DxtbA7tmlokmSKGuxqfXoCRzm41XjC2-GMS_fZGP8a_d0ExYb6cJUUpX5beu-JKm4TS3qht-Rdgakm83hnTBg')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80 group-hover:opacity-95 transition-opacity duration-300 flex flex-col justify-end p-6 text-on-primary">
+<div class="flex items-center gap-2 mb-1">
+<span class="px-2.5 py-0.5 rounded-full bg-secondary text-on-secondary font-label-sm text-label-sm uppercase tracking-wider">La Experiencia</span>
+<span class="text-white/80 font-label-sm text-label-sm">· Mesa Compartida</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm font-bold">El Ritual de la Hospitalidad</h3>
+<p class="font-body-md text-body-md text-white/90 line-clamp-1">Donde los encuentros casuales se convierten en memorias duraderas.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="w-full bg-surface-container-low py-space-xl px-gutter relative overflow-hidden">
+<div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-10">
+<div class="flex-1 space-y-4 text-center lg:text-left">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary font-label-sm text-label-sm uppercase tracking-widest font-semibold">
+<span class="material-symbols-outlined text-[16px]">photo_library</span>
+<span class="">Comunidad · #AromaYBrasa</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">
+          Comparte tu perspectiva gastronómica
+        </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
+          Etiqueta a <strong class="text-on-surface font-semibold">@AromaYBrasaBistro</strong> en Instagram usando el hashtag <strong class="text-primary font-semibold">#AromaYBrasa</strong> para ser parte de nuestro muro editorial y recibir una degustación de postre en tu siguiente visita.
+        </p>
+<div class="pt-2 flex flex-wrap items-center justify-center lg:justify-start gap-4">
+<a class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-on-surface text-surface hover:bg-primary transition-colors font-label-lg text-label-lg shadow-sm" href="https://instagram.com" rel="noopener" target="_blank">
+<span class="material-symbols-outlined text-[18px]">photo_camera</span>
+<span class="">Seguir @AromaYBrasaBistro</span>
+</a>
+<a class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-surface text-on-surface hover:bg-surface-container-high transition-colors font-label-lg text-label-lg shadow-sm" data-path="reservar-mesa" href="reservas.html">
+<span class="material-symbols-outlined text-[18px]">calendar_today</span>
+<span class="">Vivir la Experiencia</span>
+</a>
+</div>
+</div>
+<div class="flex-1 w-full max-w-lg grid grid-cols-2 gap-4">
+<div class="p-6 rounded-xl bg-surface shadow-sm flex flex-col items-center text-center">
+<span class="font-display-lg text-display-lg text-primary font-bold">12.8k</span>
+<span class="font-label-md text-label-md text-on-surface-variant mt-1">Fotografías etiquetadas</span>
+</div>
+<div class="p-6 rounded-xl bg-surface shadow-sm flex flex-col items-center text-center">
+<span class="font-display-lg text-display-lg text-tertiary font-bold">4.9 ★</span>
+<span class="font-label-md text-label-md text-on-surface-variant mt-1">Índice estético &amp; ambiente</span>
+</div>
+<div class="p-6 rounded-xl bg-surface shadow-sm flex flex-col items-center text-center col-span-2">
+<div class="flex items-center justify-center -space-x-3 mb-2">
+<div class="w-10 h-10 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-bold text-xs shadow-sm">MB</div>
+<div class="w-10 h-10 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center font-bold text-xs shadow-sm">CR</div>
+<div class="w-10 h-10 rounded-full bg-tertiary-container text-on-tertiary-container flex items-center justify-center font-bold text-xs shadow-sm">LT</div>
+<div class="w-10 h-10 rounded-full bg-on-surface text-surface flex items-center justify-center font-bold text-xs shadow-sm">+85</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Comensales compartieron sus fotos esta semana</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Lightbox Modal -->
+<div class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden opacity-0 transition-opacity duration-300 flex items-center justify-center p-4 md:p-8" id="lightbox-modal">
+<div class="relative max-w-5xl w-full max-h-[942px] bg-surface rounded-xl overflow-hidden shadow-2xl flex flex-col md:flex-row transform scale-95 transition-transform duration-300" id="lightbox-card">
+<!-- Close Button -->
+<button class="absolute top-4 right-4 z-20 w-10 h-10 rounded-full bg-surface-container-high/80 text-on-surface hover:bg-surface-container-highest flex items-center justify-center transition-colors" id="close-lightbox">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+<!-- Lightbox Image Stage -->
+<div class="flex-1 bg-black flex items-center justify-center relative min-h-[320px] md:min-h-[500px]">
+<div class="w-full h-full bg-cover bg-center min-h-[340px] md:min-h-[520px]" data-alt="High-resolution close up preview of the selected gastronomic capture from Aroma &amp; Brasa gallery" id="modal-image" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBa6rcyRS2o-cT-0Ktnm4lysjWw-AE9cZmezBUwwkmlArk24WE_ktRERO3_uevfaLYrsR7Qcyr2pk3DATx9ONLqx2ciXKREYtKIHk0XQY7010pqqj_zQ6miRTtEIocnmiC_a9PWnCfPtjEwrc1u9BPXu3WVZb-9-MjJFq4lbZxs2FHh1nv1XRIxR7nLf9AiDL-ngEGdIEmz_ZrROuSUelqYpL5UWV6z9bunMsHA5A1Uvim_DlsG5SMMVQ')"></div>
+</div>
+<!-- Narrative Panel -->
+<div class="w-full md:w-80 lg:w-96 p-8 flex flex-col justify-between bg-surface">
+<div>
+<div class="flex items-center gap-2 mb-3">
+<span class="px-2.5 py-1 rounded-full bg-primary/10 text-primary font-label-sm text-label-sm uppercase tracking-wider font-semibold" id="modal-badge">
+              Categoría
+            </span>
+</div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface mb-2" id="modal-title">
+            Título de la Captura
+          </h3>
+<p class="font-label-md text-label-md text-secondary mb-4" id="modal-date">
+            Detalles técnicos y origen
+          </p>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-6" id="modal-desc">
+            Descripción culinaria detallada de la preparación, técnica aplicada y notas de cata.
+          </p>
+</div>
+<div class="pt-6 mt-6 border-t border-surface-container-highest flex flex-col gap-3">
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span class="">Resolución de Archivo</span>
+<span class="font-semibold text-on-surface">4K Ultra HDR</span>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span class="">Ubicación</span>
+<span class="font-semibold text-on-surface">Bistro Central · Ciudad</span>
+</div>
+<a class="mt-2 w-full text-center py-2.5 rounded-full bg-primary text-on-primary hover:bg-primary-container font-label-md text-label-md transition-colors shadow-sm" data-path="reservar-mesa" href="reservas.html">
+            Reservar Experiencia
+          </a>
+</div>
+</div>
+</div>
+</div>
+<script>
+    (function() {
+      const filterButtons = document.querySelectorAll('#gallery-filters .filter-btn');
+      const galleryItems = document.querySelectorAll('.gallery-item');
+      const modal = document.getElementById('lightbox-modal');
+      const modalContent = document.getElementById('lightbox-card');
+      const closeModal = document.getElementById('close-lightbox');
+      
+      const modalTitle = document.getElementById('modal-title');
+      const modalBadge = document.getElementById('modal-badge');
+      const modalDate = document.getElementById('modal-date');
+      const modalDesc = document.getElementById('modal-desc');
+      const modalImg = document.getElementById('modal-image');
 
-        <!-- Grid de Galería -->
-        <section class="max-w-7xl mx-auto px-6 pb-20">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6 auto-rows-[280px]" id="gallery-grid">
-                <div class="gallery-item group relative lg:col-span-8 lg:row-span-2 rounded-xl overflow-hidden bg-stone-200 cursor-pointer shadow-sm" data-category="brasa">
-                    <div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBFUTMzqmIcZHj-eDXpmpVEOnzGuEbk5RYP1OwG0Oz2vxhgrqBNSD9oUk8fbUiwAp44Vu1M3XWT5xFhB3eFaGc-bVQt_LCibDpLgWe8_iuzD1cR6uqCE2cS86B0Dk0DQcyi22JNlehEuGFNfFh5O_118PNZrEGYUHOK6OPRPoN9HX42AQ5jMMDDguYqkGZDKAWKlb2VIgoUYpjNQsrws4jNjZTmJvMYu6iCnWYi_ZS-5fdMFuqB7ramkg')"></div>
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-8 text-white">
-                        <span class="px-2.5 py-0.5 rounded-full bg-[#9f3c16] text-white text-xs font-bold uppercase tracking-wider w-max mb-2">La Brasa Viva</span>
-                        <h3 class="font-['Playfair_Display'] text-2xl font-bold">El Fuego de la Parcela</h3>
-                        <p class="text-sm text-stone-200 mt-1">Cortes madurados con madera de encino guatemalteco.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
+      // Gallery Filtering
+      filterButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          filterButtons.forEach(b => {
+            b.classList.remove('active', 'bg-on-surface', 'text-surface', 'shadow-sm');
+            b.classList.add('text-on-surface-variant');
+          });
+          btn.classList.add('active', 'bg-on-surface', 'text-surface', 'shadow-sm');
+          btn.classList.remove('text-on-surface-variant');
 
-    <!-- JavaScript para filtrado de galería -->
-    <script>
-        const filterButtons = document.querySelectorAll('.filter-btn');
-        filterButtons.forEach(btn => {
-            btn.addEventListener('click', () => {
-                filterButtons.forEach(b => {
-                    b.classList.remove('bg-[#1b1c1a]', 'text-white');
-                    b.classList.add('text-stone-600');
-                });
-                btn.classList.add('bg-[#1b1c1a]', 'text-white');
-                btn.classList.remove('text-stone-600');
-                
-                const filter = btn.getAttribute('data-filter');
-                const items = document.querySelectorAll('.gallery-item');
-                items.forEach(item => {
-                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
-                        item.style.display = 'block';
-                    } else {
-                        item.style.display = 'none';
-                    }
-                });
-            });
+          const filter = btn.getAttribute('data-filter');
+
+          galleryItems.forEach(item => {
+            const category = item.getAttribute('data-category');
+            if (filter === 'all' || category === filter) {
+              item.classList.remove('hidden');
+              item.classList.add('animate-fade-in');
+            } else {
+              item.classList.add('hidden');
+              item.classList.remove('animate-fade-in');
+            }
+          });
         });
-    </script>
-</body>
-</html>
+      });
+
+      // Lightbox Interaction
+      galleryItems.forEach(item => {
+        item.addEventListener('click', () => {
+          const title = item.getAttribute('data-title');
+          const badge = item.getAttribute('data-subtitle');
+          const date = item.getAttribute('data-date');
+          const desc = item.getAttribute('data-desc');
+          const imgPrompt = item.getAttribute('data-img-prompt');
+
+          modalTitle.textContent = title;
+          modalBadge.textContent = badge;
+          modalDate.innerHTML = date;
+          modalDesc.textContent = desc;
+
+          if (imgPrompt) {
+            modalImg.setAttribute('data-alt', imgPrompt);
+          }
+
+          modal.classList.remove('hidden');
+          setTimeout(() => {
+            modal.classList.remove('opacity-0');
+            modalContent.classList.remove('scale-95');
+            modalContent.classList.add('scale-100');
+          }, 10);
+          document.body.style.overflow = 'hidden';
+        });
+      });
+
+      const hideModal = () => {
+        modal.classList.add('opacity-0');
+        modalContent.classList.remove('scale-100');
+        modalContent.classList.add('scale-95');
+        setTimeout(() => {
+          modal.classList.add('hidden');
+          document.body.style.overflow = '';
+        }, 300);
+      };
+
+      closeModal.addEventListener('click', hideModal);
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+          hideModal();
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+          hideModal();
+        }
+      });
+    })();
+  </script>
+</div></main><footer class="w-full bg-surface-container-low border-t border-outline-variant/40 pt-space-xl pb-space-lg"><div class="max-w-7xl mx-auto px-gutter grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter mb-space-xl"><div class="space-y-space-md"><a href="index.html" class="flex items-center gap-space-sm hover:opacity-90 transition-opacity"><img alt="Logo Aroma &amp; Brasa" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1X8KXlZ-JRjuxmFoRJnpUxOmDToI5rZ92T9jvU4YOhrNcdzR_NRWqmi7WPvPoWUT6qmnEGAI4CbkZVP8wjjyE1rBxhUorNoQOPXcKfquQZobWYHM6HBRcoFi0uvZrAHVSlq81cCaWL2-EfaIqGc33aoFWOhyI8YsWQ_owGtNMkj3fOa9GgFrfDfWgNFBWCHYi5RfpIavPzqMzRWyogHF_NFumKjUr5GXdkfur9Y5afn38Gx6p0SH6nyNBLB"><span class="font-headline-sm text-headline-sm font-bold text-primary">Aroma &amp; Brasa</span></a><p class="font-body-md text-body-md text-on-surface-variant">Un santuario culinario donde el fuego de leña y los granos de café de altura convergen. Cocina honesta, ingredientes de origen y hospitalidad cálida en el corazón de la ciudad.</p><div class="inline-flex items-center gap-space-xs px-3 py-1.5 rounded-full bg-surface-container-high text-tertiary font-label-sm text-label-sm"><span class="material-symbols-outlined text-[16px]">verified</span><span class="">Sello de Calidad Culinaria Artesanal</span></div></div><div class="space-y-space-sm"><h4 class="font-title-md text-title-md text-on-surface">Horarios de Atención</h4><ul class="space-y-space-xs font-body-md text-body-md text-on-surface-variant"><li class=""><span class="font-semibold text-on-surface block">Lunes a Viernes</span>07:30 – 22:00</li><li class=""><span class="font-semibold text-on-surface block">Sábados y Domingos</span>08:00 – 23:00</li><li class="pt-space-xs"><span class="inline-flex items-center gap-1 text-tertiary font-label-sm text-label-sm"><span class="material-symbols-outlined text-[14px]">local_fire_department</span>Horno encendido todo el día</span></li></ul></div><div class="space-y-space-sm"><h4 class="font-title-md text-title-md text-on-surface">Ubicación &amp; Contacto</h4><div class="space-y-space-xs font-body-md text-body-md text-on-surface-variant"><p class="flex items-start gap-space-xs"><span class="material-symbols-outlined text-primary text-[18px] mt-0.5">location_on</span><span class="">Zona 10, Distrito Culinario<br>Ciudad de Guatemala, Guatemala</span></p><p class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-primary text-[18px]">call</span><a class="hover:text-on-surface transition-colors" href="tel:+50223456789">+502 2345-6789</a></p><p class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-primary text-[18px]">mail</span><a class="hover:text-on-surface transition-colors" href="mailto:reservas@aromaybrasa.gt">reservas@aromaybrasa.gt</a></p></div></div><div class="space-y-space-sm"><h4 class="font-title-md text-title-md text-on-surface">Explorar &amp; Redes</h4><ul class="space-y-space-xs font-body-md text-body-md text-on-surface-variant"><li class=""><a class="hover:text-primary transition-colors" data-path="menu-digital" href="menu.html">Carta de Temporada &amp; Vinos</a></li><li class=""><a class="hover:text-primary transition-colors" data-path="reservar-mesa" href="reservas.html">Reservación de Mesas &amp; Eventos</a></li><li class=""><a class="hover:text-primary transition-colors" data-path="galeria-y-ambiente" href="galeria.html">Recorrido Visual del Bistro</a></li><li class=""><a class="hover:text-primary transition-colors" data-path="blog-y-recetas" href="#">Historias del Tueste &amp; Recetas</a></li></ul><div class="pt-space-xs flex items-center gap-space-sm text-on-surface-variant"><a class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center hover:bg-primary hover:text-on-primary transition-colors" href="#"><span class="material-symbols-outlined text-[16px]">photo_camera</span></a><a class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center hover:bg-primary hover:text-on-primary transition-colors" href="#"><span class="material-symbols-outlined text-[16px]">share</span></a><a class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center hover:bg-primary hover:text-on-primary transition-colors" href="#"><span class="material-symbols-outlined text-[16px]">map</span></a></div></div></div><div class="max-w-7xl mx-auto px-gutter pt-space-md border-t border-outline-variant/30 flex flex-col sm:flex-row items-center justify-between gap-space-sm text-on-surface-variant font-label-md text-label-md"><p class="">© 2025 Aroma &amp; Brasa. Todos los derechos reservados. Pasión por el fuego y el grano.</p><div class="flex items-center gap-space-md"><a class="hover:text-on-surface transition-colors" href="#">Política de Privacidad</a><a class="hover:text-on-surface transition-colors" href="#">Términos de Servicio</a></div></div></footer>
+
+</body></html>

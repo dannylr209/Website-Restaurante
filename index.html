@@ -1,106 +1,608 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
-    <link rel="preconnect" href="https://fonts.googleapis.com"/>
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet"/>
-    <style>
-        @layer base {
-            html, body { margin: 0; padding: 0; }
-            body { overscroll-behavior: none; }
-            main>:first-child { margin-top: 0 !important; }
-            main>:last-child { margin-bottom: 0 !important; }
-        }
-        ::-webkit-scrollbar { display: none; }
-    </style>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        "surface": "#fbf9f5",
-                        "on-surface": "#1b1c1a",
-                        "primary": "#9f3c16",
-                        "primary-container": "#bf542c",
-                        "on-primary": "#ffffff",
-                        "on-primary-container": "#fffbff",
-                        "secondary": "#74584e",
-                        "on-secondary": "#ffffff",
-                        "secondary-container": "#fed8ca",
-                        "on-secondary-container": "#795c52",
-                        "tertiary": "#8b4c00",
-                        "surface-container": "#efeeea",
-                        "surface-container-low": "#f5f3ef",
-                        "surface-container-high": "#eae8e4",
-                        "surface-container-highest": "#e4e2de",
-                        "surface-container-lowest": "#ffffff",
-                        "outline-variant": "#dec0b7"
-                    }
-                }
-            }
-        }
-    </script>
-</head>
-<body class="bg-surface font-['Plus_Jakarta_Sans'] text-on-surface antialiased">
-    <!-- Header / Navbar -->
-    <header class="fixed top-0 w-full z-50 shadow-[0_4px_20px_rgba(44,24,16,0.06)]">
-        <div class="bg-secondary text-on-secondary px-6 py-2 text-center text-xs">
-            <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
-                <div class="flex items-center gap-2">
-                    <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                    <span>ABIERTO HOY: 07:30 - 22:30 · Café de especialidad y cocina a las brasas</span>
-                </div>
-                <div class="flex items-center gap-4">
-                    <a class="flex items-center gap-1 hover:text-orange-200 transition-colors" href="tel:+50223456789">
-                        <span class="material-symbols-outlined text-[14px]">call</span>
-                        <span>+502 2345-6789</span>
-                    </a>
-                </div>
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"on-error-container":"#93000a","inverse-on-surface":"#f2f0ed","inverse-primary":"#ffb59c","surface":"#fbf9f5","on-tertiary-fixed-variant":"#6d3a00","on-surface":"#1b1c1a","on-secondary-container":"#795c52","surface-container-highest":"#e4e2de","on-tertiary":"#ffffff","primary-fixed-dim":"#ffb59c","secondary-container":"#fed8ca","surface-container-lowest":"#ffffff","on-secondary-fixed-variant":"#5a4137","tertiary":"#8b4c00","on-error":"#ffffff","secondary":"#74584e","surface-container-low":"#f5f3ef","on-background":"#1b1c1a","on-primary-container":"#fffbff","on-surface-variant":"#57423b","surface-tint":"#a23e18","surface-variant":"#e4e2de","surface-bright":"#fbf9f5","on-secondary-fixed":"#2a170f","tertiary-fixed-dim":"#ffb77a","on-tertiary-fixed":"#2e1500","tertiary-container":"#af6102","surface-container-high":"#eae8e4","outline-variant":"#dec0b7","secondary-fixed-dim":"#e3bfb2","primary":"#9f3c16","primary-fixed":"#ffdbcf","background":"#fbf9f5","inverse-surface":"#30312e","primary-container":"#bf542c","on-primary-fixed":"#390c00","error-container":"#ffdad6","on-tertiary-container":"#fffbff","secondary-fixed":"#ffdbce","surface-dim":"#dbdad6","outline":"#8a726a","tertiary-fixed":"#ffdcc2","on-secondary":"#ffffff","on-primary":"#ffffff","on-primary-fixed-variant":"#822801","error":"#ba1a1a","surface-container":"#efeeea"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-md":"1rem","gutter":"1.5rem","space-sm":"0.5rem","space-xl":"2.5rem","margin":"2rem","margin-sm":"1rem","gutter-sm":"1rem","space-xs":"0.25rem","space-lg":"1.5rem"},"fontFamily":{"display-lg-mobile":["Playfair Display"],"headline-lg-mobile":["Playfair Display"],"title-md":["Plus Jakarta Sans"],"body-md":["Plus Jakarta Sans"],"headline-md":["Playfair Display"],"label-md":["Plus Jakarta Sans"],"label-lg":["Plus Jakarta Sans"],"headline-sm":["Playfair Display"],"body-lg":["Plus Jakarta Sans"],"label-sm":["Plus Jakarta Sans"],"display-lg":["Playfair Display"],"headline-lg":["Playfair Display"]},"fontSize":{"display-lg-mobile":["36px",{"lineHeight":"44px","letterSpacing":"-0.01em","fontWeight":"700"}],"headline-lg-mobile":["26px",{"lineHeight":"34px","letterSpacing":"0em","fontWeight":"600"}],"title-md":["18px",{"lineHeight":"26px","fontWeight":"600"}],"body-md":["14px",{"lineHeight":"22px","fontWeight":"400"}],"headline-md":["24px",{"lineHeight":"32px","fontWeight":"600"}],"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.04em","fontWeight":"600"}],"label-lg":["14px",{"lineHeight":"20px","letterSpacing":"0.01em","fontWeight":"600"}],"headline-sm":["20px",{"lineHeight":"28px","fontWeight":"500"}],"body-lg":["16px",{"lineHeight":"26px","fontWeight":"400"}],"label-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.06em","fontWeight":"500"}],"display-lg":["48px",{"lineHeight":"56px","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-lg":["32px",{"lineHeight":"40px","letterSpacing":"-0.01em","fontWeight":"600"}]}}}}</script></head><body class="bg-background font-body-md text-body-md text-on-surface antialiased"><header class="fixed top-0 w-full z-50 shadow-[0_4px_20px_rgba(44,24,16,0.06)]"><div class="bg-secondary text-on-secondary px-gutter py-space-xs text-center"><div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-space-sm font-label-md text-label-md"><div class="flex items-center gap-space-xs"><span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span><span class="">ABIERTO HOY: 07:30 - 22:30 · Café de especialidad y cocina a las brasas</span></div><div class="flex items-center gap-space-md"><a class="inline-flex items-center gap-space-xs text-on-secondary hover:text-primary-fixed transition-colors" href="tel:+50223456789"><span class="material-symbols-outlined text-[14px]">call</span><span class="">+502 2345-6789</span></a><span class="opacity-40">|</span><a class="underline underline-offset-4 decoration-primary-fixed hover:text-primary-fixed transition-colors font-label-sm text-label-sm tracking-wider uppercase" data-path="reservar-mesa" href="reservas.html">Reserva Directa</a></div></div></div><div class="h-20 bg-surface/95 backdrop-blur-xl border-b border-outline-variant/30 px-gutter"><div class="max-w-7xl mx-auto h-full flex items-center justify-between gap-space-md"><a href="index.html" class="flex items-center gap-space-sm flex-shrink-0"><img alt="Logo Aroma &amp; Brasa" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1X8KXlZ-JRjuxmFoRJnpUxOmDToI5rZ92T9jvU4YOhrNcdzR_NRWqmi7WPvPoWUT6qmnEGAI4CbkZVP8wjjyE1rBxhUorNoQOPXcKfquQZobWYHM6HBRcoFi0uvZrAHVSlq81cCaWL2-EfaIqGc33aoFWOhyI8YsWQ_owGtNMkj3fOa9GgFrfDfWgNFBWCHYi5RfpIavPzqMzRWyogHF_NFumKjUr5GXdkfur9Y5afn38Gx6p0SH6nyNBLB"><div class="flex flex-col"><span class="font-headline-sm text-headline-sm font-bold tracking-tight text-primary leading-tight">Aroma &amp; Brasa</span><span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">Bistro &amp; Café</span></div></a><nav class="hidden xl:flex items-center gap-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded-full"><a aria-current="page" class="px-3 py-1.5 transition-colors bg-primary-container text-on-primary-container font-semibold rounded-full" data-path="inicio" href="index.html">Inicio</a><a class="px-3 py-1.5 rounded-full text-on-surface-variant hover:text-on-surface transition-colors font-label-md text-label-md" data-path="menu-digital" href="menu.html">Menú Digital</a><a class="px-3 py-1.5 rounded-full text-on-surface-variant hover:text-on-surface transition-colors font-label-md text-label-md" data-path="galeria-y-ambiente" href="galeria.html">Galería &amp; Ambiente</a><a class="px-3 py-1.5 rounded-full text-on-surface-variant hover:text-on-surface transition-colors font-label-md text-label-md" data-path="reservar-mesa" href="reservas.html">Reservar Mesa</a><a class="px-3 py-1.5 rounded-full text-on-surface-variant hover:text-on-surface transition-colors font-label-md text-label-md" data-path="ubicacion-y-horarios" href="#">Ubicación &amp; Horarios</a><a class="px-3 py-1.5 rounded-full text-on-surface-variant hover:text-on-surface transition-colors font-label-md text-label-md" data-path="opiniones" href="#">Opiniones</a><a class="px-3 py-1.5 rounded-full text-on-surface-variant hover:text-on-surface transition-colors font-label-md text-label-md" data-path="blog-y-recetas" href="#">Blog &amp; Recetas</a></nav><a href="index.html" class="flex items-center gap-space-sm flex-shrink-0"><img alt="Logo Aroma &amp; Brasa" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1X8KXlZ-JRjuxmFoRJnpUxOmDToI5rZ92T9jvU4YOhrNcdzR_NRWqmi7WPvPoWUT6qmnEGAI4CbkZVP8wjjyE1rBxhUorNoQOPXcKfquQZobWYHM6HBRcoFi0uvZrAHVSlq81cCaWL2-EfaIqGc33aoFWOhyI8YsWQ_owGtNMkj3fOa9GgFrfDfWgNFBWCHYi5RfpIavPzqMzRWyogHF_NFumKjUr5GXdkfur9Y5afn38Gx6p0SH6nyNBLB"><div class="flex flex-col"><span class="font-headline-sm text-headline-sm font-bold tracking-tight text-primary leading-tight">Aroma &amp; Brasa</span><span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">Bistro &amp; Café</span></div></a></div></div></header><main class="w-full pt-[112px] bg-surface min-h-screen"><div class="flex flex-col w-full">
+<!-- SECCIÓN 1: HERO CINEMATOGRÁFICO & ASIMÉTRICO -->
+<section class="relative w-full overflow-hidden bg-surface-container-lowest">
+<div class="max-w-7xl mx-auto px-gutter py-space-xl lg:py-24">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+<!-- Contenido Editorial -->
+<div class="lg:col-span-7 flex flex-col items-start gap-space-md z-10">
+<!-- Live Status & Rating Badges -->
+<div class="flex flex-wrap items-center gap-space-xs">
+<div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-surface-container-high text-on-surface shadow-sm">
+<span class="w-2.5 h-2.5 rounded-full bg-primary animate-ping"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider font-semibold text-primary">Abierto Ahora</span>
+<span class="text-outline-variant">·</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Almuerzo &amp; Cena (Hasta 22:30 hrs)</span>
+</div>
+<div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-secondary-container text-on-secondary-container shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-tertiary" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-sm text-label-sm font-bold">4.9 / 5</span>
+<span class="font-label-sm text-label-sm opacity-80">(850+ comensales felices)</span>
+</div>
+</div>
+<!-- Titular Principal con Contraste y Tipografía Curada -->
+<div class="space-y-space-xs">
+<span class="font-label-md text-label-md uppercase tracking-[0.25em] text-tertiary font-bold block">Alta Cocina de Raíz &amp; Tueste Sagrado</span>
+<h1 class="font-display-lg text-display-lg text-on-surface leading-[1.08] tracking-tight">
+              El Arte del <span class="italic font-normal text-primary">Fuego Lento</span> y el Café de Finca.
+            </h1>
+</div>
+<!-- Subtítulo Poético -->
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
+            Sabores rústicos elevados a la alta cocina, panes de masa madre recién salidos del horno de barro y microlotes de café de altura cosechados bajo la niebla volcánica de Antigua.
+          </p>
+<!-- Acciones Principales -->
+<div class="flex flex-wrap items-center gap-space-sm pt-space-xs w-full sm:w-auto">
+<a class="w-full sm:w-auto inline-flex items-center justify-center gap-space-xs px-6 py-3.5 rounded-full bg-primary text-on-primary hover:bg-primary-container shadow-md hover:shadow-xl transition-all font-label-lg text-label-lg tracking-wide transform hover:-translate-y-0.5" data-path="reservar-mesa" href="reservas.html">
+<span class="material-symbols-outlined text-[20px]">table_restaurant</span>
+<span class="">Reservar una Mesa</span>
+</a>
+<a class="w-full sm:w-auto inline-flex items-center justify-center gap-space-xs px-6 py-3.5 rounded-full bg-surface-container text-on-surface hover:bg-surface-container-high shadow-sm transition-all font-label-lg text-label-lg" data-path="menu-digital" href="menu.html">
+<span class="">Explorar la Carta</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+<!-- Sellos de Origen Rápidos -->
+<div class="pt-space-md flex items-center gap-space-lg text-on-surface-variant font-label-sm text-label-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">local_fire_department</span>
+<span class="">Leña 100% Sostenible</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">coffee</span>
+<span class="">Granos Puntuación 88+</span>
+</div>
+<div class="hidden sm:flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">bakery_dining</span>
+<span class="">Fermentación Natural</span>
+</div>
+</div>
+</div>
+<!-- Mosaico Fotográfico de Alto Impacto -->
+<div class="lg:col-span-5 relative mt-space-md lg:mt-0">
+<div class="relative w-full aspect-[4/5] rounded-xl overflow-hidden shadow-2xl bg-surface-container-high">
+<img class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700" data-alt="Close up photography of an artisanal bistro wooden table with a sizzling wood-fired prime steak on cast iron skillet with glowing charcoal embers in the background, paired with a cup of specialty flat white coffee showing intricate latte art, warm terracotta light accents, soft cinematic morning light, rustic elegant aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWTokz6S-Vjsr1TJuai-Mt-uOFAoJDbmUFp3XCkU5wxUz86Qv9kqCYCosLFt96QIn8pc2gxdae5zAaP2Pr7TKQ9Zs28FBAQkK2oyUeGT-uWXhCSYjs38jISV65yFgVV5t2xCt0-4XuP3eUghCWw_I-VbstvpqU9N3CpOdXy7HvjlW_Jvv9_pIxXjql5KicMAMbVS6lp-Ug8uX5jKF3tRZD0ZmrSzE1eq0m7TBvfpntzFS35yF_2sRPgg">
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-6 left-6 right-6 p-4 rounded-xl bg-surface/90 backdrop-blur-md shadow-lg text-on-surface">
+<div class="flex items-center justify-between">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold block">Recomendación del Día</span>
+<p class="font-headline-sm text-headline-sm font-semibold text-on-surface">Costillar al Romero &amp; Pour Over Geisha</p>
+</div>
+<div class="w-10 h-10 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[22px]">restaurant_menu</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Tarjeta Flotante Desfasada -->
+<div class="hidden sm:block absolute -top-6 -right-6 p-4 rounded-xl bg-surface-container-lowest shadow-xl text-on-surface max-w-[210px] transform rotate-1 hover:rotate-0 transition-transform">
+<div class="flex items-center gap-2 mb-1">
+<span class="material-symbols-outlined text-tertiary text-[18px]">verified</span>
+<span class="font-label-sm text-label-sm font-bold uppercase tracking-wider text-tertiary">Materia Prima</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-snug">Café tostado en casa cada mañana a 1,600 msnm.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECCIÓN 2: FRANJA DE HORARIOS Y EXPERIENCIA RÁPIDA (3 MOMENTOS DEL DÍA) -->
+<section class="w-full py-space-xl bg-surface-container-low">
+<div class="max-w-7xl mx-auto px-gutter">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-space-lg gap-space-sm">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-[0.2em] text-primary font-bold block mb-1">Ritmo &amp; Hospitalidad</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Tres Tiempos, Una Sola Obsesión</h2>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md">
+          Diseñamos atmósferas vivas para cada instante de su jornada: desde la calidez del primer filtro matutino hasta la intimidad de las copas al atardecer.
+        </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Momento 1: Desayunos & Brunch -->
+<div class="group relative flex flex-col justify-between p-space-lg rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+<div class="space-y-space-md">
+<div class="w-full h-44 rounded-xl overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Artisanal French pastries, fresh sourdough loaves, sliced open golden croissants, and a glass v60 manual coffee dripper brewing amber coffee on an aged wooden counter, morning sunbeams, cozy bistro vibe." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEbQEODFcQxUMmXD00BDwH_uHfYtY04vmig7CcGXn6SlvI7deXCpT0Ao-TROkKxnjwBJufxMaCUhgWABxmE7G7LFc_oEecujBfQT3kHN9B1sVdV19mN8oDgMP-WCEzn4rQCvoLFa1TqUM1GLXkiaoukSOuVqd_qUOXwZsD1S3eRsZmrKTC9_fgHVc2dl5y-0nMf9JcUDSsjrji8B04AoTP1QNlAK9oISU6_PSs3QZnV-29taH6bcgPwA">
+</div>
+<div>
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-tertiary font-bold">Amanecer Rústico</span>
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-on-surface-variant bg-surface-container px-2 py-0.5 rounded-full">
+<span class="material-symbols-outlined text-[14px]">schedule</span> 07:30 – 12:00
+                </span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Desayunos &amp; Brunch</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                Café de especialidad filtrado por método manual, panadería de masa madre de fermentación lenta de 36 horas y huevos de granja en cazuela.
+              </p>
+</div>
+</div>
+<div class="pt-space-md mt-space-md border-t-0 flex items-center justify-between">
+<span class="font-label-md text-label-md text-primary font-semibold">Cesta artesanal &amp; Tueste del día</span>
+<span class="material-symbols-outlined text-primary group-hover:translate-x-1 transition-transform">east</span>
+</div>
+</div>
+<!-- Momento 2: Almuerzos & Brasas -->
+<div class="group relative flex flex-col justify-between p-space-lg rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+<div class="space-y-space-md">
+<div class="w-full h-44 rounded-xl overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Open flame wood grill with oak logs, thick marbled cuts of beef grilling over red embers, culinary chef tongs basting herbs, glowing charcoal sparks, fine dining rustic style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBad0N2MFSWpoBlGrZNmHznlhs1OzR8TY6mjME55szIfNVy3eIkRTfv6bAgDF0-3lVsPo7JhEOcg9K-HyI57zvewU5U9-I9N9wU0xfhkv_b8nAvpd-0UFkEnfe_wGvv0cILIELWvi7Qo_uSX-0569L5QKNR6zVN75FkUXLhY2Q8oBAqjEcONJgBJXoiNvi52leL6RKJ36qfINT4hfIqD_r4c6u7aSiuj1IQQXIKUrm8IsksY6VEkybgug">
+</div>
+<div>
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary font-bold">El Fuego Vivo</span>
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-on-surface-variant bg-surface-container px-2 py-0.5 rounded-full">
+<span class="material-symbols-outlined text-[14px]">schedule</span> 12:30 – 17:00
+                </span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Almuerzos &amp; Brasas</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                Cortes de carne certificados asados con leña de encino, vegetales caramelizados al rescoldo y salsas reducidas con granos de café Bourbon.
+              </p>
+</div>
+</div>
+<div class="pt-space-md mt-space-md flex items-center justify-between">
+<span class="font-label-md text-label-md text-primary font-semibold">Cortes madurados &amp; Huerto orgánico</span>
+<span class="material-symbols-outlined text-primary group-hover:translate-x-1 transition-transform">east</span>
+</div>
+</div>
+<!-- Momento 3: Cenas & Vinos -->
+<div class="group relative flex flex-col justify-between p-space-lg rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+<div class="space-y-space-md">
+<div class="w-full h-44 rounded-xl overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Intimate evening bistro scene with glowing candles, natural wine glasses filled with deep ruby red wine, artisanal charcuterie board with cured ham, artisan cheeses, and warm lighting in a warm textured room." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTXzZSgZtJMCHUyA7XXQXXoVNbV9hIZvJCa5kH5Jh64kCT6zYYjx76I8Eyd9AO2HVWSHInwmMZQy9eRL5QP65k-sJORdKdTaCtEHgyfaSg0oa48-Srw_rbDdYh9AYqm7LE32zx620l8M0umGe50NbZb4zNke2HLjTWAR_nT7Cvgm2v45bPE7etgt4z3VZVL-CiHLbC53kpzWNB_19peZQaSbO1UjJBa2QFRjgl2bRtJLWLaa_Lmt7xVA">
+</div>
+<div>
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-bold">Atmósfera &amp; Penumbra</span>
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-on-surface-variant bg-surface-container px-2 py-0.5 rounded-full">
+<span class="material-symbols-outlined text-[14px]">schedule</span> 18:00 – 22:30
+                </span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Cenas &amp; Vinos</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                Ambiente a la luz de las velas, tablas de charcutería curada en casa, vinos naturales de pequeños viticultores y coctelería infusionada al humo.
+              </p>
+</div>
+</div>
+<div class="pt-space-md mt-space-md flex items-center justify-between">
+<span class="font-label-md text-label-md text-primary font-semibold">Selección de 40+ etiquetas boutique</span>
+<span class="material-symbols-outlined text-primary group-hover:translate-x-1 transition-transform">east</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECCIÓN 3: ESPECIALIDADES DESTACADAS DEL CHEF (INTERACTIVE CARDS) -->
+<section class="w-full py-space-xl bg-surface">
+<div class="max-w-7xl mx-auto px-gutter">
+<!-- Cabecera de Menú con Filtros Visuales -->
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-space-xl gap-space-md">
+<div class="space-y-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-[0.25em] text-tertiary font-bold">Creaciones de Temporada</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Especialidades del Fuego &amp; la Tierra</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xl">
+            Cada plato es un diálogo entre el calor del carbón vegetal y la sutileza de nuestros ingredientes de origen guatemalteco.
+          </p>
+</div>
+<!-- Categorías Pills -->
+<div class="flex flex-wrap items-center gap-2">
+<button class="px-4 py-2 rounded-full bg-secondary text-on-secondary font-label-md text-label-md shadow-sm">Todos</button>
+<button class="px-4 py-2 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface-variant font-label-md text-label-md transition-colors">A la Brasa</button>
+<button class="px-4 py-2 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface-variant font-label-md text-label-md transition-colors">Horno &amp; Sartén</button>
+<button class="px-4 py-2 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface-variant font-label-md text-label-md transition-colors">Dulce &amp; Café</button>
+</div>
+</div>
+<!-- Parrilla de 4 Platos Principales -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Plato 1 -->
+<div class="group flex flex-col rounded-xl overflow-hidden bg-surface-container-low shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="relative w-full aspect-[16/10] overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Succulent glazed pork ribs roasted for hours with fresh rosemary sprigs and dark coffee honey glaze, served on a black stone plate with steam rising, professional food photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3EZhlc4YWTHIz-wniHvbBUKLaqObVXqTbuNZj2uveN4zg3gA43D2SpkKCoDJmj_dfbmP9racL2kd-PfWhe0lkkh7TFOI7Vaf_wP05BEvI2nxZzGAvos5X-W6oripnbr7rOESP5nZQ_1DPZEz0OnehUFkv8w-w3JJ9LV2J02tMdh_ODNDAGo_45kNWZjT4kWLMEvLsfvMYdSgLH6Fi-Kn5uV-1B0avQNfq9jlLFMehC8VIN8eL9SScHQ">
+<span class="absolute top-3 right-3 px-3 py-1 rounded-full bg-primary text-on-primary font-label-sm text-label-sm font-bold shadow-md">
+              Q.165
+            </span>
+<span class="absolute top-3 left-3 px-2.5 py-0.5 rounded-full bg-surface-container-lowest/90 backdrop-blur-sm text-tertiary font-label-sm text-label-sm font-semibold">
+              Cocción 14 hrs
+            </span>
+</div>
+<div class="p-space-md flex-1 flex flex-col justify-between gap-space-sm">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">
+                Costillar Ahumado al Romero &amp; Miel de Café
+              </h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1.5 leading-snug">
+                Cocido a fuego lento durante 14 horas con glaseado artesanal de miel de abeja melipona y espresso Geisha.
+              </p>
+</div>
+<div class="pt-space-xs flex items-center justify-between text-on-surface-variant">
+<span class="font-label-sm text-label-sm text-secondary font-medium">Corte de cerdo de pastoreo</span>
+<button class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center hover:bg-primary hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-[16px]">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Plato 2 -->
+<div class="group flex flex-col rounded-xl overflow-hidden bg-surface-container-low shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="relative w-full aspect-[16/10] overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Prime 400g Ribeye steak grilled over oak coals, charred grill marks, topped with herb compound butter melting over meat, with coarse sea salt flakes and roasted baby potatoes." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDskw1llEMjJcITetbvvDCHAqUTzEwAaZjFIzLbE3hEkNXPBm6t5uzMLyMySKS8n6BXr2_jrSIum_KQPZ-UHVcjmNnkg14VYX4o8b6FO9MjRjR2u0HBo_CGMquDEtiiKev7Lq8xgEdR1f-qfdDzLxBCbWmTYcaGY04jg6UuNa5vhqunnD8LHk7k1PgEM3LInQeEm6zBP8s-bvtWf1XqAk6M_MdbYD0aezIKM2DL9ISEy34orokaqqD5gA">
+<span class="absolute top-3 right-3 px-3 py-1 rounded-full bg-primary text-on-primary font-label-sm text-label-sm font-bold shadow-md">
+              Q.210
+            </span>
+<span class="absolute top-3 left-3 px-2.5 py-0.5 rounded-full bg-surface-container-lowest/90 backdrop-blur-sm text-primary font-label-sm text-label-sm font-semibold">
+              Chef Signature
+            </span>
+</div>
+<div class="p-space-md flex-1 flex flex-col justify-between gap-space-sm">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">
+                Ribeye a la Brasa de Encino (400g)
+              </h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1.5 leading-snug">
+                Sal marina volcánica, emulsión de mantequilla de hierbas de montaña y papas rústicas trufadas.
+              </p>
+</div>
+<div class="pt-space-xs flex items-center justify-between text-on-surface-variant">
+<span class="font-label-sm text-label-sm text-secondary font-medium">Maduración seca 28 días</span>
+<button class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center hover:bg-primary hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-[16px]">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Plato 3 -->
+<div class="group flex flex-col rounded-xl overflow-hidden bg-surface-container-low shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="relative w-full aspect-[16/10] overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Traditional Shakshuka served in a rustic clay skillet, rich roasted tomato and sweet pepper sauce with poached organic eggs, fresh crumbled feta cheese, parsley, and toasted sourdough bread." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcgwVL84XOeawLhP_Ye-EQCRWFDQdi9S66JbH7rkXZY20eN98-w7qeFgyL19mvSO3_q3o05Nq0_cil5iEbZu4bEwa-ae27y3D0fsR34QNUVq9CkQZVEIpA5a2Yh01gBRq95UTEOhZCownkCYq8SXTWueAwGRWzTzU_Lu2-rhMXFceUradnV7yvC_8f0FVbfRgnpXnObD0Bvkhlm1qDxZViZs1aFMKnZRxe1CyOFbfHQ0eJ0xA7sbCfHA">
+<span class="absolute top-3 right-3 px-3 py-1 rounded-full bg-primary text-on-primary font-label-sm text-label-sm font-bold shadow-md">
+              Q.75
+            </span>
+<span class="absolute top-3 left-3 px-2.5 py-0.5 rounded-full bg-surface-container-lowest/90 backdrop-blur-sm text-secondary font-label-sm text-label-sm font-semibold">
+              Todo el día
+            </span>
+</div>
+<div class="p-space-md flex-1 flex flex-col justify-between gap-space-sm">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">
+                Huevos Shakshuka en Cazuela de Barro
+              </h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1.5 leading-snug">
+                Salsa de tomates criollos rostizados al fuego, pimientos dulces, queso de cabra artesanal y pan de masa madre.
+              </p>
+</div>
+<div class="pt-space-xs flex items-center justify-between text-on-surface-variant">
+<span class="font-label-sm text-label-sm text-secondary font-medium">Opción vegetariana</span>
+<button class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center hover:bg-primary hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-[16px]">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Plato 4 -->
+<div class="group flex flex-col rounded-xl overflow-hidden bg-surface-container-low shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="relative w-full aspect-[16/10] overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Gourmet pastry tartlet filled with whipped mascarpone cream, fresh purple sliced figs, wild forest honey drizzle, roasted coffee reduction lines on ceramic plate." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZzXLvhqT-iAImXmT0EKTxRHO3KSOmcBq_Zg9LA6GI55n8kizqdMhEKu0bKoTnrTB-u8CCFvRdO81_Q0V9SyqAO7UiBzd9Lc0_aC_C46S-opxCBD0pdR3THN7mNiVkXhjtl0Y_LsIs8gol59m2il-rKnikHGcB0Ge7_T1r5DC13kn_jnbHzs_PSxv2L6N3miu4VL1auVn1xfE-h8aQm__mChncbwwPCaWismOMPKWEHQGB_EI-qPgHKA">
+<span class="absolute top-3 right-3 px-3 py-1 rounded-full bg-primary text-on-primary font-label-sm text-label-sm font-bold shadow-md">
+              Q.55
+            </span>
+<span class="absolute top-3 left-3 px-2.5 py-0.5 rounded-full bg-surface-container-lowest/90 backdrop-blur-sm text-tertiary font-label-sm text-label-sm font-semibold">
+              Pastelería Viva
+            </span>
+</div>
+<div class="p-space-md flex-1 flex flex-col justify-between gap-space-sm">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">
+                Tartaleta de Higos &amp; Mascarpone
+              </h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1.5 leading-snug">
+                Masa hojaldrada crujiente con higos frescos, miel silvestre de montaña y una delicada reducción de café espresso tostado.
+              </p>
+</div>
+<div class="pt-space-xs flex items-center justify-between text-on-surface-variant">
+<span class="font-label-sm text-label-sm text-secondary font-medium">Postre artesanal</span>
+<button class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center hover:bg-primary hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-[16px]">add</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Banner de Menú Completo -->
+<div class="mt-space-xl p-space-lg rounded-xl bg-surface-container-highest flex flex-col sm:flex-row items-center justify-between gap-space-md shadow-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-12 h-12 rounded-full bg-primary text-on-primary flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[24px]">menu_book</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">¿Desea explorar nuestra selección completa?</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Incluye más de 45 platos, coctelería con café y carta de vinos por copeo.</p>
+</div>
+</div>
+<a class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-secondary text-on-secondary hover:bg-on-secondary-fixed transition-colors font-label-md text-label-md whitespace-nowrap shadow-sm" data-path="menu-digital" href="menu.html">
+<span class="">Ver Menú Digital Completo</span>
+<span class="material-symbols-outlined text-[16px]">open_in_new</span>
+</a>
+</div>
+</div>
+</section>
+<!-- SECCIÓN 4: LA PROMESA ARTESANAL / HISTORIA (EDITORIAL ASYMMETRICAL SPLIT) -->
+<section class="w-full py-space-xl bg-surface-container-low">
+<div class="max-w-7xl mx-auto px-gutter">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+<!-- Collage Visual -->
+<div class="lg:col-span-6 grid grid-cols-2 gap-space-sm">
+<div class="space-y-space-sm">
+<div class="w-full h-64 rounded-xl overflow-hidden shadow-md">
+<img class="w-full h-full object-cover" data-alt="Guatemalan high altitude coffee farm with lush green coffee plants, red ripe coffee cherries, mountain morning fog in Antigua, sunlight breaking through clouds." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_85mBUiD9RRguMC7HziAocxIRIASiC3EnfctHws1SXu-dqXo2KX1RYmO11beTNgiAg9svPxYYKaoCfqxwEnQ6aUVrO8ZWLgw8cpiduA3PsJ-Tzx4upXAk9GYKL7lTSMqV3l-xlpeEX9ngPF8bVOMjJ11XtG-PQf2e6QJO6gsKZ6TDh7JuTKFj62hr-HF8nNOQyoiXNaeaEN1Qe-bj0HLMRnuVUXGWTwP-KxXBuI4lq3FMkOR8L-OvYg">
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm">
+<span class="font-headline-md text-headline-md font-bold text-primary block">1,600m</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Altitud de Cosecha Única</span>
+</div>
+</div>
+<div class="space-y-space-sm pt-8">
+<div class="p-space-md rounded-xl bg-secondary text-on-secondary shadow-sm">
+<span class="font-headline-md text-headline-md font-bold text-primary-fixed block">100%</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-secondary/80">Leña Certificada Sustentable</span>
+</div>
+<div class="w-full h-64 rounded-xl overflow-hidden shadow-md">
+<img class="w-full h-full object-cover" data-alt="Artisan baker checking a crusty rustic sourdough loaf coming out of a traditional wood-fired brick oven with glowing embers inside, flour dusted board, warm tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCv9Sg-EQ7VhJbPtTSkavuc2VJ1nCtiaRBzqM9YWDn2U2uOmfbOfDa7TGd5KP8UxMFXUaavv_l9Sl6OmVF0OZiDg9RmwMUab_W9PLsR_9Rf9VDlRH5bPM1bY6eHBRSe5ZqG3k3RF--sHvyNyEEBknzChTMfoVbDAflXLPnntenkQJYOUGFozSmudlbsuh4XNPbDfID2raitlbx0T1bBJWVsKOSL55SzLzTaLJ4k-X8LrlyWV6vrUEVBFw">
+</div>
+</div>
+</div>
+<!-- Manifiesto Narrativo -->
+<div class="lg:col-span-6 space-y-space-md lg:pl-space-md">
+<div class="space-y-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-[0.25em] text-tertiary font-bold">Nuestra Filosofía</span>
+<h2 class="font-display-lg text-display-lg text-on-surface leading-tight">De la Finca a la Brasa: Una Promesa Sin Atajos.</h2>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+            En <strong>Aroma &amp; Brasa</strong> entendemos el acto culinario como un ritual de paciencia. Creemos que los mejores sabores no se apresuran: nacen en la tierra fértil de pequeños productores, maduran con el viento de nuestras cordilleras y se revelan únicamente con la caricia del fuego de leña.
+          </p>
+<div class="space-y-space-sm pt-space-xs">
+<div class="flex items-start gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-primary-fixed flex items-center justify-center text-on-primary-fixed flex-shrink-0 mt-1">
+<span class="material-symbols-outlined text-[18px]">nature</span>
+</div>
+<div>
+<h4 class="font-title-md text-title-md text-on-surface">Agricultura Regenerativa &amp; Comercio Justo</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                  Trabajamos sin intermediarios con tres fincas familiares en Antigua y Fraijanes, asegurando precios dignos y granos excepcionales.
+                </p>
+</div>
+</div>
+<div class="flex items-start gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed flex-shrink-0 mt-1">
+<span class="material-symbols-outlined text-[18px]">outdoor_grill</span>
+</div>
+<div>
+<h4 class="font-title-md text-title-md text-on-surface">Maderas Nobles y Brasas Vivas</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                  Solo utilizamos poda controlada de encino y manzano. El carbón vegetal respeta la integridad molecular de cada ingrediente.
+                </p>
+</div>
+</div>
+</div>
+<div class="pt-space-sm">
+<a class="inline-flex items-center gap-2 text-primary hover:text-primary-container font-label-lg text-label-lg font-bold group" data-path="blog-y-recetas" href="#">
+<span class="">Leer más sobre nuestros productores</span>
+<span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">trending_flat</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECCIÓN 5: TESTIMONIOS DESTACADOS (REPUTACIÓN & EXPERIENCIA) -->
+<section class="w-full py-space-xl bg-surface">
+<div class="max-w-7xl mx-auto px-gutter">
+<div class="text-center max-w-2xl mx-auto mb-space-xl space-y-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-[0.25em] text-tertiary font-bold">Voces de Nuestra Mesa</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Experiencias que Dejan Memoria</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          Más que una cena o una taza matutina, servimos instantes de calma y deleite sensorial.
+        </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Testimonio 1 -->
+<div class="p-space-lg rounded-xl bg-surface-container-low shadow-sm flex flex-col justify-between">
+<div class="space-y-space-sm">
+<div class="flex items-center gap-1 text-tertiary">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface italic">
+              "El costillar ahumado con miel de café es probablemente uno de los mejores platos que he probado en Guatemala. El maridaje sugerido por el sommelier con vino natural elevó la cena a otro nivel."
+            </p>
+</div>
+<div class="pt-space-md mt-space-md flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-primary/10 text-primary font-bold flex items-center justify-center font-title-md text-title-md">
+              MC
             </div>
-        </div>
-        <div class="h-20 bg-surface/95 backdrop-blur-xl border-b border-outline-variant/30 px-6">
-            <div class="max-w-7xl mx-auto h-full flex items-center justify-between">
-                <div class="flex items-center gap-3">
-                    <span class="font-['Playfair_Display'] text-xl font-bold tracking-tight text-primary">Aroma & Brasa</span>
-                </div>
-                <nav class="hidden xl:flex items-center gap-2">
-                    <a class="px-3 py-1.5 bg-primary-container text-on-primary-container font-semibold rounded-full text-sm" href="#">Inicio</a>
-                    <a class="px-3 py-1.5 text-stone-700 hover:text-stone-900 transition-colors text-sm" href="#">Menú Digital</a>
-                    <a class="px-3 py-1.5 text-stone-700 hover:text-stone-900 transition-colors text-sm" href="#">Galería & Ambiente</a>
-                    <a class="px-3 py-1.5 text-stone-700 hover:text-stone-900 transition-colors text-sm" href="#">Reservar Mesa</a>
-                </nav>
+<div>
+<span class="font-title-md text-title-md text-on-surface block font-semibold leading-tight">Mariana Castillo</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Crítica Gastronómica Local</span>
+</div>
+</div>
+</div>
+<!-- Testimonio 2 -->
+<div class="p-space-lg rounded-xl bg-surface-container-low shadow-sm flex flex-col justify-between">
+<div class="space-y-space-sm">
+<div class="flex items-center gap-1 text-tertiary">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface italic">
+              "El café filtrado Geisha preparado en mesa y los panes de masa madre aún calientes justifican levantarse temprano los fines de semana. La atención del equipo es cálida y sin pretensiones innecesarias."
+            </p>
+</div>
+<div class="pt-space-md mt-space-md flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-tertiary/10 text-tertiary font-bold flex items-center justify-center font-title-md text-title-md">
+              EA
             </div>
-        </div>
-    </header>
+<div>
+<span class="font-title-md text-title-md text-on-surface block font-semibold leading-tight">Estuardo Alvarado</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Comensal Habitual de Brunch</span>
+</div>
+</div>
+</div>
+<!-- Testimonio 3 -->
+<div class="p-space-lg rounded-xl bg-surface-container-low shadow-sm flex flex-col justify-between">
+<div class="space-y-space-sm">
+<div class="flex items-center gap-1 text-tertiary">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface italic">
+              "Celebramos nuestro aniversario aquí. La atmósfera nocturna con las velas encendidas, la música sutil y el Ribeye a las brasas fue inmejorable. Reservar en línea fue facilísimo."
+            </p>
+</div>
+<div class="pt-space-md mt-space-md flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-secondary/10 text-secondary font-bold flex items-center justify-center font-title-md text-title-md">
+              LG
+            </div>
+<div>
+<span class="font-title-md text-title-md text-on-surface block font-semibold leading-tight">Lucía &amp; Gerardo</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Cena de Aniversario</span>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-space-lg text-center">
+<a class="inline-flex items-center gap-2 text-on-surface-variant hover:text-on-surface font-label-md text-label-md" data-path="opiniones" href="#">
+<span class="">Ver las más de 850 reseñas verificadas</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</section>
+<!-- SECCIÓN 6: LLAMADO A LA ACCIÓN FINAL, RESERVA RÁPIDA & UBICACIÓN MAPA -->
+<section class="w-full py-space-xl bg-surface-container-high relative overflow-hidden">
+<div class="max-w-7xl mx-auto px-gutter">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+<!-- Formulario Rápido de Reservación -->
+<div class="lg:col-span-6 bg-surface-container-lowest p-space-lg md:p-space-xl rounded-xl shadow-xl space-y-space-md">
+<div class="space-y-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-[0.2em] text-primary font-bold">Asegure su Lugar</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">Reserve su Experiencia en Mesa</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Garantice su mesa junto al horno o en nuestra terraza ajardinada. Confirmación inmediata vía WhatsApp y correo.
+            </p>
+</div>
+<form class="space-y-space-sm" onsubmit="event.preventDefault(); alert('¡Gracias! Su mesa ha sido pre-reservada.');">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm">
+<div>
+<label class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface font-semibold block mb-1">Fecha</label>
+<div class="flex items-center px-3 py-2.5 rounded-lg bg-surface-container text-on-surface">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant mr-2">calendar_today</span>
+<input class="bg-transparent text-on-surface font-body-md text-body-md w-full focus:outline-none" type="date" value="2025-05-15">
+</div>
+</div>
+<div>
+<label class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface font-semibold block mb-1">Hora &amp; Turno</label>
+<div class="flex items-center px-3 py-2.5 rounded-lg bg-surface-container text-on-surface">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant mr-2">schedule</span>
+<select class="bg-transparent text-on-surface font-body-md text-body-md w-full focus:outline-none">
+<option>13:30 (Almuerzo)</option>
+<option>15:00 (Tarde de Café)</option>
+<option>19:30 (Cena Íntima)</option>
+<option>21:00 (Cena &amp; Vinos)</option>
+</select>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm">
+<div>
+<label class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface font-semibold block mb-1">Personas</label>
+<div class="flex items-center px-3 py-2.5 rounded-lg bg-surface-container text-on-surface">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant mr-2">group</span>
+<select class="bg-transparent text-on-surface font-body-md text-body-md w-full focus:outline-none">
+<option>2 personas (Mesa íntima)</option>
+<option>4 personas (Comedor)</option>
+<option>6+ personas (Mesa comunitaria)</option>
+</select>
+</div>
+</div>
+<div>
+<label class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface font-semibold block mb-1">Área Preferida</label>
+<div class="flex items-center px-3 py-2.5 rounded-lg bg-surface-container text-on-surface">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant mr-2">deck</span>
+<select class="bg-transparent text-on-surface font-body-md text-body-md w-full focus:outline-none">
+<option>Salón Principal &amp; Brasas</option>
+<option>Terraza Jardín</option>
+<option>Barra de Especialidad</option>
+</select>
+</div>
+</div>
+</div>
+<div class="pt-space-xs">
+<button class="w-full py-3.5 px-6 rounded-full bg-primary text-on-primary font-label-lg text-label-lg font-bold shadow-md hover:bg-primary-container hover:shadow-lg transition-all flex items-center justify-center gap-2" type="submit">
+<span class="material-symbols-outlined text-[20px]">check_circle</span>
+<span class="">Confirmar Reserva de Mesa</span>
+</button>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant text-center">
+              Sin costo por cancelación hasta 2 horas antes de su turno.
+            </p>
+</form>
+</div>
+<!-- Ubicación en Mapa y Tarjeta Rápida de Llegada -->
+<div class="lg:col-span-6 space-y-space-md">
+<div class="space-y-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-[0.2em] text-tertiary font-bold">Encuéntrenos</span>
+<h3 class="font-headline-lg text-headline-lg text-on-surface">En el Corazón del Distrito Culinario</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Fácil acceso, parqueo privado con seguridad y valet parking de cortesía durante horarios de almuerzo y cena.
+            </p>
+</div>
+<!-- Mapa Integrado con data-location -->
+<div class="relative w-full h-72 rounded-xl overflow-hidden shadow-lg bg-surface-container">
+<div class="w-full h-full bg-cover bg-center" data-location="Zona 10, Ciudad de Guatemala, Guatemala"></div>
+<div class="absolute bottom-4 left-4 right-4 p-3 rounded-lg bg-surface/90 backdrop-blur-md flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">pin_drop</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">Zona 10, Distrito Culinario, Cdad. de Guatemala</span>
+</div>
+<a class="font-label-sm text-label-sm text-primary font-bold underline" data-path="ubicacion-y-horarios" href="#">Cómo llegar</a>
+</div>
+</div>
+<!-- Tarjetas Rápidas de Horario y Teléfono -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm pt-space-xs">
+<div class="p-3.5 rounded-xl bg-surface-container-lowest shadow-sm flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container text-primary flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">call</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Línea Directa</span>
+<a class="font-title-md text-title-md text-on-surface font-bold hover:text-primary transition-colors" href="tel:+50223456789">+502 2345-6789</a>
+</div>
+</div>
+<div class="p-3.5 rounded-xl bg-surface-container-lowest shadow-sm flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container text-tertiary flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">local_parking</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Estacionamiento</span>
+<span class="font-title-md text-title-md text-on-surface font-bold">Valet Parking Gratis</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div></main><footer class="w-full bg-surface-container-low border-t border-outline-variant/40 pt-space-xl pb-space-lg"><div class="max-w-7xl mx-auto px-gutter grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter mb-space-xl"><div class="space-y-space-md"><div class="flex items-center gap-space-sm"><img alt="Logo Aroma &amp; Brasa" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1X8KXlZ-JRjuxmFoRJnpUxOmDToI5rZ92T9jvU4YOhrNcdzR_NRWqmi7WPvPoWUT6qmnEGAI4CbkZVP8wjjyE1rBxhUorNoQOPXcKfquQZobWYHM6HBRcoFi0uvZrAHVSlq81cCaWL2-EfaIqGc33aoFWOhyI8YsWQ_owGtNMkj3fOa9GgFrfDfWgNFBWCHYi5RfpIavPzqMzRWyogHF_NFumKjUr5GXdkfur9Y5afn38Gx6p0SH6nyNBLB"><span class="font-headline-sm text-headline-sm font-bold text-primary">Aroma &amp; Brasa</span></div><p class="font-body-md text-body-md text-on-surface-variant">Un santuario culinario donde el fuego de leña y los granos de café de altura convergen. Cocina honesta, ingredientes de origen y hospitalidad cálida en el corazón de la ciudad.</p><div class="inline-flex items-center gap-space-xs px-3 py-1.5 rounded-full bg-surface-container-high text-tertiary font-label-sm text-label-sm"><span class="material-symbols-outlined text-[16px]">verified</span><span class="">Sello de Calidad Culinaria Artesanal</span></div></div><div class="space-y-space-sm"><h4 class="font-title-md text-title-md text-on-surface">Horarios de Atención</h4><ul class="space-y-space-xs font-body-md text-body-md text-on-surface-variant"><li class=""><span class="font-semibold text-on-surface block">Lunes a Viernes</span>07:30 – 22:00</li><li class=""><span class="font-semibold text-on-surface block">Sábados y Domingos</span>08:00 – 23:00</li><li class="pt-space-xs"><span class="inline-flex items-center gap-1 text-tertiary font-label-sm text-label-sm"><span class="material-symbols-outlined text-[14px]">local_fire_department</span>Horno encendido todo el día</span></li></ul></div><div class="space-y-space-sm"><h4 class="font-title-md text-title-md text-on-surface">Ubicación &amp; Contacto</h4><div class="space-y-space-xs font-body-md text-body-md text-on-surface-variant"><p class="flex items-start gap-space-xs"><span class="material-symbols-outlined text-primary text-[18px] mt-0.5">location_on</span><span class="">Zona 10, Distrito Culinario<br>Ciudad de Guatemala, Guatemala</span></p><p class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-primary text-[18px]">call</span><a class="hover:text-on-surface transition-colors" href="tel:+50223456789">+502 2345-6789</a></p><p class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-primary text-[18px]">mail</span><a class="hover:text-on-surface transition-colors" href="mailto:reservas@aromaybrasa.gt">reservas@aromaybrasa.gt</a></p></div></div><div class="space-y-space-sm"><h4 class="font-title-md text-title-md text-on-surface">Explorar &amp; Redes</h4><ul class="space-y-space-xs font-body-md text-body-md text-on-surface-variant"><li class=""><a class="hover:text-primary transition-colors" data-path="menu-digital" href="menu.html">Carta de Temporada &amp; Vinos</a></li><li class=""><a class="hover:text-primary transition-colors" data-path="reservar-mesa" href="reservas.html">Reservación de Mesas &amp; Eventos</a></li><li class=""><a class="hover:text-primary transition-colors" data-path="galeria-y-ambiente" href="galeria.html">Recorrido Visual del Bistro</a></li><li class=""><a class="hover:text-primary transition-colors" data-path="blog-y-recetas" href="#">Historias del Tueste &amp; Recetas</a></li></ul><div class="pt-space-xs flex items-center gap-space-sm text-on-surface-variant"><a class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center hover:bg-primary hover:text-on-primary transition-colors" href="#"><span class="material-symbols-outlined text-[16px]">photo_camera</span></a><a class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center hover:bg-primary hover:text-on-primary transition-colors" href="#"><span class="material-symbols-outlined text-[16px]">share</span></a><a class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center hover:bg-primary hover:text-on-primary transition-colors" href="#"><span class="material-symbols-outlined text-[16px]">map</span></a></div></div></div><div class="max-w-7xl mx-auto px-gutter pt-space-md border-t border-outline-variant/30 flex flex-col sm:flex-row items-center justify-between gap-space-sm text-on-surface-variant font-label-md text-label-md"><p class="">© 2025 Aroma &amp; Brasa. Todos los derechos reservados. Pasión por el fuego y el grano.</p><div class="flex items-center gap-space-md"><a class="hover:text-on-surface transition-colors" href="#">Política de Privacidad</a><a class="hover:text-on-surface transition-colors" href="#">Términos de Servicio</a></div></div></footer>
 
-    <main class="w-full pt-[112px]">
-        <!-- Hero Section -->
-        <section class="relative w-full bg-surface-container-lowest py-16 lg:py-24 px-6">
-            <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                <div class="lg:col-span-7 flex flex-col items-start gap-4">
-                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-high text-xs font-bold text-primary">
-                        <span class="w-2 h-2 rounded-full bg-primary animate-ping"></span>
-                        Abierto Ahora · Almuerzo & Cena
-                    </div>
-                    <h1 class="font-['Playfair_Display'] text-4xl lg:text-6xl font-bold tracking-tight leading-tight">
-                        El Arte del <span class="italic text-primary font-normal">Fuego Lento</span> y el Café de Finca.
-                    </h1>
-                    <p class="text-stone-700 text-base lg:text-lg max-w-xl">
-                        Sabores rústicos elevados a la alta cocina, panes de masa madre recién salidos del horno de barro y microlotes de café de altura.
-                    </p>
-                    <div class="flex flex-wrap gap-4 pt-2">
-                        <a href="#" class="px-6 py-3.5 rounded-full bg-primary text-on-primary font-bold shadow-md hover:bg-primary-container transition-all">
-                            Reservar una Mesa
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-</body>
-</html>
+</body></html>

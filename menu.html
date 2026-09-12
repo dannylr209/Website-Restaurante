@@ -1,85 +1,873 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
-    <link rel="preconnect" href="https://fonts.googleapis.com"/>
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet"/>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-[#fbf9f5] font-['Plus_Jakarta_Sans'] text-[#1b1c1a] antialiased">
-    <!-- Header / Navbar -->
-    <header class="fixed top-0 w-full z-50 bg-surface/95 backdrop-blur-xl border-b border-outline-variant/30 h-20 px-6">
-        <div class="max-w-7xl mx-auto h-full flex items-center justify-between">
-            <span class="font-['Playfair_Display'] text-xl font-bold tracking-tight text-[#9f3c16]">Aroma & Brasa</span>
-            <nav class="hidden xl:flex items-center gap-2">
-                <a class="px-3 py-1.5 text-stone-700 hover:text-stone-900 transition-colors text-sm" href="index.html">Inicio</a>
-                <a class="px-3 py-1.5 bg-[#bf542c] text-white font-semibold rounded-full text-sm" href="menu.html">Menú Digital</a>
-                <a class="px-3 py-1.5 text-stone-700 hover:text-stone-900 transition-colors text-sm" href="galeria.html">Galería & Ambiente</a>
-                <a class="px-3 py-1.5 text-stone-700 hover:text-stone-900 transition-colors text-sm" href="reservas.html">Reservar Mesa</a>
-            </nav>
-        </div>
-    </header>
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"on-error-container":"#93000a","inverse-on-surface":"#f2f0ed","inverse-primary":"#ffb59c","surface":"#fbf9f5","on-tertiary-fixed-variant":"#6d3a00","on-surface":"#1b1c1a","on-secondary-container":"#795c52","surface-container-highest":"#e4e2de","on-tertiary":"#ffffff","primary-fixed-dim":"#ffb59c","secondary-container":"#fed8ca","surface-container-lowest":"#ffffff","on-secondary-fixed-variant":"#5a4137","tertiary":"#8b4c00","on-error":"#ffffff","secondary":"#74584e","surface-container-low":"#f5f3ef","on-background":"#1b1c1a","on-primary-container":"#fffbff","on-surface-variant":"#57423b","surface-tint":"#a23e18","surface-variant":"#e4e2de","surface-bright":"#fbf9f5","on-secondary-fixed":"#2a170f","tertiary-fixed-dim":"#ffb77a","on-tertiary-fixed":"#2e1500","tertiary-container":"#af6102","surface-container-high":"#eae8e4","outline-variant":"#dec0b7","secondary-fixed-dim":"#e3bfb2","primary":"#9f3c16","primary-fixed":"#ffdbcf","background":"#fbf9f5","inverse-surface":"#30312e","primary-container":"#bf542c","on-primary-fixed":"#390c00","error-container":"#ffdad6","on-tertiary-container":"#fffbff","secondary-fixed":"#ffdbce","surface-dim":"#dbdad6","outline":"#8a726a","tertiary-fixed":"#ffdcc2","on-secondary":"#ffffff","on-primary":"#ffffff","on-primary-fixed-variant":"#822801","error":"#ba1a1a","surface-container":"#efeeea"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-md":"1rem","gutter":"1.5rem","space-sm":"0.5rem","space-xl":"2.5rem","margin":"2rem","margin-sm":"1rem","gutter-sm":"1rem","space-xs":"0.25rem","space-lg":"1.5rem"},"fontFamily":{"display-lg-mobile":["Playfair Display"],"headline-lg-mobile":["Playfair Display"],"title-md":["Plus Jakarta Sans"],"body-md":["Plus Jakarta Sans"],"headline-md":["Playfair Display"],"label-md":["Plus Jakarta Sans"],"label-lg":["Plus Jakarta Sans"],"headline-sm":["Playfair Display"],"body-lg":["Plus Jakarta Sans"],"label-sm":["Plus Jakarta Sans"],"display-lg":["Playfair Display"],"headline-lg":["Playfair Display"]},"fontSize":{"display-lg-mobile":["36px",{"lineHeight":"44px","letterSpacing":"-0.01em","fontWeight":"700"}],"headline-lg-mobile":["26px",{"lineHeight":"34px","letterSpacing":"0em","fontWeight":"600"}],"title-md":["18px",{"lineHeight":"26px","fontWeight":"600"}],"body-md":["14px",{"lineHeight":"22px","fontWeight":"400"}],"headline-md":["24px",{"lineHeight":"32px","fontWeight":"600"}],"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.04em","fontWeight":"600"}],"label-lg":["14px",{"lineHeight":"20px","letterSpacing":"0.01em","fontWeight":"600"}],"headline-sm":["20px",{"lineHeight":"28px","fontWeight":"500"}],"body-lg":["16px",{"lineHeight":"26px","fontWeight":"400"}],"label-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.06em","fontWeight":"500"}],"display-lg":["48px",{"lineHeight":"56px","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-lg":["32px",{"lineHeight":"40px","letterSpacing":"-0.01em","fontWeight":"600"}]}}}}</script></head><body class="bg-background font-body-md text-body-md text-on-surface antialiased"><header class="fixed top-0 w-full z-50 shadow-[0_4px_20px_rgba(44,24,16,0.06)]"><div class="bg-secondary text-on-secondary px-gutter py-space-xs text-center"><div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-space-sm font-label-md text-label-md"><div class="flex items-center gap-space-xs"><span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span><span class="">ABIERTO HOY: 07:30 - 22:30 · Café de especialidad y cocina a las brasas</span></div><div class="flex items-center gap-space-md"><a class="inline-flex items-center gap-space-xs text-on-secondary hover:text-primary-fixed transition-colors" href="tel:+50223456789"><span class="material-symbols-outlined text-[14px]">call</span><span class="">+502 2345-6789</span></a><span class="opacity-40">|</span><a class="underline underline-offset-4 decoration-primary-fixed hover:text-primary-fixed transition-colors font-label-sm text-label-sm tracking-wider uppercase" data-path="reservar-mesa" href="reservas.html">Reserva Directa</a></div></div></div><div class="h-20 bg-surface/95 backdrop-blur-xl border-b border-outline-variant/30 px-gutter"><div class="max-w-7xl mx-auto h-full flex items-center justify-between gap-space-md"><a href="index.html" class="flex items-center gap-space-sm flex-shrink-0 cursor-pointer"><img alt="Logo Aroma &amp; Brasa" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1X8KXlZ-JRjuxmFoRJnpUxOmDToI5rZ92T9jvU4YOhrNcdzR_NRWqmi7WPvPoWUT6qmnEGAI4CbkZVP8wjjyE1rBxhUorNoQOPXcKfquQZobWYHM6HBRcoFi0uvZrAHVSlq81cCaWL2-EfaIqGc33aoFWOhyI8YsWQ_owGtNMkj3fOa9GgFrfDfWgNFBWCHYi5RfpIavPzqMzRWyogHF_NFumKjUr5GXdkfur9Y5afn38Gx6p0SH6nyNBLB"><div class="flex flex-col"><span class="font-headline-sm text-headline-sm font-bold tracking-tight text-primary leading-tight">Aroma &amp; Brasa</span><span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">Bistro &amp; Café</span></div></a><nav class="hidden xl:flex items-center gap-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded-full"><a class="px-3 py-1.5 rounded-full text-on-surface-variant hover:text-on-surface transition-colors font-label-md text-label-md" data-path="inicio" href="index.html">Inicio</a><a class="px-3 py-1.5 rounded-full text-on-surface-variant hover:text-on-surface transition-colors font-label-md text-label-md" data-path="menu-digital" href="menu.html">Menú Digital</a><a class="px-3 py-1.5 rounded-full text-on-surface-variant hover:text-on-surface transition-colors font-label-md text-label-md" data-path="galeria-y-ambiente" href="galeria.html">Galería &amp; Ambiente</a><a class="px-3 py-1.5 rounded-full text-on-surface-variant hover:text-on-surface transition-colors font-label-md text-label-md" data-path="reservar-mesa" href="reservas.html">Reservar Mesa</a><a class="px-3 py-1.5 rounded-full text-on-surface-variant hover:text-on-surface transition-colors font-label-md text-label-md" data-path="ubicacion-y-horarios" href="#">Ubicación &amp; Horarios</a><a class="px-3 py-1.5 rounded-full text-on-surface-variant hover:text-on-surface transition-colors font-label-md text-label-md" data-path="opiniones" href="#">Opiniones</a><a class="px-3 py-1.5 rounded-full text-on-surface-variant hover:text-on-surface transition-colors font-label-md text-label-md" data-path="blog-y-recetas" href="#">Blog &amp; Recetas</a></nav><div class="flex items-center gap-space-sm"><a class="hidden md:inline-flex items-center gap-space-xs px-3 py-2 rounded-full border border-outline-variant/60 text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all font-label-md text-label-md" href="tel:+50223456789"><span class="material-symbols-outlined text-[16px]">phone_in_talk</span><span class="">Llamar: +502 2345-6789</span></a><a class="inline-flex items-center gap-space-xs px-4 py-2 rounded-full bg-primary text-on-primary hover:bg-primary-container hover:text-on-primary-container shadow-sm transition-all font-label-lg text-label-lg" data-path="reservar-mesa" href="reservas.html"><span class="material-symbols-outlined text-[18px]">calendar_today</span><span class="">Reservar Mesa</span></a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center flex-shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></div></header><main class="w-full pt-[112px] bg-surface min-h-screen"><div class="flex flex-col w-full">
+<!-- Top Sensory Accent & Editorial Header -->
+<section class="relative w-full px-gutter pt-space-xl pb-space-lg overflow-hidden">
+<!-- Decorative Warm Gradient Blurs -->
+<div class="absolute -top-24 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-gradient-to-b from-primary-fixed/25 via-secondary-container/15 to-transparent rounded-full blur-3xl pointer-events-none -z-10"></div>
+<div class="absolute top-10 right-4 w-72 h-72 bg-tertiary-fixed/20 rounded-full blur-2xl pointer-events-none -z-10"></div>
+<div class="max-w-7xl mx-auto flex flex-col items-center text-center">
+<!-- Origin Tag -->
+<div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-secondary-container/40 text-on-secondary-container font-label-sm text-label-sm uppercase tracking-widest mb-space-sm shadow-sm">
+<span class="material-symbols-outlined text-[15px] text-primary" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+<span class="">Cosecha Propia &amp; Leña de Encino</span>
+</div>
+<!-- Main Headline -->
+<h1 class="font-display-lg text-display-lg text-on-surface tracking-tight max-w-3xl">
+        Nuestra Carta Culinaria
+      </h1>
+<!-- Sensorial Subtitle -->
+<p class="mt-space-sm font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+        Una sinfonía de humo ancestral, brasas vivas y granos de café de estricta altura. Cada plato rinde tributo a la temporalidad de nuestra tierra con técnicas lentas de fuego y fermentación artesanal.
+      </p>
+<!-- Search and Dietary Quick Actions Container -->
+<div class="w-full max-w-2xl mt-space-lg flex flex-col sm:flex-row items-center gap-space-sm">
+<!-- Live Dish Search Input -->
+<div class="relative w-full shadow-sm rounded-full">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]">search</span>
+<input class="w-full pl-12 pr-10 py-3.5 bg-surface-container-lowest text-on-surface placeholder:text-outline font-body-md text-body-md rounded-full shadow-sm focus:outline-none focus:bg-surface-container-lowest transition-all" id="dishSearch" placeholder="Buscar por corte, ingrediente, café o maridaje..." type="text">
+<button aria-label="Limpiar búsqueda" class="hidden absolute right-3.5 top-1/2 -translate-y-1/2 text-on-surface-variant hover:text-primary transition-colors p-1" id="clearSearch">
+<span class="material-symbols-outlined text-[18px]">cancel</span>
+</button>
+</div>
+<!-- Direct Filter Toggle / Counter Badge -->
+<div class="hidden sm:flex items-center gap-2 px-4 py-3 bg-surface-container-low rounded-full flex-shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-primary text-[18px]">restaurant_menu</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold" id="dishesCounter">12 creaciones</span>
+</div>
+</div>
+<!-- Categories Filter Bar -->
+<div class="w-full mt-space-lg overflow-x-auto pb-space-xs flex items-center justify-start lg:justify-center gap-2.5">
+<button class="cat-filter-btn flex items-center gap-1.5 px-5 py-2.5 rounded-full font-label-md text-label-md transition-all duration-200 bg-primary text-on-primary shadow-sm hover:opacity-95" data-category="all">
+<span class="material-symbols-outlined text-[16px]">dinner_dining</span>
+<span class="">Todas las Creaciones</span>
+</button>
+<button class="cat-filter-btn flex items-center gap-1.5 px-5 py-2.5 rounded-full font-label-md text-label-md transition-all duration-200 bg-surface-container-low text-on-surface-variant hover:bg-surface-container hover:text-on-surface shadow-sm" data-category="entradas">
+<span class="material-symbols-outlined text-[16px]">tapas</span>
+<span class="">Entradas &amp; Cazuelas</span>
+</button>
+<button class="cat-filter-btn flex items-center gap-1.5 px-5 py-2.5 rounded-full font-label-md text-label-md transition-all duration-200 bg-surface-container-low text-on-surface-variant hover:bg-surface-container hover:text-on-surface shadow-sm" data-category="brasas">
+<span class="material-symbols-outlined text-[16px]">outdoor_grill</span>
+<span class="">Platos Fuertes &amp; Brasas</span>
+</button>
+<button class="cat-filter-btn flex items-center gap-1.5 px-5 py-2.5 rounded-full font-label-md text-label-md transition-all duration-200 bg-surface-container-low text-on-surface-variant hover:bg-surface-container hover:text-on-surface shadow-sm" data-category="postres">
+<span class="material-symbols-outlined text-[16px]">bakery_dining</span>
+<span class="">Postres &amp; Dulce Brasa</span>
+</button>
+<button class="cat-filter-btn flex items-center gap-1.5 px-5 py-2.5 rounded-full font-label-md text-label-md transition-all duration-200 bg-surface-container-low text-on-surface-variant hover:bg-surface-container hover:text-on-surface shadow-sm" data-category="cafes">
+<span class="material-symbols-outlined text-[16px]">coffee</span>
+<span class="">Cafés de Especialidad</span>
+</button>
+<button class="cat-filter-btn flex items-center gap-1.5 px-5 py-2.5 rounded-full font-label-md text-label-md transition-all duration-200 bg-surface-container-low text-on-surface-variant hover:bg-surface-container hover:text-on-surface shadow-sm" data-category="cocteleria">
+<span class="material-symbols-outlined text-[16px]">wine_bar</span>
+<span class="">Vinos &amp; Coctelería</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Notification Toast for Favorites & Interactivity -->
+<div class="fixed bottom-6 right-6 z-50 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none flex items-center gap-3 px-5 py-3 rounded-full bg-inverse-surface text-inverse-on-surface shadow-xl font-label-md text-label-md" id="toastNotification">
+<span class="material-symbols-outlined text-primary-fixed text-[20px]">bookmark_added</span>
+<span id="toastMessage" class="">Guardado en tu lista de degustación</span>
+</div>
+<!-- Interactive Menu Grid Container -->
+<section class="w-full px-gutter py-space-md">
+<div class="max-w-7xl mx-auto">
+<!-- Dish Cards Grid: 3 columns desktop, 2 tablet, 1 mobile -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="menuCardsContainer">
+<!-- ITEM 1: Carpaccio (Entradas) -->
+<article class="dish-card group flex flex-col bg-surface-container-low rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300" data-dish-category="entradas" data-dish-title="Carpaccio de Res con Emulsión de Café y Alcaparras">
+<div class="relative w-full aspect-[16/10] overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Delicate, paper-thin prime beef carpaccio plated artistically with crispy capers, shaved aged cheese, microgreens, and a deep espresso coffee drizzle. Warm rustic ambient kitchen lighting with terracotta tones and warm wood table." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDd4keAPQ3cPzsGCnQlus0s8RzrqYkyB6cE8H9J5_00_Jprff-SunN_RvKatnHQwGlWq6gusdoKyfogCfSS0QXwJp1EumblVatK6HscPS3MqKxdC5XtoSVdlGU3QE1-mvgU_AwEkTie2hXuuWCEXgk3RcWW1stO9qRXkXcnuT1EhKOs3IM8RDs_Ljpqn4LxcSXfqHfgGOgxqxk2UbDF8FE3FGMY_vQgjtATwJqfTWeTM73piWdqjGhf2g">
+<div class="absolute top-3 left-3 flex flex-wrap items-center gap-1.5">
+<span class="px-2.5 py-1 rounded-full bg-tertiary-container text-on-tertiary-container font-label-sm text-label-sm tracking-wide uppercase shadow-sm">
+                Chef's Choice
+              </span>
+</div>
+<button aria-label="Añadir a lista de deseos" class="fav-btn absolute top-3 right-3 w-9 h-9 rounded-full bg-surface-container-lowest/80 hover:bg-surface-container-lowest text-on-surface flex items-center justify-center transition-all shadow-sm">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+<div class="absolute bottom-2 left-3 right-3 flex items-center justify-between text-on-primary font-label-sm text-label-sm drop-shadow">
+<span class="px-2 py-0.5 rounded-full bg-black/40 backdrop-blur-sm">Carne Angus</span>
+<span class="px-2 py-0.5 rounded-full bg-black/40 backdrop-blur-sm">Sin Gluten</span>
+</div>
+</div>
+<div class="p-space-lg flex flex-col flex-grow justify-between">
+<div>
+<div class="flex items-start justify-between gap-2 mb-space-xs">
+<h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors leading-snug">
+                  Carpaccio de Res con Emulsión de Café
+                </h3>
+<span class="font-title-md text-title-md text-primary font-bold whitespace-nowrap">
+                  Q.85
+                </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2 mb-space-sm">
+                Láminas finas de lomo curado al café Bourbon, alcaparras crocantes al rescoldo, virutas de queso Tikal curado y aceite de trufa blanca.
+              </p>
+</div>
+<!-- Sensory Pairing & Notes Footer -->
+<div class="pt-space-sm mt-space-xs bg-surface-container-high/40 -mx-space-lg -mb-space-lg px-space-lg py-space-sm flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[15px] text-tertiary">wine_bar</span>
+<span class="truncate">Maridaje: Pinot Noir de Altura</span>
+</div>
+<span class="text-primary font-label-sm text-label-sm font-semibold flex items-center gap-0.5 group-hover:translate-x-1 transition-transform">
+                Ver notas
+                <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</span>
+</div>
+</div>
+</article>
+<!-- ITEM 2: Burrata Horneada (Entradas) -->
+<article class="dish-card group flex flex-col bg-surface-container-low rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300" data-dish-category="entradas" data-dish-title="Burrata Horneada a la Leña con Pesto de Albahaca Silvestre">
+<div class="relative w-full aspect-[16/10] overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Artisanal whole burrata baked inside a rustic earthenware skillet with blistered cherry tomatoes, fresh wild basil pesto, and charred sourdough slices resting on aged dark wood. Warm golden hearth glow." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyfEp-iuDB0DN0wo1NGCaryBpOYGh9KGce289EtqGFTcKQWKsOAHH_kkK5F3jEyWN2AhdRmTqakL7Qccb7SGjOOdaiuOgCQCfOL8GumUA_dQ4dmFYyrEjZdCSSc2rK_-9fhVk9H57XjasIyHaCfKCFk8MCEgrXvMaJgA3HvjqtU3Qgb5A7wqZ_WsVSFSQaXelGBuUfuBLvroGq5GHdjmO9CyDOpLa1v3mAcyQrz826ksMs20NAIiByKw">
+<div class="absolute top-3 left-3 flex flex-wrap items-center gap-1.5">
+<span class="px-2.5 py-1 rounded-full bg-secondary text-on-secondary font-label-sm text-label-sm tracking-wide uppercase shadow-sm">
+                Horno de Leña
+              </span>
+</div>
+<button aria-label="Añadir a lista de deseos" class="fav-btn absolute top-3 right-3 w-9 h-9 rounded-full bg-surface-container-lowest/80 hover:bg-surface-container-lowest text-on-surface flex items-center justify-center transition-all shadow-sm">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+<div class="absolute bottom-2 left-3 right-3 flex items-center justify-between text-on-primary font-label-sm text-label-sm drop-shadow">
+<span class="px-2 py-0.5 rounded-full bg-black/40 backdrop-blur-sm">Vegetariano</span>
+<span class="px-2 py-0.5 rounded-full bg-black/40 backdrop-blur-sm">Queso Artesanal</span>
+</div>
+</div>
+<div class="p-space-lg flex flex-col flex-grow justify-between">
+<div>
+<div class="flex items-start justify-between gap-2 mb-space-xs">
+<h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors leading-snug">
+                  Burrata Horneada a la Leña
+                </h3>
+<span class="font-title-md text-title-md text-primary font-bold whitespace-nowrap">
+                  Q.95
+                </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2 mb-space-sm">
+                Cremosa burrata fresca en cazuela de barro, tomates cherry confitados al romero, pesto de albahaca silvestre y hogaza tostada de masa madre.
+              </p>
+</div>
+<div class="pt-space-sm mt-space-xs bg-surface-container-high/40 -mx-space-lg -mb-space-lg px-space-lg py-space-sm flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[15px] text-tertiary">local_bar</span>
+<span class="truncate">Maridaje: Sauvignon Blanc Mineral</span>
+</div>
+<span class="text-primary font-label-sm text-label-sm font-semibold flex items-center gap-0.5 group-hover:translate-x-1 transition-transform">
+                Ver notas
+                <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</span>
+</div>
+</div>
+</article>
+<!-- ITEM 3: Ceviche Rústico de Hongos (Entradas) -->
+<article class="dish-card group flex flex-col bg-surface-container-low rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300" data-dish-category="entradas" data-dish-title="Ceviche Rústico de Hongos Silvestres y Cítricos">
+<div class="relative w-full aspect-[16/10] overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Rustic cold ceramic bowl filled with citrus marinated wild mushrooms, sliced purple onions, fresh coriander, avocado cubes, and charred corn tostadas on a slate surface with natural lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHjobh3wNahe5s93TxQ6yyMud3uEl6Krcg0AaBkF33RmwN_5_3v0sxgC1uxGG8O717c-uweDE3_KdESvOoOdF0TQK_d5Bpmf_1n13gI2LpqMyfo3b2pmLsQ2ftOenaG7ds_LzoOywt8ol-5NUH1ZcRSeOKI5mPPimLSrQHu7omxZlSoh0Ir8sd3SbW0zn2GI_9d_ITRmX0C0hCFb-doc8aBomMxVp8SKHm4K1QqbxI-SQxMPRNOND87Q">
+<div class="absolute top-3 left-3 flex flex-wrap items-center gap-1.5">
+<span class="px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm tracking-wide uppercase shadow-sm">
+                Vegano / Orgánico
+              </span>
+</div>
+<button aria-label="Añadir a lista de deseos" class="fav-btn absolute top-3 right-3 w-9 h-9 rounded-full bg-surface-container-lowest/80 hover:bg-surface-container-lowest text-on-surface flex items-center justify-center transition-all shadow-sm">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+<div class="absolute bottom-2 left-3 right-3 flex items-center justify-between text-on-primary font-label-sm text-label-sm drop-shadow">
+<span class="px-2 py-0.5 rounded-full bg-black/40 backdrop-blur-sm">Gluten Free</span>
+<span class="px-2 py-0.5 rounded-full bg-black/40 backdrop-blur-sm">Fresco</span>
+</div>
+</div>
+<div class="p-space-lg flex flex-col flex-grow justify-between">
+<div>
+<div class="flex items-start justify-between gap-2 mb-space-xs">
+<h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors leading-snug">
+                  Ceviche Rústico de Hongos Silvestres
+                </h3>
+<span class="font-title-md text-title-md text-primary font-bold whitespace-nowrap">
+                  Q.75
+                </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2 mb-space-sm">
+                Variedad de setas de bosque curadas en leche de tigre de mandarina y lima criolla, aguacate tierno, cebolla morada y tostadas de maíz nixtamalizado.
+              </p>
+</div>
+<div class="pt-space-sm mt-space-xs bg-surface-container-high/40 -mx-space-lg -mb-space-lg px-space-lg py-space-sm flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[15px] text-tertiary">local_cafe</span>
+<span class="truncate">Maridaje: Cold Brew Tonic</span>
+</div>
+<span class="text-primary font-label-sm text-label-sm font-semibold flex items-center gap-0.5 group-hover:translate-x-1 transition-transform">
+                Ver notas
+                <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</span>
+</div>
+</div>
+</article>
+<!-- ITEM 4: Tomahawk Prime (Brasas) -->
+<article class="dish-card group flex flex-col bg-surface-container-low rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300" data-dish-category="brasas" data-dish-title="Tomahawk Prime a las Brasas">
+<div class="relative w-full aspect-[16/10] overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Massive prime bone-in Tomahawk steak sizzling hot with prominent grill marks, sea salt flakes, roasted garlic bulbs, and a sprig of charred rosemary over glowing charcoal embers in an upscale dark steakhouse environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDG4yHjxBdtafVYFokLTuSJLIoWDLMgf75V1TaYyt56zrPni6lIu4S0Z9AX5b2jafbYSqf_gHMdvhHSjDWIQb8ipPdTwQ-mfxJFyVccSSM5ne-SSS8VoDR7sztZJkBcBHIHgqnfcbg6bz4VjyEBNcmNBYh5ePED8fvtZQpaJhDlov1jRvUKhWh3sIUHkyVlT4sBkGAMW5aDAVWUfXxTcNxIBWqt07uojWYsze_KFy1GOHfKpWx2J76kcA">
+<div class="absolute top-3 left-3 flex flex-wrap items-center gap-1.5">
+<span class="px-2.5 py-1 rounded-full bg-primary text-on-primary font-label-sm text-label-sm tracking-wide uppercase shadow-sm">
+                Especialidad Insignia
+              </span>
+</div>
+<button aria-label="Añadir a lista de deseos" class="fav-btn absolute top-3 right-3 w-9 h-9 rounded-full bg-surface-container-lowest/80 hover:bg-surface-container-lowest text-on-surface flex items-center justify-center transition-all shadow-sm">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+<div class="absolute bottom-2 left-3 right-3 flex items-center justify-between text-on-primary font-label-sm text-label-sm drop-shadow">
+<span class="px-2 py-0.5 rounded-full bg-black/40 backdrop-blur-sm">Para Compartir (38 oz)</span>
+<span class="px-2 py-0.5 rounded-full bg-black/40 backdrop-blur-sm">45 Días Maduración</span>
+</div>
+</div>
+<div class="p-space-lg flex flex-col flex-grow justify-between">
+<div>
+<div class="flex items-start justify-between gap-2 mb-space-xs">
+<h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors leading-snug">
+                  Tomahawk Prime a las Brasas
+                </h3>
+<span class="font-title-md text-title-md text-primary font-bold whitespace-nowrap">
+                  Q.340
+                </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2 mb-space-sm">
+                Corte certificado madurado en seco con costra de café molido fino y pimienta negra de Alta Verapaz. Servido con mantequilla de médula y papines al rescoldo.
+              </p>
+</div>
+<div class="pt-space-sm mt-space-xs bg-surface-container-high/40 -mx-space-lg -mb-space-lg px-space-lg py-space-sm flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[15px] text-tertiary">wine_bar</span>
+<span class="truncate">Maridaje: Cabernet Sauvignon Reserva</span>
+</div>
+<span class="text-primary font-label-sm text-label-sm font-semibold flex items-center gap-0.5 group-hover:translate-x-1 transition-transform">
+                Ver notas
+                <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</span>
+</div>
+</div>
+</article>
+<!-- ITEM 5: Pechuga de Pato (Brasas) -->
+<article class="dish-card group flex flex-col bg-surface-container-low rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300" data-dish-category="brasas" data-dish-title="Pechuga de Pato con Glaseado de Moras y Puré de Camote">
+<div class="relative w-full aspect-[16/10] overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Pan-roasted duck breast sliced with a deep berry glaze reduction, velvety roasted sweet potato puree, and edible flower garnishes in a refined culinary ceramic plate. Gourmet bistro ambiance." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXdsdBfQ3yMIjB4cekNE8Bpy09kzNYZuz5CiZZcbGmpYmt_HuMqI02itDpj4f-lgDn8HEkVDPFJOxrDkEkZPNQmLt_rg2FmrGFcIFWCifQQpAnZRsJfZsP8TxrkoWMXwI1FRsx5PuOblbRtsebpMUkOYKSfZenrNkLhEvV1RN5nKC1Qlgrh-eef_RPRI6ZzM606F-Zgv30M3VytgmtSRCfuTc1gOEYBnSsbozBVKwmBju-1Hl9qnmVRw">
+<div class="absolute top-3 left-3 flex flex-wrap items-center gap-1.5">
+<span class="px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm tracking-wide uppercase shadow-sm">
+                Nuevo de Temporada
+              </span>
+</div>
+<button aria-label="Añadir a lista de deseos" class="fav-btn absolute top-3 right-3 w-9 h-9 rounded-full bg-surface-container-lowest/80 hover:bg-surface-container-lowest text-on-surface flex items-center justify-center transition-all shadow-sm">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+<div class="absolute bottom-2 left-3 right-3 flex items-center justify-between text-on-primary font-label-sm text-label-sm drop-shadow">
+<span class="px-2 py-0.5 rounded-full bg-black/40 backdrop-blur-sm">Magret de Pato</span>
+<span class="px-2 py-0.5 rounded-full bg-black/40 backdrop-blur-sm">Agridulce</span>
+</div>
+</div>
+<div class="p-space-lg flex flex-col flex-grow justify-between">
+<div>
+<div class="flex items-start justify-between gap-2 mb-space-xs">
+<h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors leading-snug">
+                  Pechuga de Pato &amp; Moras Silvestres
+                </h3>
+<span class="font-title-md text-title-md text-primary font-bold whitespace-nowrap">
+                  Q.175
+                </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2 mb-space-sm">
+                Magret sellado con piel crocante aromatizada con anís estrella, puré sedoso de camote ahumado a la leña y demi-glace de moras y miel de abeja melipona.
+              </p>
+</div>
+<div class="pt-space-sm mt-space-xs bg-surface-container-high/40 -mx-space-lg -mb-space-lg px-space-lg py-space-sm flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[15px] text-tertiary">wine_bar</span>
+<span class="truncate">Maridaje: Syrah o Carmenère</span>
+</div>
+<span class="text-primary font-label-sm text-label-sm font-semibold flex items-center gap-0.5 group-hover:translate-x-1 transition-transform">
+                Ver notas
+                <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</span>
+</div>
+</div>
+</article>
+<!-- ITEM 6: Salmón a la Tabla de Cedro (Brasas) -->
+<article class="dish-card group flex flex-col bg-surface-container-low rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300" data-dish-category="brasas" data-dish-title="Salmón a la Tabla de Cedro con Espárragos">
+<div class="relative w-full aspect-[16/10] overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Rich wild salmon fillet slow-cooked over a smoking natural cedar wood plank with charred green asparagus, lemon wedges, and cracked peppercorn. Soft natural daylight and warm earthen tableware." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCE8K76L7qGDaI8areLE8iD7VyvAEHuFVyh1dyn0gNN48gWXMlz9_4Ohn-D1VeznyeYi63zxVel3RSSRV8BpXCgXi5QvCwC7nrijWE-UYgAJV2BGDV-F7hSxJyaUvgKjpA6wYP99BOwnCF6mtNFkWSNCd4ZyHL5DIEHFpMApXikhout1CmZNnHiqy7ii_KuJl1SufCGk6V3ZP2v7gur-95Snq9wokvZaFZvu9Gl1fu8IAtZxKAbvS0zLQ">
+<div class="absolute top-3 left-3 flex flex-wrap items-center gap-1.5">
+<span class="px-2.5 py-1 rounded-full bg-surface-container-highest text-on-surface font-label-sm text-label-sm tracking-wide uppercase shadow-sm">
+                Pesca Sostenible
+              </span>
+</div>
+<button aria-label="Añadir a lista de deseos" class="fav-btn absolute top-3 right-3 w-9 h-9 rounded-full bg-surface-container-lowest/80 hover:bg-surface-container-lowest text-on-surface flex items-center justify-center transition-all shadow-sm">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+<div class="absolute bottom-2 left-3 right-3 flex items-center justify-between text-on-primary font-label-sm text-label-sm drop-shadow">
+<span class="px-2 py-0.5 rounded-full bg-black/40 backdrop-blur-sm">Cedro Aromático</span>
+<span class="px-2 py-0.5 rounded-full bg-black/40 backdrop-blur-sm">Omega-3</span>
+</div>
+</div>
+<div class="p-space-lg flex flex-col flex-grow justify-between">
+<div>
+<div class="flex items-start justify-between gap-2 mb-space-xs">
+<h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors leading-snug">
+                  Salmón a la Tabla de Cedro
+                </h3>
+<span class="font-title-md text-title-md text-primary font-bold whitespace-nowrap">
+                  Q.185
+                </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2 mb-space-sm">
+                Salmón salvaje ahumado lentamente al contacto directo con leña de cedro, acompañado de espárragos trigueros al grill y mantequilla noisette al limón persa.
+              </p>
+</div>
+<div class="pt-space-sm mt-space-xs bg-surface-container-high/40 -mx-space-lg -mb-space-lg px-space-lg py-space-sm flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[15px] text-tertiary">wine_bar</span>
+<span class="truncate">Maridaje: Chardonnay con Crianza</span>
+</div>
+<span class="text-primary font-label-sm text-label-sm font-semibold flex items-center gap-0.5 group-hover:translate-x-1 transition-transform">
+                Ver notas
+                <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</span>
+</div>
+</div>
+</article>
+<!-- ITEM 7: Risotto de Hongos Porcini (Brasas / Fuertes) -->
+<article class="dish-card group flex flex-col bg-surface-container-low rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300" data-dish-category="brasas" data-dish-title="Risotto de Hongos Porcini al Aroma de Roble">
+<div class="relative w-full aspect-[16/10] overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Creamy risotto with porcini mushrooms, freshly grated parmesan, herb oil droplets, and smoke infusion served in an elegant low stoneware bowl. Moody high-end bistro food photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqyKeAtjqX2TdoEyTy5Jhn0mNhJUv5zcPuS5f0XkH8MA61LvSDWNIW845VflpEF00dixLUzkH8i1lFCyG5TFfDuwSgNNXDAilqW1sGpRQnaWELqZ_gBEzERos9o9ao8wEUvb8WuhDTqdlSrYeRizBDcPoFQg3tn7Sce0DSZsBagcw4RGqkvo2-hMcR9ydQL5s9TCaHHnWw3Hdh8gm0P-qzzvJ5ueJ5YAZyErRmBuZD8K9Z_lSW4oJh2w">
+<div class="absolute top-3 left-3 flex flex-wrap items-center gap-1.5">
+<span class="px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm tracking-wide uppercase shadow-sm">
+                Cocina Lenta
+              </span>
+</div>
+<button aria-label="Añadir a lista de deseos" class="fav-btn absolute top-3 right-3 w-9 h-9 rounded-full bg-surface-container-lowest/80 hover:bg-surface-container-lowest text-on-surface flex items-center justify-center transition-all shadow-sm">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+<div class="absolute bottom-2 left-3 right-3 flex items-center justify-between text-on-primary font-label-sm text-label-sm drop-shadow">
+<span class="px-2 py-0.5 rounded-full bg-black/40 backdrop-blur-sm">Arroz Carnaroli</span>
+<span class="px-2 py-0.5 rounded-full bg-black/40 backdrop-blur-sm">Ahumado en Campana</span>
+</div>
+</div>
+<div class="p-space-lg flex flex-col flex-grow justify-between">
+<div>
+<div class="flex items-start justify-between gap-2 mb-space-xs">
+<h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors leading-snug">
+                  Risotto de Porcini al Roble
+                </h3>
+<span class="font-title-md text-title-md text-primary font-bold whitespace-nowrap">
+                  Q.135
+                </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2 mb-space-sm">
+                Arroz carnaroli ligado al queso Grana Padano 24 meses, caldo concentrado de setas silvestres, terminado con mantequilla infusionada en humo de roble.
+              </p>
+</div>
+<div class="pt-space-sm mt-space-xs bg-surface-container-high/40 -mx-space-lg -mb-space-lg px-space-lg py-space-sm flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[15px] text-tertiary">wine_bar</span>
+<span class="truncate">Maridaje: Nebbiolo o Barolo</span>
+</div>
+<span class="text-primary font-label-sm text-label-sm font-semibold flex items-center gap-0.5 group-hover:translate-x-1 transition-transform">
+                Ver notas
+                <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</span>
+</div>
+</div>
+</article>
+<!-- ITEM 8: Volcán de Chocolate (Postres) -->
+<article class="dish-card group flex flex-col bg-surface-container-low rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300" data-dish-category="postres" data-dish-title="Volcán de Chocolate Amargo 70% con Helado de Cardamomo">
+<div class="relative w-full aspect-[16/10] overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Molten dark chocolate lava cake cut open with rich warm chocolate flowing out, served alongside artisanal green cardamom ice cream, dusted with organic cocoa powder and crushed roasted coffee beans on a slate plate." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzi4abGXrFOpFgYL_ypDdmIVWVL3Zv5Oi6GozU_ahmMcMo5kNKQfooe7ZSj1iLZSSj5gv7mD4culCM_WOABeWlEEtpxsM7uFVkzydDowh9wiSKrDuaoIHSo8U3HGx7_E_QcLhi8gycpXJLEzpJ7zb2tQU5Ifi_TOCaE7EYc_qUQ2QSDFGC-14P_EbeqmSJL4J1boBXzr3PSB6Jldupjc3IkArtVETi3PD2VphdAYBoIs89w9cHCtJtWQ">
+<div class="absolute top-3 left-3 flex flex-wrap items-center gap-1.5">
+<span class="px-2.5 py-1 rounded-full bg-primary-container text-on-primary-container font-label-sm text-label-sm tracking-wide uppercase shadow-sm">
+                Cacao Criollo
+              </span>
+</div>
+<button aria-label="Añadir a lista de deseos" class="fav-btn absolute top-3 right-3 w-9 h-9 rounded-full bg-surface-container-lowest/80 hover:bg-surface-container-lowest text-on-surface flex items-center justify-center transition-all shadow-sm">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+<div class="absolute bottom-2 left-3 right-3 flex items-center justify-between text-on-primary font-label-sm text-label-sm drop-shadow">
+<span class="px-2 py-0.5 rounded-full bg-black/40 backdrop-blur-sm">Suchitepéquez 70%</span>
+<span class="px-2 py-0.5 rounded-full bg-black/40 backdrop-blur-sm">Cardamomo Cobanero</span>
+</div>
+</div>
+<div class="p-space-lg flex flex-col flex-grow justify-between">
+<div>
+<div class="flex items-start justify-between gap-2 mb-space-xs">
+<h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors leading-snug">
+                  Volcán de Chocolate Amargo 70%
+                </h3>
+<span class="font-title-md text-title-md text-primary font-bold whitespace-nowrap">
+                  Q.60
+                </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2 mb-space-sm">
+                Bizcocho tibio de corazón fluido de cacao fino de aroma guatemalteco, acompañado de helado cremoso de cardamomo fresco y crujiente de café Bourbon.
+              </p>
+</div>
+<div class="pt-space-sm mt-space-xs bg-surface-container-high/40 -mx-space-lg -mb-space-lg px-space-lg py-space-sm flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[15px] text-tertiary">local_cafe</span>
+<span class="truncate">Maridaje: Espresso Doble Geisha</span>
+</div>
+<span class="text-primary font-label-sm text-label-sm font-semibold flex items-center gap-0.5 group-hover:translate-x-1 transition-transform">
+                Ver notas
+                <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</span>
+</div>
+</div>
+</article>
+<!-- ITEM 9: Cheesecake Vasco (Postres) -->
+<article class="dish-card group flex flex-col bg-surface-container-low rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300" data-dish-category="postres" data-dish-title="Cheesecake Vasco con Costra Caramelizada">
+<div class="relative w-full aspect-[16/10] overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Authentic Basque burnt cheesecake slice with a deeply browned caramelized top crust and an ultra creamy soft melted center, placed on parchment paper over rustic warm ceramic tableware." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6PepsS8E2SuaHdr1kbXBn-BtGpZ4autaNFxrPyxDaPxU_q0-HbuOvIxV_3-QAQrcER0QtjZMn5J813nr755FzME7sUj4CZoyQmNd-ieTd49Qr5Dm-OEbNc_buz5-g9T6k74pHmVOxf93YuEb1a7lhQaOdPhO6XaEVWspHjyJiVsYscRpIZyvwJtxx26rjwzMbGxqXrVKjB6AXZs3xKe_2L78UnSKddkYPOrEGj94nLvQSNNLzvBhZFw">
+<div class="absolute top-3 left-3 flex flex-wrap items-center gap-1.5">
+<span class="px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm tracking-wide uppercase shadow-sm">
+                Favorito de la Casa
+              </span>
+</div>
+<button aria-label="Añadir a lista de deseos" class="fav-btn absolute top-3 right-3 w-9 h-9 rounded-full bg-surface-container-lowest/80 hover:bg-surface-container-lowest text-on-surface flex items-center justify-center transition-all shadow-sm">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+<div class="absolute bottom-2 left-3 right-3 flex items-center justify-between text-on-primary font-label-sm text-label-sm drop-shadow">
+<span class="px-2 py-0.5 rounded-full bg-black/40 backdrop-blur-sm">Centro Fluido</span>
+<span class="px-2 py-0.5 rounded-full bg-black/40 backdrop-blur-sm">Sin Harinas</span>
+</div>
+</div>
+<div class="p-space-lg flex flex-col flex-grow justify-between">
+<div>
+<div class="flex items-start justify-between gap-2 mb-space-xs">
+<h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors leading-snug">
+                  Cheesecake Vasco Caramelizado
+                </h3>
+<span class="font-title-md text-title-md text-primary font-bold whitespace-nowrap">
+                  Q.55
+                </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2 mb-space-sm">
+                Horneado a fuego vivo con costra caramelizada ahumada y centro sedoso que se deshace al paladar. Servido con compota tibia de higos a la leña.
+              </p>
+</div>
+<div class="pt-space-sm mt-space-xs bg-surface-container-high/40 -mx-space-lg -mb-space-lg px-space-lg py-space-sm flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[15px] text-tertiary">wine_bar</span>
+<span class="truncate">Maridaje: Vino Dulce Oporto</span>
+</div>
+<span class="text-primary font-label-sm text-label-sm font-semibold flex items-center gap-0.5 group-hover:translate-x-1 transition-transform">
+                Ver notas
+                <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</span>
+</div>
+</div>
+</article>
+<!-- ITEM 10: Chemex Geisha (Cafés) -->
+<article class="dish-card group flex flex-col bg-surface-container-low rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300" data-dish-category="cafes" data-dish-title="Chemex Geisha de Acatenango">
+<div class="relative w-full aspect-[16/10] overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Artisanal pour-over Chemex brewing specialty coffee with amber aromatic liquid dripping down. Barista pouring hot kettle water, steam rising, elegant ceramic glassware in a warm cafe with morning light." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRZELciEw88lv2xURKWKeDRCPW7m19t7yToNDCYl_JnRIO5mLjT3j62PQ2wJSIQ_snsMeWNT6ZWgg2mrjbuwS6LxPONFDonuXEoLyx2fNtYeEtj7sfzC_Hl9b7c0iCYo6XCUi19xGwUIo7XUhec-tQK5PEwMgzPmjgxD6uqjBeJyTo63M95Jd01WvUX4cypIWnqNUyPNgipwVS7v-YTzcgRvVX0fqdFYz8BW0VzGr43egqpU9OAEL5QA">
+<div class="absolute top-3 left-3 flex flex-wrap items-center gap-1.5">
+<span class="px-2.5 py-1 rounded-full bg-tertiary text-on-tertiary font-label-sm text-label-sm tracking-wide uppercase shadow-sm">
+                Café de Finca (91 Pts)
+              </span>
+</div>
+<button aria-label="Añadir a lista de deseos" class="fav-btn absolute top-3 right-3 w-9 h-9 rounded-full bg-surface-container-lowest/80 hover:bg-surface-container-lowest text-on-surface flex items-center justify-center transition-all shadow-sm">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+<div class="absolute bottom-2 left-3 right-3 flex items-center justify-between text-on-primary font-label-sm text-label-sm drop-shadow">
+<span class="px-2 py-0.5 rounded-full bg-black/40 backdrop-blur-sm">2,100 msnm</span>
+<span class="px-2 py-0.5 rounded-full bg-black/40 backdrop-blur-sm">Lavado Tradicional</span>
+</div>
+</div>
+<div class="p-space-lg flex flex-col flex-grow justify-between">
+<div>
+<div class="flex items-start justify-between gap-2 mb-space-xs">
+<h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors leading-snug">
+                  Chemex Geisha de Acatenango
+                </h3>
+<span class="font-title-md text-title-md text-primary font-bold whitespace-nowrap">
+                  Q.45
+                </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2 mb-space-sm">
+                Varietal Geisha cosechado en las faldas del Volcán de Acatenango. Notas florales a jazmín silvestre, bergamota, melocotón blanco y final limpio de té negro.
+              </p>
+</div>
+<div class="pt-space-sm mt-space-xs bg-surface-container-high/40 -mx-space-lg -mb-space-lg px-space-lg py-space-sm flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[15px] text-tertiary">bakery_dining</span>
+<span class="truncate">Maridaje: Galleta de Mantequilla Dorada</span>
+</div>
+<span class="text-primary font-label-sm text-label-sm font-semibold flex items-center gap-0.5 group-hover:translate-x-1 transition-transform">
+                Ver notas
+                <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</span>
+</div>
+</div>
+</article>
+<!-- ITEM 11: Cold Brew Tonic (Cafés) -->
+<article class="dish-card group flex flex-col bg-surface-container-low rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300" data-dish-category="cafes" data-dish-title="Cold Brew Tonic con Romero y Piel de Naranja">
+<div class="relative w-full aspect-[16/10] overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Tall crystal tumbler with cold brew tonic, clear ice cubes, glowing layer of tonic water and deep dark coffee layer, garnished with a charred sprig of rosemary and an expressed orange twist." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXb0qxW8wsOjudedIGBHA-qYaLaB88X_dGBHY2aRs-hPLw9m1rnyNf6XhlblneNw3sgnYybkcd20VhNtgrVubHaSbgUHO-6qIhTpknfqFaudTm425NHFeQ9mnJ1BSCO8giDixIFSseug39gHgHZeq6GhwOjPx6OngXrMBhqDvUMqVkTXNSWRD0YN0Gjw_LzaXbcL3mjJqZvXXFSARorQSZmK-phwCYbv7aH_focWmeWB7bz3xwI1jG4Q">
+<div class="absolute top-3 left-3 flex flex-wrap items-center gap-1.5">
+<span class="px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm tracking-wide uppercase shadow-sm">
+                Extracción 18h
+              </span>
+</div>
+<button aria-label="Añadir a lista de deseos" class="fav-btn absolute top-3 right-3 w-9 h-9 rounded-full bg-surface-container-lowest/80 hover:bg-surface-container-lowest text-on-surface flex items-center justify-center transition-all shadow-sm">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+<div class="absolute bottom-2 left-3 right-3 flex items-center justify-between text-on-primary font-label-sm text-label-sm drop-shadow">
+<span class="px-2 py-0.5 rounded-full bg-black/40 backdrop-blur-sm">Refrescante</span>
+<span class="px-2 py-0.5 rounded-full bg-black/40 backdrop-blur-sm">Tónica Botánica</span>
+</div>
+</div>
+<div class="p-space-lg flex flex-col flex-grow justify-between">
+<div>
+<div class="flex items-start justify-between gap-2 mb-space-xs">
+<h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors leading-snug">
+                  Cold Brew Tonic &amp; Romero
+                </h3>
+<span class="font-title-md text-title-md text-primary font-bold whitespace-nowrap">
+                  Q.38
+                </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2 mb-space-sm">
+                Concentrado de café Pacamara infusionado en frío durante 18 horas, agua tónica artesanal, hielo traslúcido, perfume de piel de naranja y romero sopleteado.
+              </p>
+</div>
+<div class="pt-space-sm mt-space-xs bg-surface-container-high/40 -mx-space-lg -mb-space-lg px-space-lg py-space-sm flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[15px] text-tertiary">dinner_dining</span>
+<span class="truncate">Maridaje: Carpaccio o Ceviche</span>
+</div>
+<span class="text-primary font-label-sm text-label-sm font-semibold flex items-center gap-0.5 group-hover:translate-x-1 transition-transform">
+                Ver notas
+                <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</span>
+</div>
+</div>
+</article>
+<!-- ITEM 12: Smoked Bourbon Old Fashioned (Coctelería) -->
+<article class="dish-card group flex flex-col bg-surface-container-low rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300" data-dish-category="cocteleria" data-dish-title="Smoked Bourbon Old Fashioned con Astillas de Café">
+<div class="relative w-full aspect-[16/10] overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Heavy crystal rocks glass filled with an amber Old Fashioned cocktail, a large square ice block, an orange peel twist, enveloped in fragrant natural wood smoke under a vintage glass cloche." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4pI4vRAVeW-ybcftoALrZ3b8pU2SI320sXb9Ed6LiRpaYl_vM9pMQ26vcZiIOVcT17CMBOM_MxnidW-Sh14XahF4GFLx4PSL9Kt8hMMH9iAD9k0OWcJ2S5M7raBc-WHirYI-t5jpuh7sMdbofHo-xCun8qr9Ze6jYDX2n6meAIarDHSJog-1i1c6rGIzth9nQ6-2viOED2W2Cl6IDSEsT_KsWeatQf5bgmC8belkMLlOkDi16gbGkXw">
+<div class="absolute top-3 left-3 flex flex-wrap items-center gap-1.5">
+<span class="px-2.5 py-1 rounded-full bg-primary text-on-primary font-label-sm text-label-sm tracking-wide uppercase shadow-sm">
+                Coctel Insignia
+              </span>
+</div>
+<button aria-label="Añadir a lista de deseos" class="fav-btn absolute top-3 right-3 w-9 h-9 rounded-full bg-surface-container-lowest/80 hover:bg-surface-container-lowest text-on-surface flex items-center justify-center transition-all shadow-sm">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+<div class="absolute bottom-2 left-3 right-3 flex items-center justify-between text-on-primary font-label-sm text-label-sm drop-shadow">
+<span class="px-2 py-0.5 rounded-full bg-black/40 backdrop-blur-sm">Ahumado en Mesa</span>
+<span class="px-2 py-0.5 rounded-full bg-black/40 backdrop-blur-sm">Bourbon Premium</span>
+</div>
+</div>
+<div class="p-space-lg flex flex-col flex-grow justify-between">
+<div>
+<div class="flex items-start justify-between gap-2 mb-space-xs">
+<h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors leading-snug">
+                  Smoked Bourbon Old Fashioned
+                </h3>
+<span class="font-title-md text-title-md text-primary font-bold whitespace-nowrap">
+                  Q.75
+                </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2 mb-space-sm">
+                Bourbon macerado en cáscara de café, bitters de chocolate artesanal, azúcar mascabado sin refinar y ahumado en vivo con astillas de madera de cafeto.
+              </p>
+</div>
+<div class="pt-space-sm mt-space-xs bg-surface-container-high/40 -mx-space-lg -mb-space-lg px-space-lg py-space-sm flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[15px] text-tertiary">outdoor_grill</span>
+<span class="truncate">Maridaje: Tomahawk o Volcán de Cacao</span>
+</div>
+<span class="text-primary font-label-sm text-label-sm font-semibold flex items-center gap-0.5 group-hover:translate-x-1 transition-transform">
+                Ver notas
+                <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</span>
+</div>
+</div>
+</article>
+</div>
+<!-- Empty State Container -->
+<div class="hidden py-space-xl flex-col items-center justify-center text-center" id="noResultsState">
+<div class="w-16 h-16 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant mb-space-sm">
+<span class="material-symbols-outlined text-[32px]">search_off</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">No encontramos platos con esos términos</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1 max-w-md">
+          Prueba con ingredientes como "café", "leña", "salmón", "cacao" o selecciona otra categoría de la carta.
+        </p>
+<button class="mt-space-md px-5 py-2 rounded-full bg-primary text-on-primary font-label-md text-label-md" id="resetSearchBtn">
+          Ver Carta Completa
+        </button>
+</div>
+</div>
+</section>
+<!-- Interactive Tasting Menu Highlights Infographic (SVG Data Graphic) -->
+<section class="w-full px-gutter py-space-xl bg-surface-container-low/60 my-space-lg">
+<div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+<div class="lg:col-span-5 space-y-space-sm">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary font-semibold">Técnicas del Taller</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">El Fuego y la Infusión: Cómo Diseñamos Cada Receta</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          Cada preparación equilibra el perfil tánico del grano y la intensidad calórica de la madera. Monitoreamos temperaturas precisas para preservar los aceites esenciales de nuestros ingredientes orgánicos.
+        </p>
+<div class="grid grid-cols-2 gap-space-sm pt-space-xs">
+<div class="p-space-sm bg-surface-container-lowest rounded-lg shadow-sm">
+<span class="font-label-sm text-label-sm text-secondary block uppercase">Madera de Encino</span>
+<span class="font-title-md text-title-md text-on-surface font-bold">480°C</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Brasa pura y bruma sutil</span>
+</div>
+<div class="p-space-sm bg-surface-container-lowest rounded-lg shadow-sm">
+<span class="font-label-sm text-label-sm text-secondary block uppercase">Extracción Óptima</span>
+<span class="font-title-md text-title-md text-on-surface font-bold">92.5°C</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Claridad de notas florales</span>
+</div>
+</div>
+</div>
+<!-- Sensory Radar / Infographic Chart SVG -->
+<div class="lg:col-span-7 bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col md:flex-row items-center justify-between gap-6">
+<div class="w-full max-w-[260px] aspect-square flex items-center justify-center">
+<!-- Sensory Balance Radar SVG under 2KB -->
+<svg aria-label="Gráfica de equilibrio sensorial" class="w-full h-full" viewBox="0 0 200 200">
+<!-- Concentric Guideline Polygons -->
+<polygon class="text-on-surface" fill="none" points="100,20 180,60 160,160 40,160 20,60" stroke="currentColor" stroke-opacity="0.1" stroke-width="1.5"></polygon>
+<polygon class="text-on-surface" fill="none" points="100,45 155,75 140,140 60,140 45,75" stroke="currentColor" stroke-opacity="0.12" stroke-width="1.5"></polygon>
+<polygon class="text-on-surface" fill="none" points="100,70 130,90 120,120 80,120 70,90" stroke="currentColor" stroke-opacity="0.15" stroke-width="1"></polygon>
+<!-- Radar Spokes -->
+<line class="text-on-surface" stroke="currentColor" stroke-opacity="0.1" x1="100" x2="100" y1="100" y2="20"></line>
+<line class="text-on-surface" stroke="currentColor" stroke-opacity="0.1" x1="100" x2="180" y1="100" y2="60"></line>
+<line class="text-on-surface" stroke="currentColor" stroke-opacity="0.1" x1="100" x2="160" y1="100" y2="160"></line>
+<line class="text-on-surface" stroke="currentColor" stroke-opacity="0.1" x1="100" x2="40" y1="100" y2="160"></line>
+<line class="text-on-surface" stroke="currentColor" stroke-opacity="0.1" x1="100" x2="20" y1="100" y2="60"></line>
+<!-- Filled Aroma Profile Polygon -->
+<polygon fill="#bf542c" fill-opacity="0.25" points="100,30 165,65 145,145 55,135 32,70" stroke="#9f3c16" stroke-linejoin="round" stroke-width="2.5"></polygon>
+<!-- Highlight Nodes -->
+<circle cx="100" cy="30" fill="#9f3c16" r="4"></circle>
+<circle cx="165" cy="65" fill="#9f3c16" r="4"></circle>
+<circle cx="145" cy="145" fill="#9f3c16" r="4"></circle>
+<circle cx="55" cy="135" fill="#9f3c16" r="4"></circle>
+<circle cx="32" cy="70" fill="#9f3c16" r="4"></circle>
+</svg>
+</div>
+<div class="flex flex-col space-y-space-xs flex-1 w-full">
+<h4 class="font-title-md text-title-md text-on-surface">Perfil de Sabor Predominante</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">La firma culinaria de Aroma &amp; Brasa gravita en cinco ejes esenciales:</p>
+<div class="space-y-2 pt-2">
+<div>
+<div class="flex justify-between font-label-sm text-label-sm mb-0.5 text-on-surface">
+<span class="">Humo de Encino &amp; Roble</span>
+<span class="font-bold text-primary">94%</span>
+</div>
+<div class="w-full h-1.5 rounded-full bg-surface-container">
+<div class="h-1.5 rounded-full bg-primary" style="width: 94%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between font-label-sm text-label-sm mb-0.5 text-on-surface">
+<span class="">Acidez Brillante (Cítricos &amp; Café Geisha)</span>
+<span class="font-bold text-tertiary">88%</span>
+</div>
+<div class="w-full h-1.5 rounded-full bg-surface-container">
+<div class="h-1.5 rounded-full bg-tertiary" style="width: 88%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between font-label-sm text-label-sm mb-0.5 text-on-surface">
+<span class="">Dulzor Caramelizado &amp; Umami</span>
+<span class="font-bold text-secondary">90%</span>
+</div>
+<div class="w-full h-1.5 rounded-full bg-surface-container">
+<div class="h-1.5 rounded-full bg-secondary" style="width: 90%"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Reservation & Private Tasting Showcase Banner -->
+<section class="w-full px-gutter py-space-xl">
+<div class="max-w-7xl mx-auto relative rounded-xl overflow-hidden bg-inverse-surface text-inverse-on-surface p-space-lg sm:p-space-xl shadow-xl">
+<!-- Background Hearth Image with Dark Contrast Scrim -->
+<div class="absolute inset-0 bg-cover bg-center opacity-30 mix-blend-luminosity" data-alt="Intimate candlelit culinary dining room with large wooden communal tasting tables, wine cellar glass rack, glowing fireplace hearth in background, cozy rustic modern atmosphere." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD7hZf-Gijuzf5VJbsnF6fCdVuih72MR1jNZDKfhYJmBquIkWg6oTXNjOUWQFZyLBLvRsJAn2RAKlQ6N3PQtunxIaAA8QJaRJqZQhhr5wlPox1moF3nNd_PvfNmfCpd2uNJxcd_g6G7auCjyc96ffczetRwKvRQo7fYFFo5vGUYHsU15ZlC1qHZ1uxWDzJFkoZFD5jQaW1hScpEhQhhkJ2VbJf0x3HrsTXmvUip0ugT68Kjj1B1v0LGvQ')"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-inverse-surface via-inverse-surface/90 to-transparent"></div>
+<div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+<div class="lg:col-span-8 space-y-space-sm">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary/30 text-primary-fixed font-label-sm text-label-sm uppercase tracking-widest">
+<span class="material-symbols-outlined text-[14px]">stars</span>
+<span class="">Experiencias Exclusivas</span>
+</span>
+<h2 class="font-display-lg text-display-lg text-white font-bold leading-tight">
+            Degustación a la Brasa &amp; Maridaje Privado
+          </h2>
+<p class="font-body-lg text-body-lg text-inverse-on-surface/80 max-w-2xl">
+            Diseñamos menús de 7 tiempos maridados con añadas seleccionadas y microlotes de café para mesas corporativas, aniversarios o eventos familiares íntimos en nuestra cava subterránea.
+          </p>
+<div class="flex flex-wrap items-center gap-space-md pt-space-xs">
+<div class="flex items-center gap-2 text-inverse-on-surface/90 font-label-md text-label-md">
+<span class="material-symbols-outlined text-primary-fixed text-[20px]">groups</span>
+<span class="">Mesa del Chef: 6 a 18 personas</span>
+</div>
+<div class="flex items-center gap-2 text-inverse-on-surface/90 font-label-md text-label-md">
+<span class="material-symbols-outlined text-primary-fixed text-[20px]">room_service</span>
+<span class="">Sommelier &amp; Barista dedicados</span>
+</div>
+</div>
+</div>
+<div class="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col items-stretch lg:items-end gap-space-sm">
+<a class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-primary text-on-primary hover:bg-primary-container font-label-lg text-label-lg shadow-lg hover:shadow-xl transition-all" data-path="reservar-mesa" href="reservas.html">
+<span class="material-symbols-outlined text-[20px]">calendar_today</span>
+<span class="">Reservar Degustación</span>
+</a>
+<a class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-white/10 hover:bg-white/20 text-white font-label-lg text-label-lg transition-all backdrop-blur-sm" href="tel:+50223456789">
+<span class="material-symbols-outlined text-[20px]">call</span>
+<span class="">Atención a Eventos</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive Client-side Script -->
+<script>
+    (function () {
+      const searchInput = document.getElementById('dishSearch');
+      const clearSearch = document.getElementById('clearSearch');
+      const filterButtons = document.querySelectorAll('.cat-filter-btn');
+      const dishCards = document.querySelectorAll('.dish-card');
+      const counterLabel = document.getElementById('dishesCounter');
+      const noResultsState = document.getElementById('noResultsState');
+      const resetSearchBtn = document.getElementById('resetSearchBtn');
+      const toast = document.getElementById('toastNotification');
+      const toastMessage = document.getElementById('toastMessage');
+      const favButtons = document.querySelectorAll('.fav-btn');
 
-    <main class="w-full pt-28 min-h-screen pb-20">
-        <!-- Título de la sección -->
-        <section class="max-w-7xl mx-auto px-6 py-12 text-center">
-            <h1 class="font-['Playfair_Display'] text-4xl lg:text-5xl font-bold tracking-tight mb-4">
-                Nuestra Carta
-            </h1>
-            <p class="text-stone-600 max-w-xl mx-auto">
-                Ingredientes locales de estación, técnicas ancestrales de fuego y fermentos madre diarios.
-            </p>
-            
-            <!-- Pestañas de categorías del menú -->
-            <div class="flex flex-wrap justify-center gap-3 mt-8">
-                <button class="px-5 py-2 rounded-full bg-[#1b1c1a] text-white font-semibold text-sm">Café & Desayunos</button>
-                <button class="px-5 py-2 rounded-full bg-stone-200 text-stone-700 hover:bg-stone-300 font-semibold text-sm transition-all">A las Brasas</button>
-                <button class="px-5 py-2 rounded-full bg-stone-200 text-stone-700 hover:bg-stone-300 font-semibold text-sm transition-all">Panadería & Masas</button>
-                <button class="px-5 py-2 rounded-full bg-stone-200 text-stone-700 hover:bg-stone-300 font-semibold text-sm transition-all">Postres & Cocteles</button>
-            </div>
-        </section>
+      let currentCategory = 'all';
+      let currentQuery = '';
 
-        <!-- Contenido del Menú -->
-        <section class="max-w-4xl mx-auto px-6">
-            <div class="space-y-6">
-                <!-- Ítem del menú -->
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-stone-100 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-                    <div>
-                        <div class="flex items-center gap-2">
-                            <h3 class="font-['Playfair_Display'] text-xl font-bold">Puyazo Madurado a la Leña</h3>
-                            <span class="px-2 py-0.5 rounded-full bg-amber-100 text-amber-800 text-xs font-bold">Especialidad</span>
-                        </div>
-                        <p class="text-stone-600 text-sm mt-1 max-w-xl">Corte de 12oz cocinado a las brasas de encino, acompañado de puré de papa rústico con mantequilla de humo y vegetales de huerto.</p>
-                    </div>
-                    <div class="text-right">
-                        <span class="font-['Playfair_Display'] text-2xl font-bold text-[#9f3c16]">$24.50</span>
-                    </div>
-                </div>
+      function updateMenuFilter() {
+        let visibleCount = 0;
 
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-stone-100 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-                    <div>
-                        <h3 class="font-['Playfair_Display'] text-xl font-bold">Café V60 Microlote Acatenango</h3>
-                        <p class="text-stone-600 text-sm mt-1 max-w-xl">Notas aromáticas a jazmín, durazno blanco y chocolate amargo. Extracción artesanal en barra.</p>
-                    </div>
-                    <div class="text-right">
-                        <span class="font-['Playfair_Display'] text-2xl font-bold text-[#9f3c16]">$4.75</span>
-                    </div>
-                </div>
+        dishCards.forEach(card => {
+          const category = card.getAttribute('data-dish-category');
+          const title = (card.getAttribute('data-dish-title') || '').toLowerCase();
+          const cardText = card.innerText.toLowerCase();
 
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-stone-100 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-                    <div>
-                        <h3 class="font-['Playfair_Display'] text-xl font-bold">Tostón de Masa Madre & Aguacate</h3>
-                        <p class="text-stone-600 text-sm mt-1 max-w-xl">Pan rústico de fermentación larga tostado a la brasa, aguacate Hass, rábanos encurtidos y huevo de patio poché.</p>
-                    </div>
-                    <div class="text-right">
-                        <span class="font-['Playfair_Display'] text-2xl font-bold text-[#9f3c16]">$9.25</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-</body>
-</html>
+          const matchesCategory = currentCategory === 'all' || category === currentCategory;
+          const matchesQuery = currentQuery === '' || title.includes(currentQuery) || cardText.includes(currentQuery);
+
+          if (matchesCategory && matchesQuery) {
+            card.classList.remove('hidden');
+            visibleCount++;
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+
+        if (counterLabel) {
+          counterLabel.textContent = `${visibleCount} ${visibleCount === 1 ? 'creación' : 'creaciones'}`;
+        }
+
+        if (noResultsState) {
+          if (visibleCount === 0) {
+            noResultsState.classList.remove('hidden');
+            noResultsState.classList.add('flex');
+          } else {
+            noResultsState.classList.add('hidden');
+            noResultsState.classList.remove('flex');
+          }
+        }
+      }
+
+      // Search events
+      if (searchInput) {
+        searchInput.addEventListener('input', (e) => {
+          currentQuery = e.target.value.trim().toLowerCase();
+          if (clearSearch) {
+            clearSearch.classList.toggle('hidden', currentQuery.length === 0);
+          }
+          updateMenuFilter();
+        });
+      }
+
+      if (clearSearch) {
+        clearSearch.addEventListener('click', () => {
+          if (searchInput) {
+            searchInput.value = '';
+            currentQuery = '';
+            clearSearch.classList.add('hidden');
+            searchInput.focus();
+            updateMenuFilter();
+          }
+        });
+      }
+
+      if (resetSearchBtn) {
+        resetSearchBtn.addEventListener('click', () => {
+          if (searchInput) searchInput.value = '';
+          currentQuery = '';
+          if (clearSearch) clearSearch.classList.add('hidden');
+          currentCategory = 'all';
+          setActiveFilterPill(filterButtons[0]);
+          updateMenuFilter();
+        });
+      }
+
+      function setActiveFilterPill(selectedBtn) {
+        filterButtons.forEach(btn => {
+          btn.classList.remove('bg-primary', 'text-on-primary');
+          btn.classList.add('bg-surface-container-low', 'text-on-surface-variant');
+        });
+        selectedBtn.classList.remove('bg-surface-container-low', 'text-on-surface-variant');
+        selectedBtn.classList.add('bg-primary', 'text-on-primary');
+      }
+
+      // Filter Buttons
+      filterButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          currentCategory = btn.getAttribute('data-category');
+          setActiveFilterPill(btn);
+          updateMenuFilter();
+        });
+      });
+
+      // Favorites Micro-interaction
+      function showToast(text) {
+        if (!toast || !toastMessage) return;
+        toastMessage.textContent = text;
+        toast.classList.remove('translate-y-24', 'opacity-0');
+        toast.classList.add('translate-y-0', 'opacity-100');
+        setTimeout(() => {
+          toast.classList.remove('translate-y-0', 'opacity-100');
+          toast.classList.add('translate-y-24', 'opacity-0');
+        }, 2600);
+      }
+
+      favButtons.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const icon = btn.querySelector('.material-symbols-outlined');
+          const isFavorited = icon.style.fontVariationSettings.includes("'FILL' 1");
+
+          if (isFavorited) {
+            icon.style.fontVariationSettings = "'FILL' 0";
+            btn.classList.remove('text-primary');
+            btn.classList.add('text-on-surface');
+            showToast('Removido de tus favoritos');
+          } else {
+            icon.style.fontVariationSettings = "'FILL' 1";
+            btn.classList.remove('text-on-surface');
+            btn.classList.add('text-primary');
+            showToast('Guardado en tus platos favoritos');
+          }
+        });
+      });
+    })();
+  </script>
+</div></main><footer class="w-full bg-surface-container-low border-t border-outline-variant/40 pt-space-xl pb-space-lg"><div class="max-w-7xl mx-auto px-gutter grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter mb-space-xl"><div class="space-y-space-md"><a href="index.html" class="flex items-center gap-space-sm cursor-pointer"><img alt="Logo Aroma &amp; Brasa" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1X8KXlZ-JRjuxmFoRJnpUxOmDToI5rZ92T9jvU4YOhrNcdzR_NRWqmi7WPvPoWUT6qmnEGAI4CbkZVP8wjjyE1rBxhUorNoQOPXcKfquQZobWYHM6HBRcoFi0uvZrAHVSlq81cCaWL2-EfaIqGc33aoFWOhyI8YsWQ_owGtNMkj3fOa9GgFrfDfWgNFBWCHYi5RfpIavPzqMzRWyogHF_NFumKjUr5GXdkfur9Y5afn38Gx6p0SH6nyNBLB"><span class="font-headline-sm text-headline-sm font-bold text-primary">Aroma &amp; Brasa</span></a><p class="font-body-md text-body-md text-on-surface-variant">Un santuario culinario donde el fuego de leña y los granos de café de altura convergen. Cocina honesta, ingredientes de origen y hospitalidad cálida en el corazón de la ciudad.</p><div class="inline-flex items-center gap-space-xs px-3 py-1.5 rounded-full bg-surface-container-high text-tertiary font-label-sm text-label-sm"><span class="material-symbols-outlined text-[16px]">verified</span><span class="">Sello de Calidad Culinaria Artesanal</span></div></div><div class="space-y-space-sm"><h4 class="font-title-md text-title-md text-on-surface">Horarios de Atención</h4><ul class="space-y-space-xs font-body-md text-body-md text-on-surface-variant"><li class=""><span class="font-semibold text-on-surface block">Lunes a Viernes</span>07:30 – 22:00</li><li class=""><span class="font-semibold text-on-surface block">Sábados y Domingos</span>08:00 – 23:00</li><li class="pt-space-xs"><span class="inline-flex items-center gap-1 text-tertiary font-label-sm text-label-sm"><span class="material-symbols-outlined text-[14px]">local_fire_department</span>Horno encendido todo el día</span></li></ul></div><div class="space-y-space-sm"><h4 class="font-title-md text-title-md text-on-surface">Ubicación &amp; Contacto</h4><div class="space-y-space-xs font-body-md text-body-md text-on-surface-variant"><p class="flex items-start gap-space-xs"><span class="material-symbols-outlined text-primary text-[18px] mt-0.5">location_on</span><span class="">Zona 10, Distrito Culinario<br>Ciudad de Guatemala, Guatemala</span></p><p class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-primary text-[18px]">call</span><a class="hover:text-on-surface transition-colors" href="tel:+50223456789">+502 2345-6789</a></p><p class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-primary text-[18px]">mail</span><a class="hover:text-on-surface transition-colors" href="mailto:reservas@aromaybrasa.gt">reservas@aromaybrasa.gt</a></p></div></div><div class="space-y-space-sm"><h4 class="font-title-md text-title-md text-on-surface">Explorar &amp; Redes</h4><ul class="space-y-space-xs font-body-md text-body-md text-on-surface-variant"><li class=""><a class="hover:text-primary transition-colors" data-path="menu-digital" href="menu.html">Carta de Temporada &amp; Vinos</a></li><li class=""><a class="hover:text-primary transition-colors" data-path="reservar-mesa" href="reservas.html">Reservación de Mesas &amp; Eventos</a></li><li class=""><a class="hover:text-primary transition-colors" data-path="galeria-y-ambiente" href="galeria.html">Recorrido Visual del Bistro</a></li><li class=""><a class="hover:text-primary transition-colors" data-path="blog-y-recetas" href="#">Historias del Tueste &amp; Recetas</a></li></ul><div class="pt-space-xs flex items-center gap-space-sm text-on-surface-variant"><a class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center hover:bg-primary hover:text-on-primary transition-colors" href="#"><span class="material-symbols-outlined text-[16px]">photo_camera</span></a><a class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center hover:bg-primary hover:text-on-primary transition-colors" href="#"><span class="material-symbols-outlined text-[16px]">share</span></a><a class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center hover:bg-primary hover:text-on-primary transition-colors" href="#"><span class="material-symbols-outlined text-[16px]">map</span></a></div></div></div><div class="max-w-7xl mx-auto px-gutter pt-space-md border-t border-outline-variant/30 flex flex-col sm:flex-row items-center justify-between gap-space-sm text-on-surface-variant font-label-md text-label-md"><p class="">© 2025 Aroma &amp; Brasa. Todos los derechos reservados. Pasión por el fuego y el grano.</p><div class="flex items-center gap-space-md"><a class="hover:text-on-surface transition-colors" href="#">Política de Privacidad</a><a class="hover:text-on-surface transition-colors" href="#">Términos de Servicio</a></div></div></footer>
+
+</body></html>

@@ -1,85 +1,477 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
-    <link rel="preconnect" href="https://fonts.googleapis.com"/>
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet"/>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-[#fbf9f5] font-['Plus_Jakarta_Sans'] text-[#1b1c1a] antialiased">
-    <!-- Header / Navbar -->
-    <header class="fixed top-0 w-full z-50 bg-surface/95 backdrop-blur-xl border-b border-outline-variant/30 h-20 px-6">
-        <div class="max-w-7xl mx-auto h-full flex items-center justify-between">
-            <span class="font-['Playfair_Display'] text-xl font-bold tracking-tight text-[#9f3c16]">Aroma & Brasa</span>
-            <nav class="hidden xl:flex items-center gap-2">
-                <a class="px-3 py-1.5 text-stone-700 hover:text-stone-900 transition-colors text-sm" href="index.html">Inicio</a>
-                <a class="px-3 py-1.5 text-stone-700 hover:text-stone-900 transition-colors text-sm" href="menu.html">Menú Digital</a>
-                <a class="px-3 py-1.5 text-stone-700 hover:text-stone-900 transition-colors text-sm" href="galeria.html">Galería & Ambiente</a>
-                <a class="px-3 py-1.5 bg-[#bf542c] text-white font-semibold rounded-full text-sm" href="reservas.html">Reservar Mesa</a>
-            </nav>
-        </div>
-    </header>
-
-    <main class="w-full pt-28 min-h-screen pb-20">
-        <section class="max-w-3xl mx-auto px-6 py-12">
-            <div class="text-center mb-10">
-                <h1 class="font-['Playfair_Display'] text-4xl font-bold tracking-tight mb-3">
-                    Reserva tu Experiencia
-                </h1>
-                <p class="text-stone-600">Asegura tu mesa en nuestra terraza jardín o en el salón principal junto a la cocina abierta.</p>
-            </div>
-
-            <!-- Formulario de Reservación -->
-            <form class="bg-white p-8 md:p-10 rounded-3xl shadow-sm border border-stone-200/60 space-y-6" onsubmit="event.preventDefault(); alert('¡Reserva solicitada con éxito! Te contactaremos por correo de confirmación.');">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                        <label class="block text-sm font-semibold text-stone-700 mb-2">Nombre Completo</label>
-                        <input type="text" required placeholder="Ej. Sofía Martínez" class="w-full px-4 py-3 rounded-xl border border-stone-300 focus:outline-none focus:border-[#9f3c16] text-sm"/>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-semibold text-stone-700 mb-2">Correo Electrónico</label>
-                        <input type="email" required placeholder="sofia@example.com" class="w-full px-4 py-3 rounded-xl border border-stone-300 focus:outline-none focus:border-[#9f3c16] text-sm"/>
-                    </div>
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"on-error-container":"#93000a","inverse-on-surface":"#f2f0ed","inverse-primary":"#ffb59c","surface":"#fbf9f5","on-tertiary-fixed-variant":"#6d3a00","on-surface":"#1b1c1a","on-secondary-container":"#795c52","surface-container-highest":"#e4e2de","on-tertiary":"#ffffff","primary-fixed-dim":"#ffb59c","secondary-container":"#fed8ca","surface-container-lowest":"#ffffff","on-secondary-fixed-variant":"#5a4137","tertiary":"#8b4c00","on-error":"#ffffff","secondary":"#74584e","surface-container-low":"#f5f3ef","on-background":"#1b1c1a","on-primary-container":"#fffbff","on-surface-variant":"#57423b","surface-tint":"#a23e18","surface-variant":"#e4e2de","surface-bright":"#fbf9f5","on-secondary-fixed":"#2a170f","tertiary-fixed-dim":"#ffb77a","on-tertiary-fixed":"#2e1500","tertiary-container":"#af6102","surface-container-high":"#eae8e4","outline-variant":"#dec0b7","secondary-fixed-dim":"#e3bfb2","primary":"#9f3c16","primary-fixed":"#ffdbcf","background":"#fbf9f5","inverse-surface":"#30312e","primary-container":"#bf542c","on-primary-fixed":"#390c00","error-container":"#ffdad6","on-tertiary-container":"#fffbff","secondary-fixed":"#ffdbce","surface-dim":"#dbdad6","outline":"#8a726a","tertiary-fixed":"#ffdcc2","on-secondary":"#ffffff","on-primary":"#ffffff","on-primary-fixed-variant":"#822801","error":"#ba1a1a","surface-container":"#efeeea"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-md":"1rem","gutter":"1.5rem","space-sm":"0.5rem","space-xl":"2.5rem","margin":"2rem","margin-sm":"1rem","gutter-sm":"1rem","space-xs":"0.25rem","space-lg":"1.5rem"},"fontFamily":{"display-lg-mobile":["Playfair Display"],"headline-lg-mobile":["Playfair Display"],"title-md":["Plus Jakarta Sans"],"body-md":["Plus Jakarta Sans"],"headline-md":["Playfair Display"],"label-md":["Plus Jakarta Sans"],"label-lg":["Plus Jakarta Sans"],"headline-sm":["Playfair Display"],"body-lg":["Plus Jakarta Sans"],"label-sm":["Plus Jakarta Sans"],"display-lg":["Playfair Display"],"headline-lg":["Playfair Display"]},"fontSize":{"display-lg-mobile":["36px",{"lineHeight":"44px","letterSpacing":"-0.01em","fontWeight":"700"}],"headline-lg-mobile":["26px",{"lineHeight":"34px","letterSpacing":"0em","fontWeight":"600"}],"title-md":["18px",{"lineHeight":"26px","fontWeight":"600"}],"body-md":["14px",{"lineHeight":"22px","fontWeight":"400"}],"headline-md":["24px",{"lineHeight":"32px","fontWeight":"600"}],"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.04em","fontWeight":"600"}],"label-lg":["14px",{"lineHeight":"20px","letterSpacing":"0.01em","fontWeight":"600"}],"headline-sm":["20px",{"lineHeight":"28px","fontWeight":"500"}],"body-lg":["16px",{"lineHeight":"26px","fontWeight":"400"}],"label-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.06em","fontWeight":"500"}],"display-lg":["48px",{"lineHeight":"56px","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-lg":["32px",{"lineHeight":"40px","letterSpacing":"-0.01em","fontWeight":"600"}]}}}}</script></head><body class="bg-background font-body-md text-body-md text-on-surface antialiased"><header class="fixed top-0 w-full z-50 shadow-[0_4px_20px_rgba(44,24,16,0.06)]"><div class="bg-secondary text-on-secondary px-gutter py-space-xs text-center"><div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-space-sm font-label-md text-label-md"><div class="flex items-center gap-space-xs"><span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span><span class="">ABIERTO HOY: 07:30 - 22:30 · Café de especialidad y cocina a las brasas</span></div><div class="flex items-center gap-space-md"><a class="inline-flex items-center gap-space-xs text-on-secondary hover:text-primary-fixed transition-colors" href="tel:+50223456789"><span class="material-symbols-outlined text-[14px]">call</span><span class="">+502 2345-6789</span></a><span class="opacity-40">|</span><a class="underline underline-offset-4 decoration-primary-fixed hover:text-primary-fixed transition-colors font-label-sm text-label-sm tracking-wider uppercase" data-path="reservar-mesa" href="reservas.html">Reserva Directa</a></div></div></div><div class="h-20 bg-surface/95 backdrop-blur-xl border-b border-outline-variant/30 px-gutter"><div class="max-w-7xl mx-auto h-full flex items-center justify-between gap-space-md"><a href="index.html" class="flex items-center gap-space-sm flex-shrink-0 hover:opacity-90 transition-opacity"><img alt="Logo Aroma &amp; Brasa" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1X8KXlZ-JRjuxmFoRJnpUxOmDToI5rZ92T9jvU4YOhrNcdzR_NRWqmi7WPvPoWUT6qmnEGAI4CbkZVP8wjjyE1rBxhUorNoQOPXcKfquQZobWYHM6HBRcoFi0uvZrAHVSlq81cCaWL2-EfaIqGc33aoFWOhyI8YsWQ_owGtNMkj3fOa9GgFrfDfWgNFBWCHYi5RfpIavPzqMzRWyogHF_NFumKjUr5GXdkfur9Y5afn38Gx6p0SH6nyNBLB"><div class="flex flex-col"><span class="font-headline-sm text-headline-sm font-bold tracking-tight text-primary leading-tight">Aroma &amp; Brasa</span><span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">Bistro &amp; Café</span></div></a><nav class="hidden xl:flex items-center gap-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded-full"><a class="px-3 py-1.5 rounded-full text-on-surface-variant hover:text-on-surface transition-colors font-label-md text-label-md" data-path="inicio" href="index.html">Inicio</a><a class="px-3 py-1.5 rounded-full text-on-surface-variant hover:text-on-surface transition-colors font-label-md text-label-md" data-path="menu-digital" href="menu.html">Menú Digital</a><a class="px-3 py-1.5 rounded-full text-on-surface-variant hover:text-on-surface transition-colors font-label-md text-label-md" data-path="galeria-y-ambiente" href="galeria.html">Galería &amp; Ambiente</a><a aria-current="page" class="px-3 py-1.5 transition-colors bg-primary-container text-on-primary-container font-semibold rounded-full" data-path="reservar-mesa" href="reservas.html">Reservar Mesa</a><a class="px-3 py-1.5 rounded-full text-on-surface-variant hover:text-on-surface transition-colors font-label-md text-label-md" data-path="ubicacion-y-horarios" href="#">Ubicación &amp; Horarios</a><a class="px-3 py-1.5 rounded-full text-on-surface-variant hover:text-on-surface transition-colors font-label-md text-label-md" data-path="opiniones" href="#">Opiniones</a><a class="px-3 py-1.5 rounded-full text-on-surface-variant hover:text-on-surface transition-colors font-label-md text-label-md" data-path="blog-y-recetas" href="#">Blog &amp; Recetas</a></nav><div class="flex items-center gap-space-sm"><a class="hidden md:inline-flex items-center gap-space-xs px-3 py-2 rounded-full border border-outline-variant/60 text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all font-label-md text-label-md" href="tel:+50223456789"><span class="material-symbols-outlined text-[16px]">phone_in_talk</span><span class="">Llamar: +502 2345-6789</span></a><a class="inline-flex items-center gap-space-xs px-4 py-2 rounded-full bg-primary text-on-primary hover:bg-primary-container hover:text-on-primary-container shadow-sm transition-all font-label-lg text-label-lg" data-path="reservar-mesa" href="reservas.html"><span class="material-symbols-outlined text-[18px]">calendar_today</span><span class="">Reservar Mesa</span></a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center flex-shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></div></header><main class="w-full pt-[112px] bg-surface min-h-screen"><div class="flex flex-col w-full">
+<section class="relative overflow-hidden px-gutter py-space-xl bg-surface-container-low">
+<div class="absolute -right-24 -top-24 w-96 h-96 rounded-full bg-primary/5 blur-3xl pointer-events-none"></div>
+<div class="absolute left-10 -bottom-20 w-80 h-80 rounded-full bg-tertiary/5 blur-3xl pointer-events-none"></div>
+<div class="max-w-7xl mx-auto flex flex-col gap-space-lg relative z-10">
+<div class="max-w-3xl flex flex-col gap-space-xs">
+<div class="inline-flex items-center gap-space-xs px-3 py-1 rounded-full bg-primary-fixed text-on-primary-fixed w-fit">
+<span class="material-symbols-outlined text-[16px]">table_restaurant</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider font-semibold">Experiencia En Vivo · Fuego &amp; Café</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface">Reserva tu Mesa en Aroma &amp; Brasa</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Asegura tu lugar para una velada gastronómica inolvidable. Para mesas mayores a 10 personas, disponemos de salón privado.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<div class="p-space-md rounded-xl bg-surface shadow-sm flex items-start gap-space-md">
+<div class="w-12 h-12 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[22px]">mark_chat_read</span>
+</div>
+<div class="flex flex-col">
+<h3 class="font-title-md text-title-md text-on-surface">Confirmación Inmediata</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Recepción instantánea de tu voucher digital por WhatsApp y correo.</p>
+</div>
+</div>
+<div class="p-space-md rounded-xl bg-surface shadow-sm flex items-start gap-space-md">
+<div class="w-12 h-12 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[22px]">schedule</span>
+</div>
+<div class="flex flex-col">
+<h3 class="font-title-md text-title-md text-on-surface">Tolerancia de Cortesía</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Mantenemos tu mesa reservada con 15 minutos de cortesía y bienvenida cálida.</p>
+</div>
+</div>
+<div class="p-space-md rounded-xl bg-surface shadow-sm flex items-start gap-space-md">
+<div class="w-12 h-12 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[22px]">local_parking</span>
+</div>
+<div class="flex flex-col">
+<h3 class="font-title-md text-title-md text-on-surface">Valet Parking Gratuito</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Estacionamiento privado y asistencia personalizada a tu llegada.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="px-gutter py-space-xl max-w-7xl mx-auto w-full">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
+<div class="lg:col-span-8 flex flex-col gap-space-lg">
+<form class="bg-surface-container-low p-space-lg rounded-xl shadow-sm flex flex-col gap-space-lg" id="reservation-form">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<label class="font-title-md text-title-md text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">room_preferences</span>
+<span class="">1. Selecciona tu Ambiente</span>
+</label>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Aforo en tiempo real</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm" id="zone-selector">
+<button class="zone-btn text-left p-space-md rounded-xl bg-surface transition-all flex flex-col gap-space-xs shadow-sm ring-2 ring-primary" data-vibe="Frente al fuego de brasas abiertas" data-zone="Salón Principal" type="button">
+<div class="flex items-center justify-between w-full">
+<span class="font-headline-sm text-headline-sm text-on-surface">Salón Principal</span>
+<span class="material-symbols-outlined text-primary text-[20px]">fireplace</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Frente a la cocina de fuego abierto y parrilla de leña.</p>
+<div class="mt-space-xs inline-flex items-center gap-1 font-label-sm text-label-sm text-primary font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+                  Ambiente cálido y vibrante
                 </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div>
-                        <label class="block text-sm font-semibold text-stone-700 mb-2">Fecha</label>
-                        <input type="date" required class="w-full px-4 py-3 rounded-xl border border-stone-300 focus:outline-none focus:border-[#9f3c16] text-sm"/>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-semibold text-stone-700 mb-2">Hora</label>
-                        <select class="w-full px-4 py-3 rounded-xl border border-stone-300 focus:outline-none focus:border-[#9f3c16] text-sm bg-white">
-                            <option>12:30 PM (Almuerzo)</option>
-                            <option>02:00 PM (Almuerzo)</option>
-                            <option>07:00 PM (Cena)</option>
-                            <option>08:30 PM (Cena)</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-semibold text-stone-700 mb-2">Comensales</label>
-                        <select class="w-full px-4 py-3 rounded-xl border border-stone-300 focus:outline-none focus:border-[#9f3c16] text-sm bg-white">
-                            <option>1 Persona</option>
-                            <option>2 Personas</option>
-                            <option>3 - 4 Personas</option>
-                            <option>5+ Personas (Grupo)</option>
-                        </select>
-                    </div>
+</button>
+<button class="zone-btn text-left p-space-md rounded-xl bg-surface transition-all flex flex-col gap-space-xs shadow-sm" data-vibe="Vegetación nativa y brisa fresca" data-zone="Terraza Jardín" type="button">
+<div class="flex items-center justify-between w-full">
+<span class="font-headline-sm text-headline-sm text-on-surface">Terraza Jardín</span>
+<span class="material-symbols-outlined text-secondary text-[20px]">potted_plant</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Espacio al aire libre con iluminación tenue y pérgola verde.</p>
+<div class="mt-space-xs inline-flex items-center gap-1 font-label-sm text-label-sm text-on-surface-variant">
+                  Pet Friendly · Climatizada
                 </div>
-
-                <div>
-                    <label class="block text-sm font-semibold text-stone-700 mb-2">Notas u Observaciones Especiales (Opcional)</label>
-                    <textarea rows="3" placeholder="Alergias, celebraciones de cumpleaños o preferencia de zona..." class="w-full px-4 py-3 rounded-xl border border-stone-300 focus:outline-none focus:border-[#9f3c16] text-sm"></textarea>
+</button>
+<button class="zone-btn text-left p-space-md rounded-xl bg-surface transition-all flex flex-col gap-space-xs shadow-sm" data-vibe="Maridajes y espresso de especialidad" data-zone="Barra del Sommelier" type="button">
+<div class="flex items-center justify-between w-full">
+<span class="font-headline-sm text-headline-sm text-on-surface">Barra del Sommelier</span>
+<span class="material-symbols-outlined text-secondary text-[20px]">wine_bar</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Degustaciones guiadas, cócteles de autor y barismo de altura.</p>
+<div class="mt-space-xs inline-flex items-center gap-1 font-label-sm text-label-sm text-on-surface-variant">
+                  Ideal para 1-2 comensales
                 </div>
+</button>
+<button class="zone-btn text-left p-space-md rounded-xl bg-surface transition-all flex flex-col gap-space-xs shadow-sm" data-vibe="Exclusividad y mesa de roble rústico" data-zone="Cava Privada" type="button">
+<div class="flex items-center justify-between w-full">
+<span class="font-headline-sm text-headline-sm text-on-surface">Cava Privada</span>
+<span class="material-symbols-outlined text-secondary text-[20px]">lock_clock</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Bóveda subterránea climatizada para celebraciones íntimas.</p>
+<div class="mt-space-xs inline-flex items-center gap-1 font-label-sm text-label-sm text-on-surface-variant">
+                  Hasta 12 personas · Menú degustación
+                </div>
+</button>
+</div>
+</div>
+<div class="flex flex-col gap-space-sm">
+<label class="font-title-md text-title-md text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">group</span>
+<span class="">2. Número de Comensales</span>
+</label>
+<div class="flex flex-wrap items-center gap-space-xs" id="guests-selector">
+<button class="guest-btn w-12 h-12 rounded-full bg-surface text-on-surface font-title-md text-title-md flex items-center justify-center transition-all shadow-sm" data-guests="1" type="button">1</button>
+<button class="guest-btn w-12 h-12 rounded-full bg-secondary text-on-secondary font-title-md text-title-md flex items-center justify-center transition-all shadow-sm" data-guests="2" type="button">2</button>
+<button class="guest-btn w-12 h-12 rounded-full bg-surface text-on-surface font-title-md text-title-md flex items-center justify-center transition-all shadow-sm" data-guests="3" type="button">3</button>
+<button class="guest-btn w-12 h-12 rounded-full bg-surface text-on-surface font-title-md text-title-md flex items-center justify-center transition-all shadow-sm" data-guests="4" type="button">4</button>
+<button class="guest-btn w-12 h-12 rounded-full bg-surface text-on-surface font-title-md text-title-md flex items-center justify-center transition-all shadow-sm" data-guests="5" type="button">5</button>
+<button class="guest-btn w-12 h-12 rounded-full bg-surface text-on-surface font-title-md text-title-md flex items-center justify-center transition-all shadow-sm" data-guests="6" type="button">6</button>
+<button class="guest-btn w-12 h-12 rounded-full bg-surface text-on-surface font-title-md text-title-md flex items-center justify-center transition-all shadow-sm" data-guests="7" type="button">7</button>
+<button class="guest-btn w-12 h-12 rounded-full bg-surface text-on-surface font-title-md text-title-md flex items-center justify-center transition-all shadow-sm" data-guests="8" type="button">8</button>
+<button class="guest-btn px-4 h-12 rounded-full bg-surface text-on-surface font-title-md text-title-md flex items-center justify-center transition-all shadow-sm" data-guests="10+" type="button">10+ Grupo</button>
+</div>
+</div>
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<label class="font-title-md text-title-md text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">calendar_month</span>
+<span class="">3. Fecha de la Reserva</span>
+</label>
+<span class="font-label-md text-label-md text-primary font-semibold" id="active-month">Octubre 2025</span>
+</div>
+<div class="p-space-md rounded-xl bg-surface shadow-sm">
+<div class="grid grid-cols-7 gap-1 text-center font-label-md text-label-md text-on-surface-variant mb-space-xs font-semibold">
+<span class="">Lun</span><span class="">Mar</span><span class="">Mié</span><span class="">Jue</span><span class="">Vie</span><span class="">Sáb</span><span class="">Dom</span>
+</div>
+<div class="grid grid-cols-7 gap-1 text-center font-body-md text-body-md" id="calendar-days">
+<span class="py-2.5 rounded-lg text-outline-variant opacity-40">29</span>
+<span class="py-2.5 rounded-lg text-outline-variant opacity-40">30</span>
+<button class="date-btn py-2.5 rounded-lg hover:bg-surface-container-high transition-colors" data-date="Jueves 16 Oct" type="button">16</button>
+<button class="date-btn py-2.5 rounded-lg hover:bg-surface-container-high transition-colors" data-date="Viernes 17 Oct" type="button">17</button>
+<button class="date-btn py-2.5 rounded-lg bg-primary text-on-primary font-bold shadow-sm" data-date="Sábado 18 Oct" type="button">18</button>
+<button class="date-btn py-2.5 rounded-lg hover:bg-surface-container-high transition-colors" data-date="Domingo 19 Oct" type="button">19</button>
+<button class="date-btn py-2.5 rounded-lg hover:bg-surface-container-high transition-colors" data-date="Lunes 20 Oct" type="button">20</button>
+<button class="date-btn py-2.5 rounded-lg hover:bg-surface-container-high transition-colors" data-date="Martes 21 Oct" type="button">21</button>
+<button class="date-btn py-2.5 rounded-lg hover:bg-surface-container-high transition-colors" data-date="Miércoles 22 Oct" type="button">22</button>
+<button class="date-btn py-2.5 rounded-lg hover:bg-surface-container-high transition-colors" data-date="Jueves 23 Oct" type="button">23</button>
+<button class="date-btn py-2.5 rounded-lg hover:bg-surface-container-high transition-colors" data-date="Viernes 24 Oct" type="button">24</button>
+<button class="date-btn py-2.5 rounded-lg hover:bg-surface-container-high transition-colors" data-date="Sábado 25 Oct" type="button">25</button>
+<button class="date-btn py-2.5 rounded-lg hover:bg-surface-container-high transition-colors" data-date="Domingo 26 Oct" type="button">26</button>
+<button class="date-btn py-2.5 rounded-lg hover:bg-surface-container-high transition-colors" data-date="Lunes 27 Oct" type="button">27</button>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-space-sm">
+<label class="font-title-md text-title-md text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">access_time</span>
+<span class="">4. Turno y Horario</span>
+</label>
+<div class="flex flex-col gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-md text-label-md font-semibold text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-tertiary">wb_sunny</span>
+                  Almuerzo &amp; Brasas del Mediodía
+                </span>
+<div class="flex flex-wrap gap-2">
+<button class="time-btn px-4 py-2 rounded-full bg-surface text-on-surface font-label-md text-label-md shadow-sm transition-all" data-time="12:30 PM" type="button">12:30</button>
+<button class="time-btn px-4 py-2 rounded-full bg-surface text-on-surface font-label-md text-label-md shadow-sm transition-all" data-time="13:00 PM" type="button">13:00</button>
+<button class="time-btn px-4 py-2 rounded-full bg-surface text-on-surface font-label-md text-label-md shadow-sm transition-all" data-time="13:30 PM" type="button">13:30</button>
+<button class="time-btn px-4 py-2 rounded-full bg-surface text-on-surface font-label-md text-label-md shadow-sm transition-all" data-time="14:00 PM" type="button">14:00</button>
+<button class="time-btn px-4 py-2 rounded-full bg-surface text-on-surface font-label-md text-label-md shadow-sm transition-all" data-time="14:30 PM" type="button">14:30</button>
+</div>
+</div>
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-md text-label-md font-semibold text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-tertiary">coffee</span>
+                  Tarde, Repostería &amp; Métodos de Café
+                </span>
+<div class="flex flex-wrap gap-2">
+<button class="time-btn px-4 py-2 rounded-full bg-surface text-on-surface font-label-md text-label-md shadow-sm transition-all" data-time="16:00 PM" type="button">16:00</button>
+<button class="time-btn px-4 py-2 rounded-full bg-surface text-on-surface font-label-md text-label-md shadow-sm transition-all" data-time="16:30 PM" type="button">16:30</button>
+<button class="time-btn px-4 py-2 rounded-full bg-surface text-on-surface font-label-md text-label-md shadow-sm transition-all" data-time="17:00 PM" type="button">17:00</button>
+</div>
+</div>
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-md text-label-md font-semibold text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-primary">dark_mode</span>
+                  Cena &amp; Experiencia Nocturna
+                </span>
+<div class="flex flex-wrap gap-2">
+<button class="time-btn px-4 py-2 rounded-full bg-surface text-on-surface font-label-md text-label-md shadow-sm transition-all" data-time="19:00 PM" type="button">19:00</button>
+<button class="time-btn px-4 py-2 rounded-full bg-surface text-on-surface font-label-md text-label-md shadow-sm transition-all" data-time="19:30 PM" type="button">19:30</button>
+<button class="time-btn px-4 py-2 rounded-full bg-primary text-on-primary font-bold shadow-sm transition-all" data-time="20:00 PM" type="button">20:00</button>
+<button class="time-btn px-4 py-2 rounded-full bg-surface text-on-surface font-label-md text-label-md shadow-sm transition-all" data-time="20:30 PM" type="button">20:30</button>
+<button class="time-btn px-4 py-2 rounded-full bg-surface text-on-surface font-label-md text-label-md shadow-sm transition-all" data-time="21:00 PM" type="button">21:00</button>
+</div>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-space-md">
+<label class="font-title-md text-title-md text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">person</span>
+<span class="">5. Datos Personales del Titular</span>
+</label>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<div class="flex flex-col gap-space-xs sm:col-span-2">
+<span class="font-label-md text-label-md text-on-surface-variant font-medium">Nombre Completo *</span>
+<input class="w-full px-4 py-3 rounded-xl bg-surface text-on-surface outline-none focus:ring-2 focus:ring-primary shadow-sm font-body-md text-body-md" id="input-name" placeholder="Ej. Alejandra Morales Castillo" required="" type="text">
+</div>
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-md text-label-md text-on-surface-variant font-medium">Teléfono Móvil (WhatsApp) *</span>
+<div class="flex items-center gap-2">
+<span class="px-3 py-3 rounded-xl bg-surface text-on-surface-variant font-body-md text-body-md shadow-sm">+502</span>
+<input class="w-full px-4 py-3 rounded-xl bg-surface text-on-surface outline-none focus:ring-2 focus:ring-primary shadow-sm font-body-md text-body-md" id="input-phone" placeholder="5555-1234" required="" type="tel">
+</div>
+</div>
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-md text-label-md text-on-surface-variant font-medium">Correo Electrónico *</span>
+<input class="w-full px-4 py-3 rounded-xl bg-surface text-on-surface outline-none focus:ring-2 focus:ring-primary shadow-sm font-body-md text-body-md" id="input-email" placeholder="alejandra@ejemplo.com" required="" type="email">
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-space-md">
+<label class="font-title-md text-title-md text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">celebration</span>
+<span class="">6. Ocasión y Requerimientos Especiales (Opcional)</span>
+</label>
+<div class="flex flex-col gap-space-sm">
+<span class="font-label-md text-label-md text-on-surface-variant font-medium">Motivo u Ocasión</span>
+<div class="flex flex-wrap gap-2" id="occasion-selector">
+<button class="occ-btn px-4 py-2 rounded-full bg-secondary text-on-secondary font-label-md text-label-md shadow-sm transition-all" data-occasion="Cena Casual" type="button">Cena Casual</button>
+<button class="occ-btn px-4 py-2 rounded-full bg-surface text-on-surface font-label-md text-label-md shadow-sm transition-all" data-occasion="Cumpleaños" type="button">Cumpleaños</button>
+<button class="occ-btn px-4 py-2 rounded-full bg-surface text-on-surface font-label-md text-label-md shadow-sm transition-all" data-occasion="Aniversario" type="button">Aniversario</button>
+<button class="occ-btn px-4 py-2 rounded-full bg-surface text-on-surface font-label-md text-label-md shadow-sm transition-all" data-occasion="Reunión de Negocios" type="button">Reunión de Negocios</button>
+</div>
+</div>
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-md text-label-md text-on-surface-variant font-medium">Observaciones, Alergias o Sillas de Bebé</span>
+<textarea class="w-full px-4 py-3 rounded-xl bg-surface text-on-surface outline-none focus:ring-2 focus:ring-primary shadow-sm font-body-md text-body-md resize-none" id="input-notes" placeholder="Indícanos si algún comensal tiene alergias a frutos secos, mariscos, o si requieren silla alta para niños..." rows="3"></textarea>
+</div>
+</div>
+<div class="pt-space-sm flex flex-col gap-space-xs">
+<button class="w-full py-4 rounded-full bg-primary text-on-primary hover:bg-primary-container transition-all font-label-lg text-label-lg shadow-md flex items-center justify-center gap-2" type="submit">
+<span class="material-symbols-outlined text-[20px]">check_circle</span>
+<span class="">Confirmar Solicitud de Reserva</span>
+</button>
+<p class="font-label-sm text-label-sm text-center text-on-surface-variant">Sin cargos de cancelación. Modifica o cancela libremente hasta 2 horas antes del turno.</p>
+</div>
+</form>
+</div>
+<div class="lg:col-span-4 flex flex-col gap-space-md sticky top-28">
+<div class="bg-surface-container-low p-space-lg rounded-xl shadow-md flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Resumen de tu Mesa</h2>
+<span class="px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold">En Vivo</span>
+</div>
+<div class="relative w-full h-44 rounded-xl overflow-hidden shadow-sm flex items-center justify-center bg-surface">
+<svg class="w-full h-full text-on-surface-variant/20 p-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 320 160">
+<rect height="130" rx="10" stroke-dasharray="3 3" width="290" x="15" y="15"></rect>
+<rect fill="currentColor" fill-opacity="0.08" height="40" rx="6" width="70" x="30" y="25"></rect>
+<text class="font-bold" fill="currentColor" font-size="9" stroke="none" text-anchor="middle" x="65" y="48">Terraza</text>
+<rect fill="currentColor" fill-opacity="0.12" height="40" rx="6" width="165" x="120" y="25"></rect>
+<circle cx="160" cy="45" fill="currentColor" fill-opacity="0.2" r="12"></circle>
+<circle cx="210" cy="45" fill="currentColor" fill-opacity="0.2" r="12"></circle>
+<circle cx="260" cy="45" fill="currentColor" fill-opacity="0.2" r="12"></circle>
+<text class="font-bold" fill="currentColor" font-size="9" stroke="none" text-anchor="middle" x="202" y="18">Salón Principal (Brasas)</text>
+<rect fill="currentColor" fill-opacity="0.08" height="45" rx="6" width="130" x="30" y="85"></rect>
+<text class="font-bold" fill="currentColor" font-size="9" stroke="none" text-anchor="middle" x="95" y="112">Barra de Especialidad</text>
+<rect fill="currentColor" fill-opacity="0.08" height="45" rx="6" width="105" x="180" y="85"></rect>
+<text class="font-bold" fill="currentColor" font-size="9" stroke="none" text-anchor="middle" x="232" y="112">Cava Privada</text>
+<circle class="animate-ping" cx="210" cy="45" fill="#9f3c16" id="summary-pin" r="6" stroke="none"></circle>
+</svg>
+<div class="absolute bottom-2 right-2 px-2 py-1 rounded bg-surface/90 text-on-surface font-label-sm text-label-sm shadow-sm flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span id="pin-label" class="">Salón Principal</span>
+</div>
+</div>
+<div class="flex flex-col gap-space-sm divide-y-0">
+<div class="flex items-center justify-between py-1">
+<span class="font-body-md text-body-md text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-tertiary">calendar_today</span>
+                Fecha
+              </span>
+<span class="font-title-md text-title-md text-on-surface" id="summary-date">Sábado 18 Oct</span>
+</div>
+<div class="flex items-center justify-between py-1">
+<span class="font-body-md text-body-md text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-tertiary">schedule</span>
+                Horario
+              </span>
+<span class="font-title-md text-title-md text-on-surface" id="summary-time">20:00 PM</span>
+</div>
+<div class="flex items-center justify-between py-1">
+<span class="font-body-md text-body-md text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-tertiary">group</span>
+                Comensales
+              </span>
+<span class="font-title-md text-title-md text-on-surface" id="summary-guests">2 Personas</span>
+</div>
+<div class="flex items-center justify-between py-1">
+<span class="font-body-md text-body-md text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-tertiary">chair</span>
+                Ubicación
+              </span>
+<span class="font-title-md text-title-md text-on-surface text-right" id="summary-zone">Salón Principal</span>
+</div>
+<div class="flex items-center justify-between py-1">
+<span class="font-body-md text-body-md text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-tertiary">celebration</span>
+                Ocasión
+              </span>
+<span class="font-title-md text-title-md text-on-surface" id="summary-occasion">Cena Casual</span>
+</div>
+</div>
+<div class="p-space-sm rounded-xl bg-surface flex items-start gap-space-xs shadow-sm">
+<span class="material-symbols-outlined text-primary text-[20px] flex-shrink-0 mt-0.5">verified_user</span>
+<p class="font-label-sm text-label-sm text-on-surface-variant">
+              Garantía de confort Aroma &amp; Brasa: si tus planes cambian, puedes reprogramar tu reserva con un clic desde el mensaje de confirmación sin penalizaciones.
+            </p>
+</div>
+<div class="flex items-center justify-center gap-space-sm pt-space-xs">
+<a class="font-label-sm text-label-sm text-primary flex items-center gap-1 hover:underline" href="tel:+50223456789">
+<span class="material-symbols-outlined text-[16px]">call</span>
+              ¿Mesa para hoy? Llámanos directo
+            </a>
+</div>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container flex flex-col gap-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider font-bold text-on-surface-variant">Recomendación del Chef</span>
+<p class="font-body-md text-body-md text-on-surface">Para las cenas a partir de las 19:30, sugerimos iniciar con un corte madurado al sarmiento y nuestro café de altura maridado con cacao criollo.</p>
+</div>
+</div>
+</div>
+</section>
+<div class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-on-surface/40 backdrop-blur-sm hidden" id="confirmation-modal">
+<div class="bg-surface p-space-lg rounded-xl max-w-md w-full shadow-2xl flex flex-col gap-space-md text-center">
+<div class="w-16 h-16 rounded-full bg-secondary-container text-on-secondary-container mx-auto flex items-center justify-center">
+<span class="material-symbols-outlined text-[36px]">check_circle</span>
+</div>
+<div class="flex flex-col gap-space-xs">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">¡Mesa Solicitada con Éxito!</h3>
+<p class="font-body-md text-body-md text-on-surface-variant" id="modal-message">Hemos registrado tu reserva. En breves instantes recibirás un enlace de confirmación en tu WhatsApp.</p>
+</div>
+<div class="p-space-sm rounded-xl bg-surface-container-low text-left font-body-md text-body-md flex flex-col gap-1">
+<div class="flex justify-between"><span class="text-on-surface-variant">Titular:</span><span class="font-semibold text-on-surface" id="modal-name">-</span></div>
+<div class="flex justify-between"><span class="text-on-surface-variant">Fecha &amp; Hora:</span><span class="font-semibold text-on-surface" id="modal-datetime">-</span></div>
+<div class="flex justify-between"><span class="text-on-surface-variant">Espacio:</span><span class="font-semibold text-on-surface" id="modal-zone">-</span></div>
+</div>
+<button class="w-full py-3 rounded-full bg-primary text-on-primary font-label-lg text-label-lg shadow-sm" id="modal-close" type="button">
+        Entendido, ¡gracias!
+      </button>
+</div>
+</div>
+<script>
+    (() => {
+      let state = {
+        zone: "Salón Principal",
+        guests: "2",
+        date: "Sábado 18 Oct",
+        time: "20:00 PM",
+        occasion: "Cena Casual"
+      };
 
-                <button type="submit" class="w-full py-4 rounded-xl bg-[#9f3c16] text-white font-bold tracking-wide hover:bg-[#bf542c] transition-all shadow-md">
-                    Confirmar Solicitud de Reserva
-                </button>
-            </form>
-        </section>
-    </main>
-</body>
-</html>
+      const summaryDate = document.getElementById("summary-date");
+      const summaryTime = document.getElementById("summary-time");
+      const summaryGuests = document.getElementById("summary-guests");
+      const summaryZone = document.getElementById("summary-zone");
+      const summaryOccasion = document.getElementById("summary-occasion");
+      const pinLabel = document.getElementById("pin-label");
+      const summaryPin = document.getElementById("summary-pin");
+
+      const zoneCoords = {
+        "Salón Principal": { x: "210", y: "45" },
+        "Terraza Jardín": { x: "65", y: "45" },
+        "Barra del Sommelier": { x: "95", y: "110" },
+        "Cava Privada": { x: "232", y: "110" }
+      };
+
+      function updateSummary() {
+        if (summaryDate) summaryDate.textContent = state.date;
+        if (summaryTime) summaryTime.textContent = state.time;
+        if (summaryGuests) summaryGuests.textContent = state.guests.includes("+") ? state.guests + " personas" : state.guests + (state.guests === "1" ? " Persona" : " Personas");
+        if (summaryZone) summaryZone.textContent = state.zone;
+        if (summaryOccasion) summaryOccasion.textContent = state.occasion;
+        if (pinLabel) pinLabel.textContent = state.zone;
+
+        if (summaryPin && zoneCoords[state.zone]) {
+          summaryPin.setAttribute("cx", zoneCoords[state.zone].x);
+          summaryPin.setAttribute("cy", zoneCoords[state.zone].y);
+        }
+      }
+
+      document.querySelectorAll(".zone-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+          document.querySelectorAll(".zone-btn").forEach(b => {
+            b.classList.remove("ring-2", "ring-primary");
+          });
+          btn.classList.add("ring-2", "ring-primary");
+          state.zone = btn.getAttribute("data-zone");
+          updateSummary();
+        });
+      });
+
+      document.querySelectorAll(".guest-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+          document.querySelectorAll(".guest-btn").forEach(b => {
+            b.classList.remove("bg-secondary", "text-on-secondary");
+            b.classList.add("bg-surface", "text-on-surface");
+          });
+          btn.classList.remove("bg-surface", "text-on-surface");
+          btn.classList.add("bg-secondary", "text-on-secondary");
+          state.guests = btn.getAttribute("data-guests");
+          updateSummary();
+        });
+      });
+
+      document.querySelectorAll(".date-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+          document.querySelectorAll(".date-btn").forEach(b => {
+            b.classList.remove("bg-primary", "text-on-primary", "font-bold", "shadow-sm");
+          });
+          btn.classList.add("bg-primary", "text-on-primary", "font-bold", "shadow-sm");
+          state.date = btn.getAttribute("data-date");
+          updateSummary();
+        });
+      });
+
+      document.querySelectorAll(".time-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+          document.querySelectorAll(".time-btn").forEach(b => {
+            b.classList.remove("bg-primary", "text-on-primary", "font-bold");
+            b.classList.add("bg-surface", "text-on-surface");
+          });
+          btn.classList.remove("bg-surface", "text-on-surface");
+          btn.classList.add("bg-primary", "text-on-primary", "font-bold");
+          state.time = btn.getAttribute("data-time");
+          updateSummary();
+        });
+      });
+
+      document.querySelectorAll(".occ-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+          document.querySelectorAll(".occ-btn").forEach(b => {
+            b.classList.remove("bg-secondary", "text-on-secondary");
+            b.classList.add("bg-surface", "text-on-surface");
+          });
+          btn.classList.remove("bg-surface", "text-on-surface");
+          btn.classList.add("bg-secondary", "text-on-secondary");
+          state.occasion = btn.getAttribute("data-occasion");
+          updateSummary();
+        });
+      });
+
+      const form = document.getElementById("reservation-form");
+      const modal = document.getElementById("confirmation-modal");
+      const modalClose = document.getElementById("modal-close");
+      const modalName = document.getElementById("modal-name");
+      const modalDateTime = document.getElementById("modal-datetime");
+      const modalZone = document.getElementById("modal-zone");
+
+      if (form) {
+        form.addEventListener("submit", (e) => {
+          e.preventDefault();
+          const name = document.getElementById("input-name").value || "Invitado";
+          if (modalName) modalName.textContent = name;
+          if (modalDateTime) modalDateTime.textContent = `${state.date} · ${state.time}`;
+          if (modalZone) modalZone.textContent = `${state.zone} (${state.guests} pers.)`;
+          if (modal) modal.classList.remove("hidden");
+        });
+      }
+
+      if (modalClose) {
+        modalClose.addEventListener("click", () => {
+          if (modal) modal.classList.add("hidden");
+        });
+      }
+
+      updateSummary();
+    })();
+  </script>
+</div></main><footer class="w-full bg-surface-container-low border-t border-outline-variant/40 pt-space-xl pb-space-lg"><div class="max-w-7xl mx-auto px-gutter grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter mb-space-xl"><div class="space-y-space-md"><a href="index.html" class="flex items-center gap-space-sm hover:opacity-90 transition-opacity"><img alt="Logo Aroma &amp; Brasa" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1X8KXlZ-JRjuxmFoRJnpUxOmDToI5rZ92T9jvU4YOhrNcdzR_NRWqmi7WPvPoWUT6qmnEGAI4CbkZVP8wjjyE1rBxhUorNoQOPXcKfquQZobWYHM6HBRcoFi0uvZrAHVSlq81cCaWL2-EfaIqGc33aoFWOhyI8YsWQ_owGtNMkj3fOa9GgFrfDfWgNFBWCHYi5RfpIavPzqMzRWyogHF_NFumKjUr5GXdkfur9Y5afn38Gx6p0SH6nyNBLB"><span class="font-headline-sm text-headline-sm font-bold text-primary">Aroma &amp; Brasa</span></a><p class="font-body-md text-body-md text-on-surface-variant">Un santuario culinario donde el fuego de leña y los granos de café de altura convergen. Cocina honesta, ingredientes de origen y hospitalidad cálida en el corazón de la ciudad.</p><div class="inline-flex items-center gap-space-xs px-3 py-1.5 rounded-full bg-surface-container-high text-tertiary font-label-sm text-label-sm"><span class="material-symbols-outlined text-[16px]">verified</span><span class="">Sello de Calidad Culinaria Artesanal</span></div></div><div class="space-y-space-sm"><h4 class="font-title-md text-title-md text-on-surface">Horarios de Atención</h4><ul class="space-y-space-xs font-body-md text-body-md text-on-surface-variant"><li class=""><span class="font-semibold text-on-surface block">Lunes a Viernes</span>07:30 – 22:00</li><li class=""><span class="font-semibold text-on-surface block">Sábados y Domingos</span>08:00 – 23:00</li><li class="pt-space-xs"><span class="inline-flex items-center gap-1 text-tertiary font-label-sm text-label-sm"><span class="material-symbols-outlined text-[14px]">local_fire_department</span>Horno encendido todo el día</span></li></ul></div><div class="space-y-space-sm"><h4 class="font-title-md text-title-md text-on-surface">Ubicación &amp; Contacto</h4><div class="space-y-space-xs font-body-md text-body-md text-on-surface-variant"><p class="flex items-start gap-space-xs"><span class="material-symbols-outlined text-primary text-[18px] mt-0.5">location_on</span><span class="">Zona 10, Distrito Culinario<br>Ciudad de Guatemala, Guatemala</span></p><p class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-primary text-[18px]">call</span><a class="hover:text-on-surface transition-colors" href="tel:+50223456789">+502 2345-6789</a></p><p class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-primary text-[18px]">mail</span><a class="hover:text-on-surface transition-colors" href="mailto:reservas@aromaybrasa.gt">reservas@aromaybrasa.gt</a></p></div></div><div class="space-y-space-sm"><h4 class="font-title-md text-title-md text-on-surface">Explorar &amp; Redes</h4><ul class="space-y-space-xs font-body-md text-body-md text-on-surface-variant"><li class=""><a class="hover:text-primary transition-colors" data-path="menu-digital" href="menu.html">Carta de Temporada &amp; Vinos</a></li><li class=""><a class="hover:text-primary transition-colors" data-path="reservar-mesa" href="reservas.html">Reservación de Mesas &amp; Eventos</a></li><li class=""><a class="hover:text-primary transition-colors" data-path="galeria-y-ambiente" href="galeria.html">Recorrido Visual del Bistro</a></li><li class=""><a class="hover:text-primary transition-colors" data-path="blog-y-recetas" href="#">Historias del Tueste &amp; Recetas</a></li></ul><div class="pt-space-xs flex items-center gap-space-sm text-on-surface-variant"><a class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center hover:bg-primary hover:text-on-primary transition-colors" href="#"><span class="material-symbols-outlined text-[16px]">photo_camera</span></a><a class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center hover:bg-primary hover:text-on-primary transition-colors" href="#"><span class="material-symbols-outlined text-[16px]">share</span></a><a class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center hover:bg-primary hover:text-on-primary transition-colors" href="#"><span class="material-symbols-outlined text-[16px]">map</span></a></div></div></div><div class="max-w-7xl mx-auto px-gutter pt-space-md border-t border-outline-variant/30 flex flex-col sm:flex-row items-center justify-between gap-space-sm text-on-surface-variant font-label-md text-label-md"><p class="">© 2025 Aroma &amp; Brasa. Todos los derechos reservados. Pasión por el fuego y el grano.</p><div class="flex items-center gap-space-md"><a class="hover:text-on-surface transition-colors" href="#">Política de Privacidad</a><a class="hover:text-on-surface transition-colors" href="#">Términos de Servicio</a></div></div></footer>
+
+</body></html>
